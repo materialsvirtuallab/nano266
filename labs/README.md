@@ -23,7 +23,7 @@ and in your path. You have three options:
    executables already included in this repo. Run the following command to add
    the bin directory to your path as follows (assuming you are on bash):
     
-    ```
+    ```bash
     export PATH=$PATH:<path/to/repo>/bin/Mac or Ubuntu
     # The following is to set the NWChem basis sets used in lab1. Be careful
     # that the ending slash is needed!

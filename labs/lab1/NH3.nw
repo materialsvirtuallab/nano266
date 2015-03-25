@@ -9,8 +9,8 @@ end
 title "H3N1 dft optimize"
 charge 0
 basis
- H library "6-31++G*"
- N library "6-31++G*"
+ H library "6-31G"
+ N library "6-31G"
 end
 dft
  mult 1
@@ -21,8 +21,8 @@ task dft optimize
 title "H3N1 dft freq"
 charge 0
 basis
- H library "6-31++G*"
- N library "6-31++G*"
+ H library "6-31G"
+ N library "6-31G"
 end
 dft
  mult 1
@@ -33,8 +33,8 @@ task dft freq
 title "H3N1 dft energy"
 charge 0
 basis
- H library "6-311++G**"
- N library "6-311++G**"
+ H library "6-311G"
+ N library "6-311G"
 end
 dft
  mult 1
