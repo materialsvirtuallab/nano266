@@ -138,14 +138,10 @@ you may need to use a finer grid near the equilibrium point to get a more
 accurate answer.
 
 Also, it should be pointed that PWSCF allows you to specify
-
-```
-calculation = 'vc-relax'
-```
-
-to automatically perform a full cell relaxation. But it is important that you
-understand how to do it using static SCF energy calculations at different
-lattice parameters. You will be using this in your next lab.
+`calculation = 'vc-relax'` to automatically perform a full cell relaxation. But
+it is important that you understand how to do it using static SCF energy
+calculations at different lattice parameters as a demonstration of the
+variational principle. You will be using this in your next lab.
 
 ## Q8 (10 points): Choice of functional
 
