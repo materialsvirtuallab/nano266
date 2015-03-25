@@ -34,9 +34,11 @@ typing `nwchem` in your terminal to make sure that everything is working.
 
 Once you are done with the above, make sure you are in the lab2 folder by doing:
 
-    cd <path/to/repo>/labs/lab1
+```bash
+cd <path/to/repo>/labs/lab1
+```
 
-## Q1 (20 points): Geometry optimization and energy of H2
+## Q1 (10 points): Geometry optimization and energy of H2
 
 We will start with one of the simplest molecules, diatomic hydrogen. In the
 directory, we have provided a sample `H2.nw` input file. First, open up the
@@ -71,7 +73,7 @@ with comments added.
     end
     dft
      mult 1
-     xc b3lyp
+     xc B3LYP                   # The same functional must be used for the frequency calculation.
     end
     task dft freq               # Specify that we want to do a frequency calculation
 
@@ -88,17 +90,17 @@ with comments added.
 Let us first create a separate directory to run the calculation. This makes it
 easier for us to cleanup after we are done.
 
-    ```
-    mkdir scratch
-    cd scratch
-    ```
+```bash
+mkdir scratch
+cd scratch
+```
 
 Now, we copy the input files we want over, and run nwchem:
 
-    ```
-    cp ../H2.nw .
-    nwchem H2.nw > H2.nwout
-    ```
+```bash
+cp ../H2.nw .
+nwchem H2.nw > H2.nwout
+```
 
 After a very short while, the calculation should complete and the results are
 in the `H2.nwout` file. Open up this file in your favorite text editor. To find
@@ -110,7 +112,7 @@ Geometry "geometry" -> "geometry"
 
 To get the final total energy, we can use grep from the command line:
 
-```
+```bash
 grep "Total DFT energy" H2.nwout
 ```
 
@@ -128,7 +130,7 @@ around 1.1 angstroms.
 Again, record down the final bond length of H2 in angstroms and the
 final total energy in eV.
 
-#Q3 (30 points): Geometry optimization and energy of NH<sub>3</sub>
+## Q3 (20 points): Geometry optimization and energy of NH<sub>3</sub>
 
 The geommetry of ammonia is somewhat more complex, so we have provided an 
 `NH3.nw` file. Perform the same calculation as in Q1. 
@@ -140,17 +142,17 @@ providing a journal citation or a weblink.)
 
 Also record down the final energy of the NH<sub>3</sub> molecule in eV.
 
-#Q4 (30 points): Formation enthalpy of NH<sub>3</sub>.
+## Q4 (20 points): Formation enthalpy of NH<sub>3</sub>.
 
 Calculate the formation enthalpy (per molecule) of NH<sub>3</sub> in kJ/mol. To
 do this, you need not only the energies from Q1-Q3, you also need to extract
 the thermal correction to the enthalpy. For example,
 
-```
+```bash
 grep "Thermal correction to Enthalpy" H2.nwout
 ```
 
-Note the units stipulated.
+Note the units stipulated by NWChem in the output.
 
 The enthalpy *H* is then given by the energy + the correction. The formation
 energy of NH<sub>3</sub> is given by the enthalpy change of the following:
@@ -161,4 +163,20 @@ Compare your calculated formation enthalpy with experimental values. The NIST
 Chemistry Webbook (http://webbook.nist.gov/chemistry/) is a good source of
 data for many common molecules.
 
+## Q5 (30 points)
 
+In this question, you will investigate the effect that functional choice and
+basis set choice has on the formation enthalpy of NH<sub>3</sub>. Repeat Q1-Q4,
+but now modify your input files to experiment with the HF, PBE and B3LYP
+functionals. You can also modify the basis set used between 6-31g and 6-311g.
+Note that you can either modify the functional or basis set for the geometry
+optimiation and frequency step, or the final energy calculation step, or both.
+
+Discuss the effect of the functional and basis set on the geometries and final
+energies. What would be a general recommended strategy for other similar
+calculations if you want to perform the calculations as efficiently as possible
+while maintaining relatively good accuracy?
+
+Note that this is an open-ended question, and there is no real right or wrong
+answer. It is more important for you to understand the tradeoffs and come up
+with a good justification for your recommendation.
