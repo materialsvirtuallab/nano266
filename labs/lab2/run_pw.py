@@ -22,13 +22,14 @@ with open("Si.pw.in.template") as f:
 k = 8
 ecut = 10 # In Ry
 alat = 10 # The lattice parameter for the cell in Bohr.
+psp = "Si.pbe-n-kjpaw_psl.0.1.UPF"
 
 # Loop through a series of values of ecut. Note that ecut is stipulated in Ry
 # in PWSCF. Google for the meaning of the numpy.arange function (as well as any
 # other python functions that are alien to you). When writing code to automate
 # anything, you frequently need to consult documentation on the web. 
 for ecut in np.arange(10, 50, 10):
-    s = template.format(alat=alat, k=k, ecut=ecut)
+    s = template.format(alat=alat, k=k, ecut=ecut, pseudopotential=psp)
     jobname = "Si_%s_%s_%s" % (ecut, k, alat)
     
     # Write the actual input file for PWSCF.

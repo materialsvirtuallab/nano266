@@ -17,7 +17,7 @@
 &CELL
 /
 ATOMIC_SPECIES
-  Si   56.00000  Si.pbe-n-kjpaw_psl.0.1.UPF
+  Si   28.055  {pseudopotential}
 ATOMIC_POSITIONS crystal 
   Si      0.00    0.00    0.00
   Si      0.25    0.25    0.25
