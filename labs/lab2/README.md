@@ -30,7 +30,36 @@ of the sections and parameters mean. Note that some parameters have
 placeholders {xxx}, which will be replaced by our run script. A PWSCF_IO
 tutorial is provided in the tutorials folder of this repo to help you
 understand the parameters. You may also wish to consult the QuantumEspresso 
-online documentation.
+online documentation. A quick explanation of the key parameters are given as
+follows:
+
+```
+&control                   # This is the control section
+  calculation = 'scf' ,    # Specifies that we are doing a static SCF calculation.
+  outdir = './tmp' ,
+  pseudo_dir = './' ,      # Location of pseudopotential files.
+/
+&system                    # Specifies the structure
+  ibrav = 2,               # For PWSCF, ibrav = 2 denotes an FCC cell.
+  celldm(1) = {alat},      # This specifies the lattice parameter of the fcc cell.
+  nat = 2,                 # We have two Si atoms per unit cell.
+  ntyp = 1,                # There is only one type of atom (Si)
+  ecutwfc = {ecut} ,       # This stipulates the energy cutoff.
+/
+&ELECTRONS                 # These three sections are not used in this particular calculation.
+/
+&IONS
+/
+&CELL
+/
+ATOMIC_SPECIES             # You specify the pseudopotential for each atomic species.
+  Si   28.055  {pseudopotential}
+ATOMIC_POSITIONS crystal   # Specifies the atomic positions in crystal (fractional) coordinates
+  Si      0.00    0.00    0.00
+  Si      0.25    0.25    0.25
+K_POINTS automatic         # Specifies the k-point grid to be used
+  {k} {k} {k}   0 0 0
+```
 
 We have also written a Python script called `run_pw.py` to help you in this
 simulation. Again, read through the script to understand what it does. It is
