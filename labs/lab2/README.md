@@ -8,7 +8,13 @@ with respect to parameters such as the energy cutoff and k-point grid. We will b
 ## Initial setup
 
 To do the lab, you first need QuantumEspresso's pwscf. You have three options:
-1. If you have your own Mac or Ubuntu 64-bit setup.
+
+1. If you have your own Mac or Ubuntu 64-bit, you can use the
+   executables already included in this repo. Run the following command to add the bin directory to your path as follows (assuming you are on bash):
+
+    ```
+    export PATH=$PATH:/path/to/repo/bin
+    ```
 
 ## Q1 (10 points): Convergence of *absolute energies* with respect to energy cutoff.
 
