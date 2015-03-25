@@ -1,0 +1,25 @@
+&control
+  calculation = 'scf' ,
+  outdir = './tmp' ,
+  pseudo_dir = './' ,
+/
+&system
+  ibrav = 2,
+  celldm(1) = {alat},
+  nat = 2,
+  ntyp = 1,
+  ecutwfc = {ecut} ,
+/
+&ELECTRONS
+/
+&IONS
+/
+&CELL
+/
+ATOMIC_SPECIES
+  Si   56.00000  Si.pbe-n-kjpaw_psl.0.1.UPF
+ATOMIC_POSITIONS crystal 
+  Si      0.00    0.00    0.00
+  Si      0.25    0.25    0.25
+K_POINTS automatic 
+  {k} {k} {k}   0 0 0
