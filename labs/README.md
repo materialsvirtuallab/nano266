@@ -23,7 +23,12 @@ and in your path. You have three options:
    executables already included in this repo. Run the following command to add
    the bin directory to your path as follows (assuming you are on bash):
     
+    ```
     export PATH=$PATH:<path/to/repo>/bin/Mac or Ubuntu
+    # The following is to set the NWChem basis sets used in lab1. Be careful
+    # that the ending slash is needed!
+    export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
+    ```
 
 2. You can download VirtualBox, and a Ubuntu virtual machine at this link and
    setup it up.
@@ -31,6 +36,11 @@ and in your path. You have three options:
    yourself. *Attempt this only if you have a fairly good familiarity with
    compiling things on Unix-based OSes, or are willing to spend the time to
    figure it out!*
+
+In general, it is not recommended that you run on a native Windows OS for these
+labs. Most first principles codes are designed to run primarily on
+supercomputing clusters that have Unix-based OSes. If you have a Windows
+machine, you should try option 2 above.
 
 # Programming code
 
