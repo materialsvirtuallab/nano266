@@ -13,15 +13,18 @@ To do the lab, you first need QuantumEspresso's pwscf. You have three options:
 
 1. If you have your own Mac or Ubuntu 64-bit, you can use the
    executables already included in this repo. Run the following command to add the bin directory to your path as follows (assuming you are on bash):
+   
     ```
     export PATH=$PATH:\<path/to/repo\>/bin/Mac or Ubuntu
     ```
+
 2. You can download VirtualBox, and a Ubuntu virtual machine at this link and
    setup it up.
 3. You can download the source code for QuantumEspresso and install it 
    yourself. *Attempt this only if you have a fairly good familiarity with compiling things on Unix-based OSes, or are willing to spend the time to figure it out. The compilation is pretty straightforward, but if you are not familiar with Unix-based OSes, it will be a challenge!*
 
 Once you are done with the above, make sure you are in the lab2 folder by doing:
+
     ```
     cd \<path/to/repo\>/labs/lab2
     ```
