@@ -111,7 +111,7 @@ accurate answer.
 Also, it should be pointed that PWSCF allows you to specify
 
 ```
-caclulation = 'vc-relax'
+calculation = 'vc-relax'
 ```
 
 to automatically perform a full cell relaxation. But it is important that you
