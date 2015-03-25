@@ -4,6 +4,24 @@ Welcome to the lab sessions for NANO266. Before you begin, you should read this
 carefully and follow all instructions to make sure that your computer / 
 computing resource is set up properly.
 
+# Cloning the repo
+
+You should first clone this repo by doing:
+
+```
+git clone https://github.com/materialsvirtuallab/nano266.git
+```
+
+This assumes you already have git installed, which comes by default in Mac
+and can easily be installed in Unix. To update your repo to the latest version
+at any time, you can do:
+
+```
+git pull
+```
+
+from within the repo.
+
 # Modeling codes used
 
 In the labs, we will be using two open-source first principles modeling codes:
