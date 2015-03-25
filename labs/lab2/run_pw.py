@@ -27,7 +27,7 @@ alat = 10 # The lattice parameter for the cell in Bohr.
 # in PWSCF. Google for the meaning of the numpy.arange function (as well as any
 # other python functions that are alien to you). When writing code to automate
 # anything, you frequently need to consult documentation on the web. 
-for ecut in np.arange(10, 100, 10):
+for ecut in np.arange(10, 50, 10):
 	s = template.format(alat=alat, k=k, ecut=ecut)
 	jobname = "Si_%s" % ecut
 	
