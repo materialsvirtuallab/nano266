@@ -21,7 +21,7 @@ with open("Si.pw.in.template") as f:
 # Set the k-point grid
 k = 8
 ecut = 10 # In Ry
-alat = 10 # The lattice parameter for the cell in Bohr.
+alat = 10.26 # The lattice parameter for the cell in Bohr.
 psp = "Si.pbe-n-kjpaw_psl.0.1.UPF"
 
 # Loop through a series of values of ecut. Note that ecut is stipulated in Ry

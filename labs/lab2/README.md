@@ -25,7 +25,7 @@ Once you are done with the above, make sure you are in the lab2 folder by doing:
 
     cd <path/to/repo>/labs/lab2
 
-## Q1 (10 points): Convergence of *absolute energies* with respect to energy cutoff.
+## Q1 (12 points): Convergence of *absolute energies* with respect to energy cutoff.
 
 Start by looking at the `Si.pw.in.template`, which is a template for the input file for PWSCF. You should get yourself familiar with the format, and what each of the sections and parameters mean. Note that some parameters have placeholders {xxx}, which will be replaced by our run script. A PWSCF_IO tutorial is provided in the tutorials folder of this repo to help you understand the parameters. You may also wish to consult the QuantumEspresso online documentation.
 
@@ -38,7 +38,7 @@ We have also written a Python script called `run_pw.py` to help you in this simu
 2. Do you see a trend in your calculated energies with respect to cutoff? 
    If you see a trend, is this what you expect and why? If not, why?
 
-## Q2 (10 points): Convergence of absolute energies with respect to *k*-points.
+## Q2 (12 points): Convergence of absolute energies with respect to *k*-points.
 
 1. Modify the script in Q1 to calculate the energy as a function of k -point
    grid size. For each grid, record the number of unique *k*-points. Note that this is not the same as the *k* specified in the script and input file. The `analyze.py` script reports the number of unique *k*-points. Again, make sure to keep your other variables fixed. Record and plot your final results. Specify when you reach the level of convergence of ~5 meV/atom.
@@ -47,21 +47,29 @@ We have also written a Python script called `run_pw.py` to help you in this simu
 3. Plot your calculation time against the number of *k*-points. Is there a
    relationship, and if so, what is that relationship? (You will need to figure out how to extract the calculation time from the output files.)
 
-## Q3 (10 points): Convergence of forces with respect to cutoff energies.
+## Q3 (12 points): Convergence of forces with respect to cutoff energies.
 
-1. Let us now investigate the convergence of forces on atoms with respect to 
-   cutoff. Displace a Si atom +0.05 in the z direction (fractional coordinates). Keeping other parameters fixed, calculate the forces on C as a function of cutoff. A good force value would be converged to within ~10 meV/Angstrom (note that PWSCF gives forces in Ryd/bohr). Use a *k*-point grid of 4x4x4. Plot and record your results, including all relevant parameters.
+Let us now investigate the convergence of forces on atoms with respect to 
+cutoff. Displace a Si atom +0.05 in the z direction (fractional coordinates). Keeping other parameters fixed, calculate the forces on C as a function of cutoff. A good force value would be converged to within ~10 meV/Angstrom (note that PWSCF gives forces in Ryd/bohr). Use a *k*-point grid of 4x4x4. Plot and record your results, including all relevant parameters.
 
-## Q4 (10 points): Convergence of forces with respect to *k*-points.
+## Q4 (12 points): Convergence of forces with respect to *k*-points.
 
-1. Repeat Q3, but this time, investigate the converge as a function of 
-   *k*-point grid size. Keep all other parameters fixed. Record your relevant conditions (lattice parameter, cutoffs, etc.)
+Repeat Q3, but this time, investigate the converge as a function of 
+*k*-point grid size. Keep all other parameters fixed. Record your relevant conditions (lattice parameter, cutoffs, etc.)
 
-## Q5 (5 points): Convergence of energy differences with respect to energy cutoffs.
-In practice only energy differences have physical meaning, as opposed to absolute energy scales, which can be arbitrarily shifted. Therefore, it is important to understand the convergence properties. Using PWSCF, calculate the energy difference between diamond structures at two lattice parameters as a function of cutoff. For example, you could calculate the energy of diamond at the experimental lattice parameter (6.74 bohr), the calculate the energy at 6.70 bohr (or any lattice parameter close to the minimum), take the difference between the two, and repeat for many energy cutoffs. Make sure to keep your other variables (lattice constant, k points, etc.) fixed while changing the cutoff. Record all relevant parameters such as the lattice constant, k -points, and so on. A good energy difference is converged to ~5 meV/atom (convert this to Ryd).
-Problem 6 (10 points) Comparing Probs. 1, 2, 3, and 4, and 5:
-How do the cutoff requirements change when looking at absolute energies vs.
-
-looking at forces vs. energy differences? How do the k -point grid
-requirements change? Can you explain this?
-Page
+## Q5 (12 points): Convergence of energy differences.
+
+In practice, only energy differences have physical meaning. Let us now
+investigate the convergence of energy differences with respect to energy cutoff and *k*-points. For this exercise, let's compute the energy difference between silicon structures at two lattice parameters. You can calculate the energies of silicon the experimental lattice parameter (10.26 bohr), and at 10.30 Bohr, and take the difference between the two. Do a convergence study for both the energy cutoff and the *k*-point grid. Record all relevant parameters such as the lattice constant, *k* -points, and so on. A good energy difference is converged to ~5 meV/atom.
+
+## Q6 (20 points): Selecting the right parameters
+
+Look at the results from the preceding questions. Discuss the changes in the requirements in terms of cutoff, *k*-point grid, etc. when comparing absolute energies, forces and energy differences. Explain as far as possible any trends you see.
+
+## Q7 (10 points): Finding the equilibrium structure.
+
+Using an appropriate set of parameters, determine the predicted equilibrium lattice constant for silicon by calculating the energy of the silicon structure at several lattice parameters. Note that you may need to use a finer grid near the equilibrium point to get a more accurate answer.
+
+## Q8 (10 points): Choice of functional
+
+The calculations you have been doing thus far is based on the PBE GGA functional. Redo Q7, but now use the `Si.pz-n-kjpaw_psl.0.1.UPF` (LDA)pseudopotential instead. Comment on any differences in the predicted equilibrium lattice constant.
