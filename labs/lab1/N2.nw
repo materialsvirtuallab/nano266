@@ -1,0 +1,38 @@
+memory total 1000 mb
+geometry units angstroms noautoz
+ N 0 0 -0.5488
+ N 0 0 0.5488
+end
+
+title "N2 dft optimize"
+charge 0
+basis
+ N library "6-31++G*"
+end
+dft
+ mult 1
+ xc b3lyp
+end
+task dft optimize
+
+title "N2 dft freq"
+charge 0
+basis
+ N library "6-31++G*"
+end
+dft
+ mult 1
+ xc b3lyp
+end
+task dft freq
+
+title "N2 dft energy"
+charge 0
+basis
+ N library "6-311++G**"
+end
+dft
+ mult 1
+ xc b3lyp
+end
+task dft energy
