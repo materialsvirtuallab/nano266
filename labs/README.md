@@ -52,13 +52,20 @@ and in your path. You have three options:
 2. You can download VirtualBox (https://www.virtualbox.org/), and a
    pre-configured Ubuntu virtual machine at this [link](https://s3.amazonaws.com/mavrl-web/nano266.ova).
    Note that it is a hefty 3 Gb download, so you will want to download this on
-   a fast connection. After installing VirtualBox, do File->Import Appliance and
+   a fast connection. After launching VirtualBox, do File->Import Appliance and
    then select the downloaded `nano266.ova` file. You can then start the
-   virtual machine.
+   virtual machine. You should be able to login to the virtual machine without
+   a password. If one is ever needed, it is simply "nano266fun". Start a
+   terminal by clicking on the icon on the left. By typing `ls`, you should see
+   that a nano266 directory is already cloned for you. Simply `cd nano266` and 
+   you are ready to begin to do the labs. 
 3. You can download the source code for QuantumEspresso or NWChem and install it 
    yourself. *Attempt this only if you have a fairly good familiarity with
    compiling things on Unix-based OSes, or are willing to spend the time to
-   figure it out!*
+   figure it out!* If you foresee you will be working on such calculations
+   extensively in future, it is generally useful for you to learn how to do
+   this. Start with the QuantumEspresso code as it is more straightforward to
+   compile.
 
 In general, it is not recommended that you run on a native Windows OS for these
 labs. Most first principles codes are designed to run primarily on
