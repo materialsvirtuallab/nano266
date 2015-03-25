@@ -14,7 +14,7 @@ To do the lab, you first need QuantumEspresso's pwscf. You have three options:
 1. If you have your own Mac or Ubuntu 64-bit, you can use the
    executables already included in this repo. Run the following command to add the bin directory to your path as follows (assuming you are on bash):
     ```
-    export PATH=$PATH:<path/to/repo>/bin/Mac or Ubuntu
+    export PATH=$PATH:\<path/to/repo\>/bin/Mac or Ubuntu
     ```
 2. You can download VirtualBox, and a Ubuntu virtual machine at this link and
    setup it up.
@@ -23,7 +23,7 @@ To do the lab, you first need QuantumEspresso's pwscf. You have three options:
 
 Once you are done with the above, make sure you are in the lab2 folder by doing:
     ```
-    cd <path/to/repo>/labs/lab2
+    cd \<path/to/repo\>/labs/lab2
     ```
 
 ## Q1 (10 points): Convergence of *absolute energies* with respect to energy cutoff.
