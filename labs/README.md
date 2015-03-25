@@ -2,7 +2,8 @@
 
 Welcome to the lab sessions for NANO266. Before you begin, you should read this
 carefully and follow all instructions to make sure that your computer / 
-computing resource is set up properly.
+computing resource is set up properly. Your instructors are on hand to help you
+if you run into any problems.
 
 # Cloning the repo
 
@@ -48,8 +49,12 @@ and in your path. You have three options:
     export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
     ```
 
-2. You can download VirtualBox, and a Ubuntu virtual machine at this link and
-   setup it up.
+2. You can download VirtualBox (https://www.virtualbox.org/), and a
+   pre-configured Ubuntu virtual machine at this [link](https://s3.amazonaws.com/mavrl-web/nano266.ova).
+   Note that it is a hefty 3 Gb download, so you will want to download this on
+   a fast connection. After installing VirtualBox, do File->Import Appliance and
+   then select the downloaded `nano266.ova` file. You can then start the
+   virtual machine.
 3. You can download the source code for QuantumEspresso or NWChem and install it 
    yourself. *Attempt this only if you have a fairly good familiarity with
    compiling things on Unix-based OSes, or are willing to spend the time to
