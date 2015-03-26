@@ -1,9 +1,9 @@
-latex input:        mmd-article-header
+LaTeX input:        mmd-article-header
 Title:              NANO266 Lab 2
 Base Header Level:  2
 LaTeX Mode:         memoir
-latex input:        mmd-article-begin-doc
-latex footer:       mmd-memoir-footer
+LaTeX input:        mmd-article-begin-doc
+LaTeX footer:       mmd-memoir-footer
 
 # Lab 2
 
@@ -121,9 +121,9 @@ grid size. Keep all other parameters fixed. Record your relevant conditions
 
 In practice, only energy differences have physical meaning. Let us now
 investigate the convergence of energy differences with respect to energy
-cutoff and *k*-points. For this exercise, let's compute the energy difference
+cutoff and *k*-points. For this exercise, compute the energy difference
 between silicon structures at two lattice parameters. You can calculate the
-energies of silicon the experimental lattice parameter (10.26 bohr), and at
+energies of silicon the experimental lattice parameter (10.26 Bohr), and at
 10.30 Bohr, and take the difference between the two. Do a convergence study for
 both the energy cutoff and the *k*-point grid. Record all relevant parameters
 such as the lattice constant, *k* -points, and so on. A good energy difference
