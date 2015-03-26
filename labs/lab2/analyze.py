@@ -4,6 +4,9 @@ import re
 import sys
 import csv
 
+
+# This defines the patterns for extracting relevant data from the output
+# files.
 patterns = {
     "energy": re.compile("total energy\s+=\s+([\d\.\-]+)\sRy"),
     "ecut": re.compile("kinetic\-energy cutoff\s+=\s+([\d\.\-]+)\s+Ry"),
