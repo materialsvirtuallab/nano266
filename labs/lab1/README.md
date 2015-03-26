@@ -34,12 +34,15 @@ to write your own scripts if you have the know-how.
 
 ## Initial setup
 
-It is assumed that you have already cloned this repo, and done a git pull so
-that you are up to date with the repo. Also, read through the README.md file in
-the main labs folder and make sure that you have NWChem setup properly. Try
-typing `nwchem` in your terminal to make sure that everything is working.
+It is assumed that you have already followed the instructions in the README.md
+in the root labs folder and have access to nwchem, either on XSEDE or on your
+own computer or virtual machine. Do a git pull so that you are up to date with
+the repo. Also, read through the README.md file in the main labs folder and
+make sure that you have NWChem setup properly. Try typing `nwchem` in your
+terminal to make sure that everything is working. You will get an error message
+because there is no input file, but that's not a big deal.
 
-Once you are done with the above, make sure you are in the lab2 folder by doing:
+Once you are done with the above, make sure you are in the lab1 folder by doing:
 
 ```bash
 cd <path/to/repo>/labs/lab1

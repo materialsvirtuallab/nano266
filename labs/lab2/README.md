@@ -18,10 +18,12 @@ actually need access to a supercomputing cluster to perform these calculations.
 
 ## Initial setup
 
-It is assumed that you have already cloned this repo, and done a git pull so
-that you are up to date with the repo. Also, read through the README.md file in
-the main labs folder and make sure that you have PWSCF setup properly. Try
-typing `pw.x` in your terminal to make sure that everything is working.
+It is assumed that you have already followed the instructions in the README.md
+in the root labs folder and have access to PWSCF, either on XSEDE or on your
+own computer or virtual machine. Do a git pull so that you are up to date with
+the repo. Try typing `pw.x` in your terminal to make sure that everything is
+working. You may get a `Waiting for input...` message. Just hit Ctrl-C to
+cancel.
 
 Once you are done with the above, make sure you are in the lab2 folder by doing:
 

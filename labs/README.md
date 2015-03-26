@@ -29,7 +29,7 @@ installed and in your path. You have four options:
 
 1. We have secured an XSEDE allocation for this course. Please go the the XSEDE
    portal (https://portal.xsede.org) and create an account as shown below.
-   <img width="600" src="XSEDEUserPortal.png"/>
+   <img style="clear: both;" width="600" src="XSEDEUserPortal.png"/>
    After you have done so, email your username to one of the TAs to be added
    to the allocation for this course. You can then login to the allocations
    as follows:
@@ -78,15 +78,16 @@ machine, you should try option 1 or 3 above.
 
 # Cloning the repo
 
-You should first clone this repo by doing:
+On wherever you are performing the calculations for the lab, you should clone
+this repo by doing:
 
 ```
 git clone https://github.com/materialsvirtuallab/nano266.git
 ```
 
-This assumes you already have git installed, which comes by default in Mac
-and can easily be installed in Unix-based OSes. To update your repo to the
-latest version at any time, you can do:
+This assumes you already have git installed, which comes by default in XSEDE
+and Mac and can easily be installed in Unix-based OSes. To update your repo to
+the latest version at any time, you can do:
 
 ```
 git pull
