@@ -1,16 +1,23 @@
+LaTeX input:        mmd-article-header
+Title:              NANO266 Lab 1
+Base Header Level:  2
+LaTeX Mode:         memoir
+LaTeX input:        mmd-article-begin-doc
+LaTeX footer:       mmd-memoir-footer
+
 # Lab 1
 
 ## Introduction
 
 We will begin our lab sessions with a gentle introduction into quantum
-mechanical modeling of molecules. For this purpose, we will be using 
+mechanical modeling of molecules. For this purpose, we will be using
 computational chemistry techniques to study reaction energies, ionization
 energies and electron affinities, vibrational frequencies, etc. We will
 be using NWChem, an open source quantum chemistry code. Note that all
-calculations in this lab are fairly simple and on very small molecules. 
+calculations in this lab are fairly simple and on very small molecules.
 So you can be run them on a modern desktop or laptop in serial mode, i.e., you
 do not actually need access to a supercomputing cluster to perform these
-calculations. 
+calculations.
 
 For this lab, we will be studying one of the most important reactions in the
 world - the formation of ammonia from nitrogen and hydrogen. Through the
@@ -132,8 +139,8 @@ final total energy in eV.
 
 ## Q3 (20 points): Geometry optimization and energy of NH<sub>3</sub>
 
-The geommetry of ammonia is somewhat more complex, so we have provided an 
-`NH3.nw` file. Perform the same calculation as in Q1. 
+The geommetry of ammonia is somewhat more complex, so we have provided an
+`NH3.nw` file. Perform the same calculation as in Q1.
 
 For NH<sub>3</sub>, record down the final N-H bond lengths, and also, calculate
 the  angle between the bonds. Compare the calculated values with the
@@ -157,7 +164,7 @@ Note the units stipulated by NWChem in the output.
 The enthalpy *H* is then given by the energy + the correction. The formation
 energy of NH<sub>3</sub> is given by the enthalpy change of the following:
 
-0.5 N<sub>2</sub> + 1.5 H<sub>2</sub> -> NH<sub>3</sub> 
+0.5 N<sub>2</sub> + 1.5 H<sub>2</sub> -> NH<sub>3</sub>
 
 Compare your calculated formation enthalpy with experimental values. The NIST
 Chemistry Webbook (http://webbook.nist.gov/chemistry/) is a good source of

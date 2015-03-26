@@ -19,7 +19,7 @@ which points to the root directory.
 
 Some of the materials are inspired by and adapted from MIT Course 3.320:
 Atomistic Computer Modeling of Materials taught by Prof Gerbrand Ceder and 
-Nicola Marzari.
+Nicola Marzari. Those materials are available on MIT Open Courseware.
 
 --
 Shyue Ping Ong

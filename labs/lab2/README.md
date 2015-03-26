@@ -1,3 +1,10 @@
+LaTeX input:        mmd-article-header
+Title:              NANO266 Lab 2
+Base Header Level:  2
+LaTeX Mode:         memoir
+LaTeX input:        mmd-article-begin-doc
+LaTeX footer:       mmd-memoir-footer
+
 # Lab 2
 
 ## Introduction
@@ -7,7 +14,7 @@ with respect to parameters such as the energy cutoff and k-point grid. We will
 be using QuantumEspresso (http://www.quantum-espresso.org/), an open scource
 first principles code. Note that all calculations in this lab are fairly simple
 and can be run on a modern desktop or laptop in serial mode, i.e., you do not
-actually need access to a supercomputing cluster to perform these calculations. 
+actually need access to a supercomputing cluster to perform these calculations.
 
 ## Initial setup
 
@@ -29,7 +36,7 @@ file for PWSCF. You should get yourself familiar with the format, and what each
 of the sections and parameters mean. Note that some parameters have
 placeholders {xxx}, which will be replaced by our run script. A PWSCF_IO
 tutorial is provided in the tutorials folder of this repo to help you
-understand the parameters. You may also wish to consult the QuantumEspresso 
+understand the parameters. You may also wish to consult the QuantumEspresso
 online documentation. A quick explanation of the key parameters are given as
 follows:
 
@@ -52,9 +59,9 @@ follows:
 /
 &CELL
 /
-ATOMIC_SPECIES             # You specify the pseudopotential for each atomic species.
+ATOMIC_SPECIES             # Specify the pseudopotential for each species.
   Si   28.055  {pseudopotential}
-ATOMIC_POSITIONS crystal   # Specifies the atomic positions in crystal (fractional) coordinates
+ATOMIC_POSITIONS crystal   # Specifies the atomic positions in frac. coords
   Si      0.00    0.00    0.00
   Si      0.25    0.25    0.25
 K_POINTS automatic         # Specifies the k-point grid to be used
@@ -77,7 +84,7 @@ programs for analysis. To run the scripts, you simply need to type
    *k*-points, etc.) fixed. Record and plot your final results. Specify when
    you reach the level of convergence of ~5 meV/atom (you will need to take
    care of the unit conversions). Note that PWSCF calculates energy per
-   primitive cell. 
+   primitive cell.
 2. Do you see a trend in your calculated energies with respect to cutoff?
 
 ## Q2 (12 points): Convergence of *absolute* energies with respect to *k*-points
@@ -92,12 +99,12 @@ programs for analysis. To run the scripts, you simply need to type
 2. Do you see a trend in your calculated energies with respect to grid size?
    If you see a trend, is this what you expect and why? If not, why?
 3. Plot your calculation time against the number of *k*-points. Is there a
-   relationship, and if so, what is that relationship? (You will need to figure 
+   relationship, and if so, what is that relationship? (You will need to figure
    out how to extract the calculation time from the output files.)
 
 ## Q3 (12 points): Convergence of forces with respect to cutoff energies
 
-Let us now investigate the convergence of forces on atoms with respect to 
+Let us now investigate the convergence of forces on atoms with respect to
 cutoff. Displace a Si atom +0.05 in the z direction (fractional coordinates).
 Keeping other parameters fixed, calculate the forces on Si as a function of
 cutoff. A good force value would be converged to within ~10 meV/Angstrom
@@ -114,9 +121,9 @@ grid size. Keep all other parameters fixed. Record your relevant conditions
 
 In practice, only energy differences have physical meaning. Let us now
 investigate the convergence of energy differences with respect to energy
-cutoff and *k*-points. For this exercise, let's compute the energy difference
+cutoff and *k*-points. For this exercise, compute the energy difference
 between silicon structures at two lattice parameters. You can calculate the
-energies of silicon the experimental lattice parameter (10.26 bohr), and at
+energies of silicon the experimental lattice parameter (10.26 Bohr), and at
 10.30 Bohr, and take the difference between the two. Do a convergence study for
 both the energy cutoff and the *k*-point grid. Record all relevant parameters
 such as the lattice constant, *k* -points, and so on. A good energy difference
