@@ -27,20 +27,23 @@ In the labs, we will be using two open-source first principles modeling codes:
 Before you start any of the labs, make sure that you have the software
 installed and in your path. You have four options:
 
+![XSEDE user portal](XSEDEUserPortal.png)
+
 1. We have secured an XSEDE allocation for this course. Please go the the XSEDE
-   portal (https://portal.xsede.org) and create an account as shown below.
-   <img style="clear: both;" width="600" src="XSEDEUserPortal.png"/>
+   portal (https://portal.xsede.org) and create an account as shown above.
    After you have done so, email your username to one of the TAs to be added
    to the allocation for this course. You can then login to the allocations
-   as follows:
-     ```bash
-     ssh <your_username>@trestles.sdsc.edu
-     ```
-   Once you are logged in, immediately run the following commands to make sure
-   that QuantumEspresso and NWChem are loaded for you.
-     ```bash
-     module load qe nwchem
-     ```
+   with
+
+    ```bash
+    ssh <your_username>@trestles.sdsc.edu
+    ```
+   Once you are logged in, immediately run
+
+    ```bash
+    module load qe nwchem
+    ```
+   to make sure that QuantumEspresso and NWChem are loaded for you.
 
 2. If you have your own Mac, you can use the executables already included in
    this repo (see cloning the repo section). Run the following command to add
