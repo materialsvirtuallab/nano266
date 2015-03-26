@@ -1,0 +1,110 @@
+\input{mmd-article-header}
+\def\mytitle{NANO266 Lab General Instructions}
+\def\latexmode{memoir}
+\input{mmd-article-begin-doc}
+
+\chapter{Introduction}
+\label{introduction}
+
+Welcome to the lab sessions for NANO266. Before you begin, you should read this
+carefully and follow all instructions to make sure that your computer \slash 
+computing resource is set up properly. Your instructors are on hand to help you
+if you run into any problems.
+
+\chapter{Cloning the repo}
+\label{cloningtherepo}
+
+You should first clone this repo by doing:
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+git clone https://github.com/materialsvirtuallab/nano266.git
+
+\end{verbatim}
+\end{adjustwidth}
+
+This assumes you already have git installed, which comes by default in Mac
+and can easily be installed in Unix-based OSes. To update your repo to the
+latest version at any time, you can do:
+
+\begin{adjustwidth}{2.5em}{2.5em}
+\begin{verbatim}
+
+git pull
+
+\end{verbatim}
+\end{adjustwidth}
+
+from within the repo.
+
+\chapter{First Principles Modelling Codes}
+\label{firstprinciplesmodellingcodes}
+
+In the labs, we will be using two open-source first principles modeling codes:
+
+\begin{enumerate}
+\item NWchem (http:\slash \slash www.nwchem-sw.org) is a computational chemistry code that
+ aims to be scalable both in their ability to treat large scientific
+ computational chemistry problems efficiently.
+
+\item QuantumEspresso (http:\slash \slash www.quantum-espresso.org\slash ) is an integrated suite of
+ computer codes for electronic-structure calculations and materials modeling
+ at the nanoscale. It is based on density-functional theory, plane waves, and
+ pseudopotentials.
+
+\end{enumerate}
+
+Before you start any of the labs, make sure that you have the software
+installed and in your path. You have three options:
+
+\begin{enumerate}
+\item If you have your own Mac or Ubuntu 64-bit, you can use the
+ executables already included in this repo. Run the following command to add
+ the bin directory to your path as follows (assuming you are on bash):
+
+\begin{lstlisting}[language=bash]
+export PATH=$PATH:<path/to/repo>/bin/Mac or Ubuntu
+# The following is to set the NWChem basis sets used in lab1. Be careful
+# that the ending slash is needed!
+export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
+\end{lstlisting}
+
+\item You can download VirtualBox (https:\slash \slash www.virtualbox.org\slash ), and a
+ pre-configured Ubuntu virtual machine at this \href{https://s3.amazonaws.com/mavrl-web/nano266.ova}{link}\footnote{\href{https://s3.amazonaws.com/mavrl-web/nano266.ova}{https:/\slash s3.amazonaws.com\slash mavrl-web\slash nano266.ova}}.
+ Note that it is a hefty 3 Gb download, so you will want to download this on
+ a fast connection. After launching VirtualBox, do File-$>$Import Appliance and
+ then select the downloaded \texttt{nano266.ova} file. You can then start the
+ virtual machine. You should be able to login to the virtual machine without
+ a password. If one is ever needed, it is simply ``nano266fun''. Start a
+ terminal by clicking on the icon on the left. By typing \texttt{ls}, you should see
+ that a nano266 directory is already cloned for you. Simply \texttt{cd nano266} and
+ you are ready to begin to do the labs.
+
+\item You can download the source code for QuantumEspresso or NWChem and install it
+ yourself. \emph{Attempt this only if you have a fairly good familiarity with
+ compiling things on Unix-based OSes, or are willing to spend the time to
+ figure it out!} If you foresee you will be working on such calculations
+ extensively in future, it is generally useful for you to learn how to do
+ this. Start with the QuantumEspresso code as it is more straightforward to
+ compile.
+
+\end{enumerate}
+
+In general, it is not recommended that you run on a native Windows OS for these
+labs. Most first principles codes are designed to run primarily on
+supercomputing clusters that have Unix-based OSes. If you have a Windows
+machine, you should try option 2 above.
+
+\chapter{Programming code}
+\label{programmingcode}
+
+A lot of the labs use Python as a scripting language for automating
+calculations and analysis. You should ensure that you have Python 2.7.x
+installed with numpy. If you have a Mac, this should be already the case. If you use the virtual machine, it is also already set up.
+
+If you don't know Python, get a quick primer from the official Python documentation at https:\slash \slash docs.python.org\slash 2.7\slash . You don't really need to know much more than that for the purposes of the labs. Learning how to use a scripting language like Python can save you loads of time in automating calculations.
+
+\input{mmd-memoir-footer}
+
+\end{document}

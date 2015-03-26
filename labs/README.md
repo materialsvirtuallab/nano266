@@ -12,6 +12,70 @@ carefully and follow all instructions to make sure that your computer /
 computing resource is set up properly. Your instructors are on hand to help you
 if you run into any problems.
 
+# First Principles Modeling Codes
+
+In the labs, we will be using two open-source first principles modeling codes:
+
+1. NWchem (http://www.nwchem-sw.org) is a computational chemistry code that
+   aims to be scalable both in their ability to treat large scientific
+   computational chemistry problems efficiently.
+2. QuantumEspresso (http://www.quantum-espresso.org/) is an integrated suite of
+   computer codes for electronic-structure calculations and materials modeling
+   at the nanoscale. It is based on density-functional theory, plane waves, and
+   pseudopotentials.
+
+Before you start any of the labs, make sure that you have the software
+installed and in your path. You have four options:
+
+1. We have secured an XSEDE allocation for this course. Please go the the XSEDE
+   portal (https://portal.xsede.org) and create an account as shown below.
+   <img width="600" src="XSEDEUserPortal.png"/>
+   After you have done so, email your username to one of the TAs to be added
+   to the allocation for this course. You can then login to the allocations
+   as follows:
+     ```bash
+     ssh <your_username>@trestles.sdsc.edu
+     ```
+   Once you are logged in, immediately run the following commands to make sure
+   that QuantumEspresso and NWChem are loaded for you.
+     ```bash
+     module load qe nwchem
+     ```
+
+2. If you have your own Mac, you can use the executables already included in
+   this repo (see cloning the repo section). Run the following command to add
+   the bin directory to your path as follows (assuming you are on bash):
+
+    ```bash
+    export PATH=$PATH:<path/to/repo>/bin/Mac
+    # The following is to set the NWChem basis sets used in lab1. Be careful
+    # that the ending slash is needed!
+    export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
+    ```
+
+3. You can download VirtualBox (https://www.virtualbox.org/), and a
+   pre-configured Ubuntu virtual machine at this [link](https://s3.amazonaws.com/mavrl-web/nano266.ova).
+   Note that it is a hefty 3 Gb download, so you will want to download this on
+   a fast connection. After launching VirtualBox, do File->Import Appliance and
+   then select the downloaded `nano266.ova` file. You can then start the
+   virtual machine. You should be able to login to the virtual machine without
+   a password. If one is ever needed, it is simply "nano266fun". Start a
+   terminal by clicking on the icon on the left. By typing `ls`, you should see
+   that a nano266 directory is already cloned for you. Simply `cd nano266` and
+   you are ready to begin to do the labs.
+4. You can download the source code for QuantumEspresso or NWChem and install
+   it yourself. *Attempt this only if you have a fairly good familiarity with
+   compiling things on Unix-based OSes, or are willing to spend the time to
+   figure it out!* If you foresee you will be working on such calculations
+   extensively in future, it is generally useful for you to learn how to do
+   this. Start with the QuantumEspresso code as it is more straightforward to
+   compile.
+
+In general, it is not recommended that you run on a native Windows OS for these
+labs. Most first principles codes are designed to run primarily on
+supercomputing clusters that have Unix-based OSes. If you have a Windows
+machine, you should try option 1 or 3 above.
+
 # Cloning the repo
 
 You should first clone this repo by doing:
@@ -29,55 +93,6 @@ git pull
 ```
 
 from within the repo.
-
-# First Principles Modelling Codes
-
-In the labs, we will be using two open-source first principles modeling codes:
-
-1. NWchem (http://www.nwchem-sw.org) is a computational chemistry code that
-   aims to be scalable both in their ability to treat large scientific
-   computational chemistry problems efficiently.
-2. QuantumEspresso (http://www.quantum-espresso.org/) is an integrated suite of
-   computer codes for electronic-structure calculations and materials modeling
-   at the nanoscale. It is based on density-functional theory, plane waves, and
-   pseudopotentials.
-
-Before you start any of the labs, make sure that you have the software
-installed and in your path. You have three options:
-
-1. If you have your own Mac or Ubuntu 64-bit, you can use the
-   executables already included in this repo. Run the following command to add
-   the bin directory to your path as follows (assuming you are on bash):
-
-    ```bash
-    export PATH=$PATH:<path/to/repo>/bin/Mac or Ubuntu
-    # The following is to set the NWChem basis sets used in lab1. Be careful
-    # that the ending slash is needed!
-    export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
-    ```
-
-2. You can download VirtualBox (https://www.virtualbox.org/), and a
-   pre-configured Ubuntu virtual machine at this [link](https://s3.amazonaws.com/mavrl-web/nano266.ova).
-   Note that it is a hefty 3 Gb download, so you will want to download this on
-   a fast connection. After launching VirtualBox, do File->Import Appliance and
-   then select the downloaded `nano266.ova` file. You can then start the
-   virtual machine. You should be able to login to the virtual machine without
-   a password. If one is ever needed, it is simply "nano266fun". Start a
-   terminal by clicking on the icon on the left. By typing `ls`, you should see
-   that a nano266 directory is already cloned for you. Simply `cd nano266` and
-   you are ready to begin to do the labs.
-3. You can download the source code for QuantumEspresso or NWChem and install it
-   yourself. *Attempt this only if you have a fairly good familiarity with
-   compiling things on Unix-based OSes, or are willing to spend the time to
-   figure it out!* If you foresee you will be working on such calculations
-   extensively in future, it is generally useful for you to learn how to do
-   this. Start with the QuantumEspresso code as it is more straightforward to
-   compile.
-
-In general, it is not recommended that you run on a native Windows OS for these
-labs. Most first principles codes are designed to run primarily on
-supercomputing clusters that have Unix-based OSes. If you have a Windows
-machine, you should try option 2 above.
 
 # Programming code
 
