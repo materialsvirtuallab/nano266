@@ -37,13 +37,20 @@ installed and in your path. You have four options:
 
     ```bash
     ssh <your_username>@trestles.sdsc.edu
+
     ```
+
+   If you are on a Windows machine, you need to download a SSH client like
+   PuTTY (http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
    Once you are logged in, immediately run
 
     ```bash
     module load qe nwchem python
+    export NWCHEM_BASIS_LIBRARY=/opt/nwchem/data/libraries/
     ```
-   to make sure that QuantumEspresso, NWChem and Python are loaded for you.
+   to make sure that QuantumEspresso, NWChem and Python are loaded for you and
+   that the libraries are set properly. You can also add these two lines to
+   your .bash_profile so that it will always be loaded for you when you login.
 
 2. If you have your own Mac, you can use the executables already included in
    this repo (see cloning the repo section). Run the following command to add
@@ -88,6 +95,11 @@ this repo by doing:
 git clone https://github.com/materialsvirtuallab/nano266.git
 ```
 
+Check that you have the repo cloned successfully by doing a `ls`. If you are
+using XSEDE, make sure that you do the git clone in your home folder, i.e.,
+the folder that you are in when you first log into XSEDE. This makes following
+the rest of the instructions much easier.
+
 This assumes you already have git installed, which comes by default in XSEDE
 and Mac and can easily be installed in Unix-based OSes. To update your repo to
 the latest version at any time, you can do:
@@ -98,10 +110,39 @@ git pull
 
 from within the repo.
 
-# Programming code
+# Using a Unix-based terminal.
+
+If you have never used a Unix-based terminal, there is a bit of a slight
+learning curve. But in general, you will be working with only four or five
+commands:
+* cd <dirname> - change directory to <dirname>
+* cp <file1> <file2> - copies file1 to file2
+* mv <file1> <file2> - moves file1 to file2
+* rm <file> - remove file
+
+You will also be doing some basic text editing in the terminal. For beginners,
+the `nano` command line editor has the smallest learning curve. Other options
+are `vi` and `emacs`.
+
+Finally, you will need to get your results over to your local computer to do
+analysis. The easiest way to do this is with:
+
+```
+scp <username>@trestles.sdsc.edu:~/nano266/location/of/file .
+```
+
+in your local Mac or Linux terminal. If you are on Windows, the equivalent is
+`pscp` (http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+
+# Programming in Python
 
 A lot of the labs use Python as a scripting language for automating
 calculations and analysis. You should ensure that you have Python 2.7.x
-installed with numpy. If you have a Mac, this should be already the case. If you use the virtual machine, it is also already set up.
+installed with numpy. If you have a Mac, this should be already the case. If 
+you use the virtual machine, it is also already set up.
 
-If you don't know Python, get a quick primer from the official Python documentation at https://docs.python.org/2.7/. You don't really need to know much more than that for the purposes of the labs. Learning how to use a scripting language like Python can save you loads of time in automating calculations.
+If you don't know Python, get a quick primer from the official Python
+documentation at https://docs.python.org/2.7/. You don't really need to know
+much more than that for the purposes of the labs. Learning how to use a
+scripting language like Python can save you loads of time in automating
+calculations.
