@@ -100,25 +100,28 @@ with comments added.
 Let us first create a separate directory to run the calculation. This makes it
 easier for us to cleanup after we are done.
 
-```bash
+```shell
 mkdir scratch
 cd scratch
 ```
 
 Now, we copy the input files we want over, and run nwchem:
 
-```bash
+```shell
 cp ../H2.nw .
 nwchem H2.nw > H2.nwout
 ```
 
 After a very short while, the calculation should complete and the results are
-in the `H2.nwout` file. Open up this file in your favorite text editor. To find
-the final coordinates, search for the final occurence of:
+in the `H2.nwout` file. To find the final coordinates, search for the final
+occurence of:
 
+```shell
+grep -A 8 '"geometry" -> ' H2.nwout
 ```
-Geometry "geometry" -> "geometry"
-```
+
+This command finds all instances that `"geometry" -> ` occurs in `H2.nwout` and
+prints out 8 lines after each occurence.
 
 To get the final total energy, we can use grep from the command line:
 
