@@ -1,3 +1,10 @@
+LaTeX input:        mmd-article-header
+Title:              NANO266 Lab General Instructions
+Base Header Level:  2
+LaTeX Mode:         memoir
+LaTeX input:        mmd-article-begin-doc
+LaTeX footer:       mmd-memoir-footer
+
 # Introduction
 
 Welcome to the lab sessions for NANO266. Before you begin, you should read this
