@@ -110,15 +110,15 @@ git pull
 
 from within the repo.
 
-# Using a Unix-based terminal.
+# Using a Unix-based terminal
 
 If you have never used a Unix-based terminal, there is a bit of a slight
 learning curve. But in general, you will be working with only four or five
 commands:
-* cd <dirname> - change directory to <dirname>
-* cp <file1> <file2> - copies file1 to file2
-* mv <file1> <file2> - moves file1 to file2
-* rm <file> - remove file
+* cd \<dirname\> - change directory to <dirname>
+* cp \<file1\> \<file2\> - copies file1 to file2
+* mv \<file1\> \<file2\> - moves file1 to file2
+* rm \<file\> - remove file
 
 You will also be doing some basic text editing in the terminal. For beginners,
 the `nano` command line editor has the smallest learning curve. Other options
