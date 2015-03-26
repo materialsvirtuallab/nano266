@@ -125,22 +125,23 @@ prints out 8 lines after each occurence.
 
 To get the final total energy, we can use grep from the command line:
 
-```bash
+```shell
 grep "Total DFT energy" H2.nwout
 ```
 
-The final energy line gives the total energy in **Hartree**.
+The last energy line gives the total energy in **Hartree**.
 
-For this question, record down the final bond length of H2 in angstroms and the
-final total energy in eV. Keep all output files until the end of the lab.
+For this question, record down the final bond length of H<sub>2</sub> in
+angstroms and the final total energy in eV. Keep all output files until the end
+of the lab.
 
 ## Q2 (20 points): Geometry optimization and energy of N<sub>2</sub>
 
-Repeat Q1, but this time with N2. For this question, copy `H2.nw` to `N2.nw` and
-then modify the file accordingly. The experimental N<sub>2</sub> bond length is
-around 1.1 angstroms.
+Repeat Q1, but this time with N<sub>2</sub>. For this question, copy `H2.nw` to
+`N2.nw` and then modify the file accordingly. The experimental N<sub>2</sub>
+bond  length is around 1.1 angstroms.
 
-Again, record down the final bond length of H2 in angstroms and the
+Again, record down the final bond length of H<sub>2</sub> in angstroms and the
 final total energy in eV.
 
 ## Q3 (20 points): Geometry optimization and energy of NH<sub>3</sub>
@@ -193,3 +194,12 @@ while maintaining relatively good accuracy?
 Note that this is an open-ended question, and there is no real right or wrong
 answer. It is more important for you to understand the tradeoffs and come up
 with a good justification for your recommendation.
+
+## Bonus (10 points)
+
+The formation enthalpy of ammonia is negative, but generally the reaction does
+not take place (or does so very slowly) under normal conditions. That is why
+the Haber process is performed under high pressures and temperatures with a
+catalyst. The main reason is that N<sub>2</sub> is very unreactive. Can you
+give a rough estimate of the reaction barrier using a few simple calculations,
+assuming that one has to break the N<sub>2</sub> triple bond for the reaction?
