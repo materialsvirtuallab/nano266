@@ -41,9 +41,9 @@ installed and in your path. You have four options:
    Once you are logged in, immediately run
 
     ```bash
-    module load qe nwchem
+    module load qe nwchem python
     ```
-   to make sure that QuantumEspresso and NWChem are loaded for you.
+   to make sure that QuantumEspresso, NWChem and Python are loaded for you.
 
 2. If you have your own Mac, you can use the executables already included in
    this repo (see cloning the repo section). Run the following command to add
