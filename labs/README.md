@@ -47,7 +47,7 @@ installed and in your path. You have four options:
     ```
 
    If you are on a Windows machine, you need to download a SSH client like
-   PuTTY (http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+   [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
    Once you are logged in, immediately run
 
     ```bash
@@ -122,7 +122,7 @@ If you have never used a Unix-based terminal, there is a bit of a slight
 learning curve. But in general, you will be working with only four or five
 commands:
 
-```shell
+```bash
 cd <dirname>       # change directory to <dirname>
 cp <file1> <file2> # copies <file1> to <file2>
 mv <file1> <file2> # moves <file1> to <file2>
@@ -136,7 +136,7 @@ are `vi` and `emacs`.
 Finally, you will need to get your results over to your local computer to do
 analysis. The easiest way to do this is with:
 
-```shell
+```bash
 scp <username>@trestles.sdsc.edu:~/nano266/location/of/file .
 ```
 

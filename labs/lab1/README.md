@@ -47,7 +47,7 @@ because there is no input file, but that's not a big deal.
 
 Once you are done with the above, make sure you are in the lab1 folder by doing:
 
-```shell
+```bash
 cd <path/to/repo>/labs/lab1
 ```
 
@@ -103,14 +103,14 @@ with comments added.
 Let us first create a separate directory to run the calculation. This makes it
 easier for us to cleanup after we are done.
 
-```shell
+```bash
 mkdir scratch
 cd scratch
 ```
 
 Now, we copy the input files we want over, and run nwchem:
 
-```shell
+```bash
 cp ../H2.nw .
 nwchem H2.nw > H2.nwout
 ```
@@ -119,7 +119,7 @@ After a very short while, the calculation should complete and the results are
 in the `H2.nwout` file. To find the final coordinates, search for the final
 occurence of:
 
-```shell
+```bash
 grep -A 8 '"geometry" -> ' H2.nwout
 ```
 
@@ -128,7 +128,7 @@ prints out 8 lines after each occurence.
 
 To get the final total energy, we can use grep from the command line:
 
-```shell
+```bash
 grep "Total DFT energy" H2.nwout
 ```
 
@@ -165,7 +165,7 @@ Calculate the formation enthalpy (per molecule) of NH<sub>3</sub> in kJ/mol. To
 do this, you need not only the energies from Q1-Q3, you also need to extract
 the thermal correction to the enthalpy. For example,
 
-```shell
+```bash
 grep "Thermal correction to Enthalpy" H2.nwout
 ```
 
