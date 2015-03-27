@@ -1,5 +1,6 @@
 LaTeX input:        mmd-article-header
 Title:              NANO266 Lab 2
+Author:             Shyue Ping Ong
 Base Header Level:  2
 LaTeX Mode:         memoir
 LaTeX input:        mmd-article-begin-doc
