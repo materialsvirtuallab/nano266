@@ -1,5 +1,5 @@
 LaTeX input:        mmd-article-header
-Title:              NANO266 Lab General Instructions
+Title:              NANO266 General Lab Instructions
 Author:             Shyue Ping Ong
 Affiliation:        University of California, San Diego
 Address:            9500 Gilman Drive, Mail Code 0448, La Jolla, CA 92093-0448
@@ -9,16 +9,14 @@ LaTeX Mode:         memoir
 LaTeX input:        mmd-article-begin-doc
 LaTeX footer:       mmd-memoir-footer
 
-# General Lab Instructions
-
-## Introduction
+# Introduction
 
 Welcome to the lab sessions for NANO266. Before you begin, you should read this
 carefully and follow all instructions to make sure that your computer /
 computing resource is set up properly. Your instructors are on hand to help you
 if you run into any problems.
 
-## First Principles Modeling Codes
+# First Principles Modeling Codes
 
 In the labs, we will be using two open-source first principles modeling codes:
 
@@ -43,7 +41,6 @@ installed and in your path. You have four options:
 
     ```bash
     ssh <your_username>@trestles.sdsc.edu
-
     ```
 
    If you are on a Windows machine, you need to download a SSH client like
@@ -56,7 +53,7 @@ installed and in your path. You have four options:
     ```
    to make sure that QuantumEspresso, NWChem and Python are loaded for you and
    that the libraries are set properly. You can also add these two lines to
-   your .bash_profile so that it will always be loaded for you when you login.
+   your `.bash_profile` so that it will always be loaded for you when you login.
 
 2. If you have your own Mac, you can use the executables already included in
    this repo (see cloning the repo section). Run the following command to add
@@ -92,7 +89,7 @@ labs. Most first principles codes are designed to run primarily on
 supercomputing clusters that have Unix-based OSes. If you have a Windows
 machine, you should try option 1 or 3 above.
 
-## Cloning the repo
+# Cloning the repo
 
 On wherever you are performing the calculations for the lab, you should clone
 this repo by doing:
@@ -116,7 +113,7 @@ git pull
 
 from within the repo.
 
-## Using a Unix-based terminal
+# Using a Unix-based terminal
 
 If you have never used a Unix-based terminal, there is a bit of a slight
 learning curve. But in general, you will be working with only four or five
@@ -141,17 +138,17 @@ scp <username>@trestles.sdsc.edu:~/nano266/location/of/file .
 ```
 
 in your local Mac or Linux terminal. If you are on Windows, the equivalent is
-`pscp` (http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+[pscp](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
-## Programming in Python
+# Programming in Python
 
 A lot of the labs use Python as a scripting language for automating
 calculations and analysis. You should ensure that you have Python 2.7.x
 installed with numpy. If you have a Mac, this should be already the case. If 
 you use the virtual machine, it is also already set up.
 
-If you don't know Python, get a quick primer from the official Python
-documentation at https://docs.python.org/2.7/. You do not really need to know
+If you don't know Python, get a quick primer from the official [Python
+documentation](https://docs.python.org/2.7/). You do not really need to know
 much more than the basics for the purposes of the labs. Learning how to use a
 scripting language like Python can save you loads of time in automating
 calculations.

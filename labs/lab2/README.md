@@ -9,9 +9,7 @@ LaTeX Mode:         memoir
 LaTeX input:        mmd-article-begin-doc
 LaTeX footer:       mmd-memoir-footer
 
-# Lab 2
-
-## Introduction
+# Introduction
 
 In this lab, we will look at convergence issues in bulk calculations
 with respect to parameters such as the energy cutoff and k-point grid. We will
@@ -20,7 +18,7 @@ first principles code. Note that all calculations in this lab are fairly simple
 and can be run on a modern desktop or laptop in serial mode, i.e., you do not
 actually need access to a supercomputing cluster to perform these calculations.
 
-## Initial setup
+# Initial setup
 
 It is assumed that you have already followed the instructions in the README.md
 in the root labs folder and have access to PWSCF, either on XSEDE or on your
@@ -35,7 +33,7 @@ Once you are done with the above, make sure you are in the lab2 folder by doing:
 cd <path/to/repo>/labs/lab2
 ```
 
-## Q1 (12 points): Convergence of *absolute* energies with respect to energy cutoff
+# Q1 (12 points): Convergence of *absolute* energies with respect to energy cutoff
 
 Start by looking at the `Si.pw.in.template`, which is a template for the input
 file for PWSCF. You should get yourself familiar with the format, and what each
@@ -93,7 +91,7 @@ programs for analysis. To run the scripts, you simply need to type
    primitive cell.
 2. Do you see a trend in your calculated energies with respect to cutoff?
 
-## Q2 (12 points): Convergence of *absolute* energies with respect to *k*-points
+# Q2 (12 points): Convergence of *absolute* energies with respect to *k*-points
 
 1. Modify the script in Q1 to calculate the energy as a function of *k*-point
    grid size. For each grid, record the number of unique *k*-points. Note that
@@ -108,7 +106,7 @@ programs for analysis. To run the scripts, you simply need to type
    relationship, and if so, what is that relationship? (You will need to figure
    out how to extract the calculation time from the output files.)
 
-## Q3 (12 points): Convergence of forces with respect to cutoff energies
+# Q3 (12 points): Convergence of forces with respect to cutoff energies
 
 Let us now investigate the convergence of forces on atoms with respect to
 cutoff. Displace a Si atom +0.05 in the z direction (fractional coordinates).
@@ -117,13 +115,13 @@ cutoff. A good force value would be converged to within ~10 meV/Angstrom
 (note that PWSCF gives forces in Ryd/bohr). Use a *k*-point grid of 4x4x4.
 Plot and record your results, including all relevant parameters.
 
-## Q4 (12 points): Convergence of forces with respect to *k*-points
+# Q4 (12 points): Convergence of forces with respect to *k*-points
 
 Repeat Q3, but this time, investigate the converge as a function of *k*-point
 grid size. Keep all other parameters fixed. Record your relevant conditions
 (lattice parameter, cutoffs, etc.)
 
-## Q5 (12 points): Convergence of energy differences
+# Q5 (12 points): Convergence of energy differences
 
 In practice, only energy differences have physical meaning. Let us now
 investigate the convergence of energy differences with respect to energy
@@ -135,14 +133,14 @@ both the energy cutoff and the *k*-point grid. Record all relevant parameters
 such as the lattice constant, *k* -points, and so on. A good energy difference
 is converged to ~5 meV/atom.
 
-## Q6 (20 points): Selecting the right parameters
+# Q6 (20 points): Selecting the right parameters
 
 Look at the results from the preceding questions. Discuss the changes in the
 requirements in terms of cutoff, *k*-point grid, etc. when comparing absolute
 energies, forces and energy differences. Explain as far as possible any trends
 you see.
 
-## Q7 (10 points): Finding the equilibrium structure
+# Q7 (10 points): Finding the equilibrium structure
 
 Using an appropriate set of parameters (energy cutoff, *k*-point, etc.),
 determine the predicted equilibrium lattice constant for silicon by calculating
@@ -156,7 +154,7 @@ it is important that you understand how to do it using static SCF energy
 calculations at different lattice parameters as a demonstration of the
 variational principle. You will be using this in your next lab.
 
-## Q8 (10 points): Choice of functional
+# Q8 (10 points): Choice of functional
 
 The calculations you have been doing thus far is based on the PBE GGA
 functional. Redo Q7, but now use the `Si.pz-n-kjpaw_psl.0.1.UPF` (LDA)
