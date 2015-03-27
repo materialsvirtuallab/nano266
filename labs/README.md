@@ -1,6 +1,9 @@
 LaTeX input:        mmd-article-header
 Title:              NANO266 Lab General Instructions
 Author:             Shyue Ping Ong
+Affiliation:        University of California, San Diego
+Address:            9500 Gilman Drive, Mail Code 0448, La Jolla, CA 92093-0448
+Web:                http://www.materialsvirtuallab.org
 Base Header Level:  2
 LaTeX Mode:         memoir
 LaTeX input:        mmd-article-begin-doc
