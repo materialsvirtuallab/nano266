@@ -11,13 +11,12 @@ LaTeX footer:       mmd-memoir-footer
 
 We will begin our lab sessions with a gentle introduction into quantum
 mechanical modeling of molecules. For this purpose, we will be using
-computational chemistry techniques to study reaction energies, ionization
-energies and electron affinities, vibrational frequencies, etc. We will
-be using NWChem, an open source quantum chemistry code. Note that all
-calculations in this lab are fairly simple and on very small molecules.
-So you can be run them on a modern desktop or laptop in serial mode, i.e., you
-do not actually need access to a supercomputing cluster to perform these
-calculations.
+computational chemistry techniques to study reaction energies, geometries,
+vibrational frequencies, etc. We will be using NWChem, an open source quantum 
+chemistry code. Note that all calculations in this lab are fairly simple and on
+very small molecules. So you can be run them on a modern desktop or laptop in
+serial mode, i.e., you do not actually need access to a supercomputing cluster
+to perform these calculations.
 
 For this lab, we will be studying one of the most important reactions in the
 world - the formation of ammonia from nitrogen and hydrogen. Through the
@@ -44,7 +43,7 @@ because there is no input file, but that's not a big deal.
 
 Once you are done with the above, make sure you are in the lab1 folder by doing:
 
-```bash
+```shell
 cd <path/to/repo>/labs/lab1
 ```
 
@@ -162,7 +161,7 @@ Calculate the formation enthalpy (per molecule) of NH<sub>3</sub> in kJ/mol. To
 do this, you need not only the energies from Q1-Q3, you also need to extract
 the thermal correction to the enthalpy. For example,
 
-```bash
+```shell
 grep "Thermal correction to Enthalpy" H2.nwout
 ```
 
