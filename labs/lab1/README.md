@@ -1,13 +1,13 @@
-LaTeX input:        mmd-article-header
+LaTeX input:        mmd-mavrldoc-header
 Title:              NANO266 Lab 1
 Author:             Shyue Ping Ong
 Affiliation:        University of California, San Diego
 Address:            9500 Gilman Drive, Mail Code 0448, La Jolla, CA 92093-0448
 Web:                http://www.materialsvirtuallab.org
 Base Header Level:  2
-LaTeX Mode:         memoir
-LaTeX input:        mmd-article-begin-doc
-LaTeX footer:       mmd-memoir-footer
+LaTeX Mode:         mavrldoc
+LaTeX input:        mmd-mavrldoc-begin-doc
+LaTeX footer:       mmd-mavrldoc-footer
 
 # Introduction
 
