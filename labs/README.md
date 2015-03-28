@@ -1,4 +1,4 @@
-LaTeX input:        mmd-article-header
+LaTeX input:        mmd-doc-header
 Title:              NANO266 General Lab Instructions
 Author:             Shyue Ping Ong
 Affiliation:        University of California, San Diego
@@ -6,7 +6,7 @@ Address:            9500 Gilman Drive, Mail Code 0448, La Jolla, CA 92093-0448
 Web:                http://www.materialsvirtuallab.org
 Base Header Level:  2
 LaTeX Mode:         memoir
-LaTeX input:        mmd-article-begin-doc
+LaTeX input:        mmd-doc-begin-doc
 LaTeX footer:       mmd-memoir-footer
 
 # Introduction
@@ -31,63 +31,75 @@ In the labs, we will be using two open-source first principles modeling codes:
 Before you start any of the labs, make sure that you have the software
 installed and in your path. You have four options:
 
+### Option 1: Use XSEDE
+
 ![XSEDE user portal](XSEDEUserPortal.png)
 
-1. We have secured an XSEDE allocation for this course. Please go the the XSEDE
-   portal (https://portal.xsede.org) and create an account as shown above.
-   After you have done so, email your username to one of the TAs to be added
-   to the allocation for this course. You can then login to the allocations
-   with
+We have secured an XSEDE allocation for this course. Please go the the XSEDE
+portal (https://portal.xsede.org) and create an account as shown above.
+After you have done so, email your username to one of the TAs to be added
+to the allocation for this course. You can then login to the allocations
+with
 
-    ```bash
-    ssh <your_username>@trestles.sdsc.edu
-    ```
+```bash
+ssh <your_username>@trestles.sdsc.edu
+```
+   
+If you are on a Windows machine, you need to download a SSH client like
+[PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
+Once you are logged in, immediately run
+   
+```bash
+module load qe nwchem python
+export NWCHEM_BASIS_LIBRARY=/opt/nwchem/data/libraries/
+```
+   
+to make sure that QuantumEspresso, NWChem and Python are loaded for you and
+that the libraries are set properly. You can also add these two lines to
+your `.bash_profile` so that it will always be loaded for you when you login.
 
-   If you are on a Windows machine, you need to download a SSH client like
-   [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
-   Once you are logged in, immediately run
+### Option 2: Set up your own Mac
 
-    ```bash
-    module load qe nwchem python
-    export NWCHEM_BASIS_LIBRARY=/opt/nwchem/data/libraries/
-    ```
-   to make sure that QuantumEspresso, NWChem and Python are loaded for you and
-   that the libraries are set properly. You can also add these two lines to
-   your `.bash_profile` so that it will always be loaded for you when you login.
+If you have your own Mac, you can use the executables already included in
+this repo (see cloning the repo section). Run the following command to add
+the bin directory to your path as follows (assuming you are on bash):
+   
+```bash
+export PATH=$PATH:<path/to/repo>/bin/Mac
+# The following is to set the NWChem basis sets used in lab1. 
+# Be careful that the ending slash is needed!
+export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
+```
 
-2. If you have your own Mac, you can use the executables already included in
-   this repo (see cloning the repo section). Run the following command to add
-   the bin directory to your path as follows (assuming you are on bash):
+### Option 3: Use a Virtual Machine
 
-    ```bash
-    export PATH=$PATH:<path/to/repo>/bin/Mac
-    # The following is to set the NWChem basis sets used in lab1. Be careful
-    # that the ending slash is needed!
-    export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
-    ```
+You can download VirtualBox (https://www.virtualbox.org/), and a
+pre-configured Ubuntu virtual machine at this [link](https://s3.amazonaws.com/mavrl-web/nano266.ova).
 
-3. You can download VirtualBox (https://www.virtualbox.org/), and a
-   pre-configured Ubuntu virtual machine at this [link](https://s3.amazonaws.com/mavrl-web/nano266.ova).
-   Note that it is a hefty 3 Gb download, so you will want to download this on
-   a fast connection. After launching VirtualBox, do File->Import Appliance and
-   then select the downloaded `nano266.ova` file. You can then start the
-   virtual machine. You should be able to login to the virtual machine without
-   a password. If one is ever needed, it is simply "nano266fun". Start a
-   terminal by clicking on the icon on the left. By typing `ls`, you should see
-   that a nano266 directory is already cloned for you. Simply `cd nano266` and
-   you are ready to begin to do the labs.
-4. You can download the source code for QuantumEspresso or NWChem and install
-   it yourself. *Attempt this only if you have a fairly good familiarity with
-   compiling things on Unix-based OSes, or are willing to spend the time to
-   figure it out!* If you foresee you will be working on such calculations
-   extensively in future, it is generally useful for you to learn how to do
-   this. Start with the QuantumEspresso code as it is more straightforward to
-   compile.
+Note that it is a hefty 3 Gb download, so you will want to download this on
+a fast connection. After launching VirtualBox, do File->Import Appliance and
+then select the downloaded `nano266.ova` file. You can then start the
+virtual machine. You should be able to login to the virtual machine without
+a password. If one is ever needed, it is simply "nano266fun". Start a
+terminal by clicking on the icon on the left. By typing `ls`, you should see
+that a nano266 directory is already cloned for you. Simply `cd nano266` and
+you are ready to begin to do the labs.
+
+
+### Option 4: Compile your own
+
+You can download the source code for QuantumEspresso or NWChem and install
+it yourself. *Attempt this only if you have a fairly good familiarity with
+compiling things on Unix-based OSes, or are willing to spend the time to
+figure it out!* If you foresee you will be working on such calculations
+extensively in future, it is generally useful for you to learn how to do
+this. Start with the QuantumEspresso code as it is more straightforward to
+compile.
 
 In general, it is not recommended that you run on a native Windows OS for these
 labs. Most first principles codes are designed to run primarily on
 supercomputing clusters that have Unix-based OSes. If you have a Windows
-machine, you should try option 1 or 3 above.
+machine, you should try options 1 or 3 above.
 
 # Cloning the repo
 
