@@ -6,16 +6,23 @@ A help script to generate all PDFs from the multimarkdown README.md.
 
 import os
 from monty.os import cd
+import re
 
 
 for parent, _, files in os.walk("labs"):
-    #print parent
     for f in files:
         if f == "README.md":
             with cd(parent):
-                out = "%s.pdf" % os.path.basename(parent)
-                print out
-                os.system("multimarkdown -t latex %s > tmpmmd.tex" % f)
-                os.system("pdflatex tmpmmd.tex")
-                os.system("mv tmpmmd.pdf %s" % out)
-                os.system("rm tmpmmd.*")
+                title = None
+                with open("README.md") as fp:
+                    for l in fp:
+                        print l
+                        if re.search("[Tt]itle:.*", l):
+                            title = l.split(":")[1].strip()
+                            break
+                if title:
+                    out = "%s.pdf" % title
+                    os.system('multimarkdown -t latex "%s" > tmpmmd.tex' % f)
+                    os.system('pdflatex tmpmmd.tex')
+                    os.system('mv tmpmmd.pdf "%s"' % out)
+                    os.system('rm tmpmmd.*')

@@ -31,7 +31,7 @@ In the labs, we will be using two open-source first principles modeling codes:
 Before you start any of the labs, make sure that you have the software
 installed and in your path. You have four options:
 
-### Option 1: Use XSEDE
+## Option 1: Use XSEDE
 
 ![XSEDE user portal](XSEDEUserPortal.png)
 
@@ -44,34 +44,34 @@ with
 ```bash
 ssh <your_username>@trestles.sdsc.edu
 ```
-   
+
 If you are on a Windows machine, you need to download a SSH client like
 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 Once you are logged in, immediately run
-   
+
 ```bash
 module load qe nwchem python
 export NWCHEM_BASIS_LIBRARY=/opt/nwchem/data/libraries/
 ```
-   
+
 to make sure that QuantumEspresso, NWChem and Python are loaded for you and
 that the libraries are set properly. You can also add these two lines to
 your `.bash_profile` so that it will always be loaded for you when you login.
 
-### Option 2: Set up your own Mac
+## Option 2: Set up your own Mac
 
 If you have your own Mac, you can use the executables already included in
 this repo (see cloning the repo section). Run the following command to add
 the bin directory to your path as follows (assuming you are on bash):
-   
+
 ```bash
 export PATH=$PATH:<path/to/repo>/bin/Mac
-# The following is to set the NWChem basis sets used in lab1. 
+# The following is to set the NWChem basis sets used in lab1.
 # Be careful that the ending slash is needed!
 export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
 ```
 
-### Option 3: Use a Virtual Machine
+## Option 3: Use a Virtual Machine
 
 You can download VirtualBox (https://www.virtualbox.org/), and a
 pre-configured Ubuntu virtual machine at this [link](https://s3.amazonaws.com/mavrl-web/nano266.ova).
@@ -86,7 +86,7 @@ that a nano266 directory is already cloned for you. Simply `cd nano266` and
 you are ready to begin to do the labs.
 
 
-### Option 4: Compile your own
+## Option 4: Compile your own
 
 You can download the source code for QuantumEspresso or NWChem and install
 it yourself. *Attempt this only if you have a fairly good familiarity with
@@ -156,7 +156,7 @@ in your local Mac or Linux terminal. If you are on Windows, the equivalent is
 
 A lot of the labs use Python as a scripting language for automating
 calculations and analysis. You should ensure that you have Python 2.7.x
-installed with numpy. If you have a Mac, this should be already the case. If 
+installed with numpy. If you have a Mac, this should be already the case. If
 you use the virtual machine, it is also already set up.
 
 If you don't know Python, get a quick primer from the official [Python
