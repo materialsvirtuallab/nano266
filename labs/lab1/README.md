@@ -16,7 +16,7 @@ mechanical modeling of molecules. For this purpose, we will be using
 computational chemistry techniques to study reaction energies, geometries,
 vibrational frequencies, etc. We will be using NWChem, an open source quantum 
 chemistry code. Note that all calculations in this lab are fairly simple and on
-very small molecules. So you can be run them on a modern desktop or laptop in
+very small molecules. So you can run them on a modern desktop or laptop in
 serial mode, i.e., you do not actually need access to a supercomputing cluster
 to perform these calculations.
 
@@ -192,7 +192,7 @@ energies. What would be a general recommended strategy for other similar
 calculations if you want to perform the calculations as efficiently as possible
 while maintaining relatively good accuracy?
 
-Note that this is an open-ended question, and there is no real right or wrong
+Note that this is an open-ended question, and there is no right or wrong
 answer. It is more important for you to understand the tradeoffs and come up
 with a good justification for your recommendation.
 
