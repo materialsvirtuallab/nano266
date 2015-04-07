@@ -14,7 +14,7 @@ LaTeX footer:       mmd-mavrldoc-footer
 We will begin our lab sessions with a gentle introduction into quantum
 mechanical modeling of molecules. For this purpose, we will be using
 computational chemistry techniques to study reaction energies, geometries,
-vibrational frequencies, etc. We will be using NWChem, an open source quantum 
+vibrational frequencies, etc. We will be using NWChem, an open source quantum
 chemistry code. Note that all calculations in this lab are fairly simple and on
 very small molecules. So you can be run them on a modern desktop or laptop in
 serial mode, i.e., you do not actually need access to a supercomputing cluster
@@ -136,7 +136,7 @@ For this question, record down the final bond length of H<sub>2</sub> in
 angstroms and the final total energy in eV. Keep all output files until the end
 of the lab.
 
-# Q2 (20 points): Geometry optimization and energy of N<sub>2</sub>
+# Q2 (10 points): Geometry optimization and energy of N<sub>2</sub>
 
 Repeat Q1, but this time with N<sub>2</sub>. For this question, copy `H2.nw` to
 `N2.nw` and then modify the file accordingly. The experimental N<sub>2</sub>
@@ -145,23 +145,34 @@ bond  length is around 1.1 angstroms.
 Again, record down the final bond length of H<sub>2</sub> in angstroms and the
 final total energy in eV.
 
-# Q3 (20 points): Geometry optimization and energy of NH<sub>3</sub>
+# Q3 (25 points): Geometry optimization and energy of NH<sub>3</sub>
 
 The geommetry of ammonia is somewhat more complex, so we have provided an
 `NH3.nw` file. Perform the same calculation as in Q1.
 
 For NH<sub>3</sub>, record down the final N-H bond lengths, and also, calculate
-the  angle between the bonds. Compare the calculated values with the
-experimental ones. Cite the source of your experimental data (e.g., by
-providing a journal citation or a weblink.)
+the angle between the bonds, i.e., the H-N-H bond. Compare the calculated
+values with the experimental ones. Cite the source of your experimental data
+(e.g., by providing a journal citation or a weblink.)
+
+Now, modify the file to add polarization functions to the basis set. The
+easiest way is to change all "6-31G" to "6-31+G*" and all "6-311G" to
+"6-311+G*" (technically, this adds diffuse as well as polarization functions,
+but we are limited by the choice of basis sets available) Redo the calculation
+and determine the bond lengths and angles again. Comment on the difference in
+answer between the calculation with and without polarization functions.
 
 Also record down the final energy of the NH<sub>3</sub> molecule in eV.
 
-# Q4 (20 points): Formation enthalpy of NH<sub>3</sub>.
+# Q4 (25 points): Formation enthalpy of NH<sub>3</sub>.
 
 Calculate the formation enthalpy (per molecule) of NH<sub>3</sub> in kJ/mol. To
-do this, you need not only the energies from Q1-Q3, you also need to extract
-the thermal correction to the enthalpy. For example,
+do this, you need to make sure that all calculations are done with the same
+basis set. So redo the calculations for Q1 and Q2 with the same basis set with
+polarization functions as in Q3.
+
+Once you completed the calcualtions, you need to extract the thermal
+corrections to the enthalpy as well as the energies. For example,
 
 ```bash
 grep "Thermal correction to Enthalpy" H2.nwout
@@ -183,16 +194,17 @@ data for many common molecules.
 In this question, you will investigate the effect that functional choice and
 basis set choice has on the formation enthalpy of NH<sub>3</sub>. Repeat Q1-Q4,
 but now modify your input files to experiment with the HF, PBE and B3LYP
-functionals. You can also modify the basis set used between 6-31g and 6-311g.
-Note that you can either modify the functional or basis set for the geometry
-optimiation and frequency step, or the final energy calculation step, or both.
+functionals. You can also modify the basis set used between 6-31g and 6-311g
+(adding polarization functions where necessary). Note that you can either
+modify the functional or basis set for the geometry optimiation and frequency
+step, or the final energy calculation step, or both.
 
 Discuss the effect of the functional and basis set on the geometries and final
 energies. What would be a general recommended strategy for other similar
 calculations if you want to perform the calculations as efficiently as possible
 while maintaining relatively good accuracy?
 
-Note that this is an open-ended question, and there is no real right or wrong
+Note that this is an open-ended question, and there is no right or wrong
 answer. It is more important for you to understand the tradeoffs and come up
 with a good justification for your recommendation.
 
