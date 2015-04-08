@@ -156,8 +156,8 @@ values with the experimental ones. Cite the source of your experimental data
 (e.g., by providing a journal citation or a weblink.)
 
 Now, modify the file to add polarization functions to the basis set. The
-easiest way is to change all "6-31G" to "6-31+G*" and all "6-311G" to
-"6-311+G*" (technically, this adds diffuse as well as polarization functions,
+easiest way is to change all "6-31G" to "6-31+G\*" and all "6-311G" to
+"6-311+G\*" (technically, this adds diffuse as well as polarization functions,
 but we are limited by the choice of basis sets available) Redo the calculation
 and determine the bond lengths and angles again. Comment on the difference in
 answer between the calculation with and without polarization functions.
