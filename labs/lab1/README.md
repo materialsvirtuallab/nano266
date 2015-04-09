@@ -162,6 +162,23 @@ but we are limited by the choice of basis sets available) Redo the calculation
 and determine the bond lengths and angles again. Comment on the difference in
 answer between the calculation with and without polarization functions.
 
+Tip: One of the fastest ways to make changes to a file is using the unix
+command line tool called *sed*. For example, you can do the following:
+
+```bash
+sed 's/\(6-31[1]*\)G/\1+G*/' NH3.nw > NH3_polarized.nw
+```
+
+which will effectively replace all "6-31G" and "6-311G" with "6-31+G*" and
+"6-311+G*" in the file "NH3.nw". The first argument to *sed* is the regular
+expression. "s/" denotes that this is substitution. "\\\(6-31[1]*\\\)G"
+denotes that we want to match all instances of "6-31(1)G", where the second 1
+is optional. The brackets denote that we want to store the match before the G
+in the first variable. The second half of the expressions "/\\1\+G\*/" denotes
+that we want to replace all matches with the stored variable "\\1" followed by
+"+G\*". Finally, the last part of the command "> NH3_polarized.nw" means we
+want to pipe the output to a new file "NH3_polarized.nw".
+
 Also record down the final energy of the NH<sub>3</sub> molecule in eV.
 
 # Q4 (25 points): Formation enthalpy of NH<sub>3</sub>.
