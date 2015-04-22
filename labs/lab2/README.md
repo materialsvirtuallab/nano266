@@ -117,8 +117,8 @@ Plot and record your results, including all relevant parameters.
 
 # Q4 (12 points): Convergence of forces with respect to *k*-points
 
-Repeat Q3, but this time, investigate the converge as a function of *k*-point
-grid size. Keep all other parameters fixed. Record your relevant conditions
+Repeat Q3, but this time, investigate the convergence of forces as a function of *k*-
+point grid size. Keep all other parameters fixed. Record your relevant conditions
 (lattice parameter, cutoffs, etc.)
 
 # Q5 (12 points): Convergence of energy differences
