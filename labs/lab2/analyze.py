@@ -3,6 +3,7 @@
 import re
 import sys
 import csv
+import argparse
 
 
 # This defines the patterns for extracting relevant data from the output
@@ -13,6 +14,7 @@ patterns = {
     "alat": re.compile("celldm\(1\)=\s+([\d\.]+)\s"),
     "nkpts": re.compile("number of k points=\s+([\d]+)")
 }
+
 
 def get_results(filename):
     data = {}
@@ -26,17 +28,23 @@ def get_results(filename):
     return data
 
 
-if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print('Usage is "python analyze.py filenames"')
-        print('Wildcards can be used, e.g., "python analyze *.out"')
-        sys.exit(0)
+def analyze(filenames):
     fieldnames = ['filename', 'ecut', 'nkpts', 'alat', 'energy']
     with open('results.csv', 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        for f in sys.argv[1:]:
+        for f in filenames:
             r = get_results(f)
             r["filename"] = f
             writer.writerow(r)
     print("Results written to results.csv!")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description='''Tool for analysis of PWSCF calculations.''')
+    parser.add_argument(
+        'filenames', metavar='filenames', type=str, nargs="+",
+        help='Files to process. You may use wildcards, e.g., "python analyze.py *.out".')
+    args = parser.parse_args()
+    analyze(args.filenames)

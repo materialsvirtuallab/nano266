@@ -3,7 +3,9 @@
 """
 This is a very simple python starter script to automate a series of PWSCF
 calculations. If you don't know Python, get a quick primer from the official
-Python documentation at https://docs.python.org/2.7/.
+Python documentation at https://docs.python.org/2.7/. The script is deliberately
+simple so that only basic Python syntax is used and you can get comfortable with
+making changes and writing programs.
 
 Author: Shyue Ping Ong
 """
@@ -11,7 +13,7 @@ Author: Shyue Ping Ong
 import os
 import shutil
 
-# Load the Fe.pw.in.template file as a template.
+# Load the Si.pw.in.template file as a template.
 with open("Si.pw.in.template") as f:
     template = f.read()
 
