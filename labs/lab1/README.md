@@ -210,8 +210,8 @@ data for many common molecules.
 
 In this question, you will investigate the effect that functional choice and
 basis set choice has on the formation enthalpy of NH<sub>3</sub>. Repeat Q1-Q4,
-but now modify your input files to experiment with the HF, PBE and B3LYP
-functionals. You can also modify the basis set used between 6-31g and 6-311g
+but now modify your input files to experiment with the HFexch, PBE96 and B3LYP
+functionals. You can also modify the basis set used between 6-31+g\* and 6-311+g\*
 (adding polarization functions where necessary). Note that you can either
 modify the functional or basis set for the geometry optimiation and frequency
 step, or the final energy calculation step, or both.
