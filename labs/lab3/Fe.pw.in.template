@@ -4,7 +4,7 @@
                   pseudo_dir = './' ,
  /
  &SYSTEM
-                       ibrav = 3,
+                       ibrav = 2,
                    celldm(1) = {alat},
                          nat = 1,
                         ntyp = 1,
@@ -17,9 +17,9 @@
  &CELL
  /
 ATOMIC_SPECIES
-   Fe   56.00000  Fe.pbe-spn-kjpaw_psl.0.2.1.UPF 
+   Cu   63.546  Cu.rel-pbe-dn-kjpaw_psl.0.2.UPF
 ATOMIC_POSITIONS crystal 
-   Fe      0.000000000    0.000000000    0.000000000    
+   Cu      0.000000000    0.000000000    0.000000000    
 K_POINTS automatic 
   {k} {k} {k}   0 0 0 
 
