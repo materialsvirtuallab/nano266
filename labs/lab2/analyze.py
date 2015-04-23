@@ -12,7 +12,8 @@ patterns = {
     "energy": re.compile("total energy\s+=\s+([\d\.\-]+)\sRy"),
     "ecut": re.compile("kinetic\-energy cutoff\s+=\s+([\d\.\-]+)\s+Ry"),
     "alat": re.compile("celldm\(1\)=\s+([\d\.]+)\s"),
-    "nkpts": re.compile("number of k points=\s+([\d]+)")
+    "nkpts": re.compile("number of k points=\s+([\d]+)"),
+    "total_force": re.compile("Total force =\s+([\d\.]+)")
 }
 
 
