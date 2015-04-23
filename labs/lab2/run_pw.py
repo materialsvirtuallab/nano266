@@ -17,14 +17,15 @@ import shutil
 with open("Si.pw.in.template") as f:
     template = f.read()
 
-# Set the k-point grid
-k = 8
-ecut = 10 # In Ry
+# Set default values for various parameters
+k = 8 # k-point grid of 8x8x8
+ecut = 50 # In Ry
 alat = 10.26 # The lattice parameter for the cell in Bohr.
 psp = "Si.pbe-n-kjpaw_psl.0.1.UPF"
 
 # Loop through a series of values of ecut. Note that ecut is stipulated in Ry
-# in PWSCF. 
+# in PWSCF. Modify this accordingly to loop through either different values
+# of alat, k, ecut, etc.
 for ecut in [10, 20, 30, 40, 50]:
     # This generates a string from the template with the parameters replaced
     # by the specified values.
@@ -42,7 +43,7 @@ for ecut in [10, 20, 30, 40, 50]:
     # Run PWSCF. Modify the pw.x command accordingly if needed.
     os.system("pw.x < {jobname}.pw.in > {jobname}.out".format(jobname=jobname))
 
-    print("Done")
+    print("Done. Output file is %s.out." % jobname)
 
 # This just does cleanup. For this lab, we don't need the files that are
 # dumped into the tmp directory.

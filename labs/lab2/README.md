@@ -49,6 +49,8 @@ follows:
   calculation = 'scf' ,    # Specifies that we are doing a static SCF calculation.
   outdir = './tmp' ,
   pseudo_dir = './' ,      # Location of pseudopotential files.
+  tprnfor = .True.,        # Specifies that you want forces to be printed. Used
+  tstress = .True.,        # in subsequent questions.
 /
 &system                    # Specifies the structure
   ibrav = 2,               # For PWSCF, ibrav = 2 denotes an FCC cell.

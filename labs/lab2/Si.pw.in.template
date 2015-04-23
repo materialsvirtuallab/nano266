@@ -2,6 +2,8 @@
   calculation = 'scf' ,
   outdir = './tmp' ,
   pseudo_dir = './' ,
+  tprnfor = .True.,
+  tstress = .True.,
 /
 &system
   ibrav = 2,
