@@ -1,5 +1,5 @@
 LaTeX input:        mmd-mavrldoc-header
-Title:              NANO266 Lab 2
+Title:              NANO266 Lab 2 - Convergence of DFT calculations
 Author:             Shyue Ping Ong
 Affiliation:        University of California, San Diego
 Address:            9500 Gilman Drive, Mail Code 0448, La Jolla, CA 92093-0448
@@ -164,7 +164,7 @@ Calculate the bulk modulus of silicon at the equilibrium lattice constant using 
 
 Think about how you can obtain K from the E vs a plot. Be careful that
 PWSCF reports energies per *primitive cell*, and you will need to make sure
-you do appropriate unit conversions.
+you do appropriate unit conversions ans scaling.
 
 Compare it to the experimental value of 97.6 GPa. (Hopcroft, M. a; Nix, W. D.; Kenny, T. W. J. Microelectromechanical Syst., 2010, 19, 229–238, doi:10.1109/JMEMS.2009.2039697.)
 

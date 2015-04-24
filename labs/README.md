@@ -42,7 +42,7 @@ to the allocation for this course. You can then login to the allocations
 with
 
 ```bash
-ssh <your_username>@trestles.sdsc.edu
+ssh <your_username>@comet.sdsc.edu
 ```
 
 If you are on a Windows machine, you need to download a SSH client like
