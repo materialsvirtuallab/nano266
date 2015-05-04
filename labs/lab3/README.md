@@ -38,11 +38,12 @@ sbatch submit_script
 ```
 
 You may check on the status of your job using the following command:
+
 ```bash
 squeue -u <username>
 ```
 
-# Q1 (40 points): The bcc-hcp transition in iron
+# Q1 (30 points): The bcc-hcp transition in iron
 
 In this problem, you will look at the bcc to hcp transition in iron. We will be
 using the PBE GGA functional that we used in the earlier lab. Use an energy
@@ -50,16 +51,16 @@ cutoff of 50 Ry with a charge density cutoff of 250 Ry. You will need to
 determine an appropriate $k$-point mesh for both the bcc and hcp structures.
 The energy differences are very small; choose parameters to converge your
 energies to within 1 meV.
+
 1. Calculate the ground state energy of Fe in both the bcc and hcp structure.
    Two template files are provided for bcc and hcp. A run_pw.py file is also
    provided that works for bcc, but you need to modify it as appropriate to
-   work for hcp. Note that it is important when comparing energies that the
-   $k$-point samplings for both systems are comparable and converged. Determine
-   an appropriate $k$-point grid for both structures. Optimize the lattice
-   parameters for both bcc and hcp Fe (i.e., $a$ for BCC and $a$ and $c$ for
-   HCP). (20 points)
-2. Varying the volume of the cell calculate when the HCP structure becomes more
-   favorable than the BCC one. Further, (10 points)
+   work for hcp. 
+2. Varying the volume of the cell calculate when the hcp structure becomes more
+   favorable than the bcc one. Note that it is important when comparing 
+   energies that the $k$-point samplings for both systems are comparable and 
+   converged. Determine an appropriate $k$-point grid for both structures. 
+   Optimize the lattice parameters for both bcc and hcp Fe (i.e., $a$ for bcc and $a$ and $c$ for hcp).
 3. Calculate and compare the total energy for the BCC structure in the
    ferromagnetic, anti-ferromagnetic, and nonmagnetic states. (10 points)
 
@@ -68,17 +69,19 @@ various options to do this work. At this stage of the course, we will not
 be providing complete scripts and you need to work through the manuals to
 figure out what to do. This is part and parcel of computational modeling work.
 
-# Q2 (40 points): Stability of the PbTiO$_3$ perovskite
+# Q2 (40 points): Stability of the PbTiO<sub>3</sub> perovskite
 
-PbTiO$_3$ is a perovskite oxide which is ferroelectric. The ferroelectric 
-response of PbTiO$_3$ is the result of a displacive transition where a low 
-temperature tetragonal phase is preferred over the cubic phase. 
+PbTiO<sub>3</sub> is a perovskite oxide which is ferroelectric. The
+ferroelectric response of PbTiO<sub>3</sub> is the result of a displacive 
+transition where a low temperature tetragonal phase is preferred over the cubic 
+phase. 
+
 1. Calculate and plot the energy of cubic PbTiO3 as a function of lattice 
-   parameter. Use a 4 \times 4 \times 4 $k$-point mesh with a 1, 1, 1 offset. 
-   Sample lattice parameters with a sufficiently fine grid to get a reliable 
-   value for the equilibrium lattice constant. To get an idea where to begin, 
-   note that the room-temperature experimental lattice constant is about 
-   3.97$\AA$.
+   parameter. Use a 4 $\times$ 4 $\times$ 4 $k$-point mesh with a 1, 1, 1 
+   offset. Sample lattice parameters with a sufficiently fine grid to get a 
+   reliable value for the equilibrium lattice constant. To get an idea where to 
+   begin, note that the room-temperature experimental lattice constant is about 
+   3.97 angstroms.
 2. Using the equilibrium lattice parameter from part (1), plot the energy as a 
    function of displacement of the Ti atom along one of the cubic lattice 
    directions, allowing the O atoms to fully relax for each displacement. 
@@ -93,7 +96,7 @@ temperature tetragonal phase is preferred over the cubic phase.
 4. Which phase is the most energetically stable for PbTiO3 and how does that
    relate to the ferroelectric behavior of this material?
 
-# Q3: Formation Energy of the CuAu alloy
+# Q3 (30 points): Formation Energy of the CuAu alloy
 
 1. Calculate the equation of state (energy versus lattice parameter) for FCC
    Cu and Au, with differences converged to 0.15 mHa? Investigate the k-point
