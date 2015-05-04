@@ -96,31 +96,38 @@ phase.
 4. Which phase is the most energetically stable for PbTiO3 and how does that
    relate to the ferroelectric behavior of this material?
 
-# Q3 (30 points): Formation Energy of the $\mbox{Cu}_{1-x}\mbox{Au}_x$ alloys
+# Q3 (30 points): Formation Energy of the $\mbox{Cu}_{1-x}\mbox{Au}_x$ intermetallics
 
+In this problem, we will investigate the formation energies of the
+$\mbox{Cu}_{1-x}\mbox{Au}_x$ for $x$ = 0.25, 0.5 and 0.75. See Ozolins et al. 
+Cu-Au, Ag-Au, Cu-Ag and Ni-Au intermetallics: First-principles study of phase 
+diagrams and structures, Phys. Rev. B, 1997, 57, 19, 
+doi:10.1103/PhysRevB.57.6427.
 
-
-1. Calculate the equation of state (energy versus lattice parameter) for FCC
-   Cu and Au, with differences converged to 0.15 mHa? Investigate the k-point
-   sampling for FCC Cu and Au with different lattice constants (the
-   experimental values are $a_{\mbox{Cu}} = 3.677 {\buildrel _{\circ} \over
-   {\mathrm{A}}}$ and $a_{\mbox{Au}} = 4.059 {\buildrel _{\circ} \over
-   {\mathrm{A}}}$) and plane-wave energy cutoff ecutwfc =30 Ryd. Use different
-   $k$ meshes (e.g. $4\times4\times4$, $8\times8\times8$, $12\times12\times12$,
-   $20\times20\times20$ and different ecutrho (120-360 Ryd). Which $k$-point
-   mesh provides convergence to 0.15 mHa?
-2. Calculate the energies of $\mbox{Cu}_{1-x}\mbox{Au}_x$ for x = 0.25, 0.5 and    0.75. 
-   order? Explore the stability of the L10 phase of CuAu. The ordered phase
-   L10 between copper and gold, is a body-centered tetragonal (bct) with two
-   atoms in the unit cell, and lattice parameters are $a = b \ne c$. You may
-   search the internet for the structure and experimental lattice parameters.
-   Calculate the equation of state of CuAu, $E = E(a, c)$,
-   where $a$=celldm(1) and $c/a$=celldm(3). A good range for c/a is in between
-   1, for FCC structures, and $1/\sqrt{2}$, for BCC structures. Modify the job
-   script accrodingly ldm(1) and celldm(3). It is helpful to make a first-pass
-   check for the best value for c/a, using a sparse $k$-point mesh.
-3. Calculate the formation energy of CuAu:
-   $$\Delta H_f (\mbox{CuAu}) = E_{tot}(\mbox{CuAu}) − E_b(\mbox{Cu}) − E_b(\mbox{Au})$$
-   where Eb(Cu) and Eb(Au) are the total energies for Cu and Au in their FCC
-   bulk phase. The total energy CuAu, Etot(CuAu), is chosen for fully relaxed
-   equilibrium lattice parameters and internal coordinates.
+1. Calculate the ground state energy for fcc Cu, Au and 
+   $\mbox{Cu}_{1-x}\mbox{Au}_x$  Here, we will use
+   PWSCF's *vc-relax* option to avoid having to manually do a equation of state
+   analysis. Start with the end members and the CuAu ($x$ = 0.5) intermetallic
+   and do a $k$-point convergence such that your formation energies are within
+   5 meV / atom. Start with a relatively small grid, e.g., 4 $\times$ 4 $\times 
+   4. For CuAu, you should use the L10 phase, which is a body-centered tetragonal (bct) with two atoms in the unit cell, and lattice 
+   parameters are $a = b \ne c$. A sample file is provided. You may
+   search the internet for the experimental lattice parameters and use those to 
+   set your initial guesses for $a$ = celldm(1) and $c/a$ = celldm(3). You 
+   should use good guesses to minimize the computational time.
+2. Calculate the formation energy of $\mbox{Cu}_{1-x}\mbox{Au}_x$ :
+   $$\Delta H_f (\mbox{Cu}_{1-x}\mbox{Au}_x) = E(\mbox{Cu}_{1-x}\mbox{Au}_x) − (1 - x) E(\mbox{Cu}) − x E(\mbox{Au})$$
+   where E(Cu) and E(Au) are the total energies for Cu and Au in their fcc
+   bulk phase. Note that you must normalize the energies accordingly. We want the formation energies per atom, i.e., 0.5 $\times$ the formation energy per CuAu.
+3. Repeat the calculations for $\mbox{Cu}_3\mbox{Au}$ and $\mbox{CuAu}_3$. For
+   both these structures, start with a fcc Cu or Au structure, and replace all
+   corner atoms with atoms of the other type. For example, to create
+   the $\mbox{Cu}_3\mbox{Au}$, you can start from the fcc Cu unit cell, and set 
+   the Cu atoms to be on the faces, which gives one Au (1 / 8 $\times$ 8) and 
+   three Cu (1 / 2 $\times$ 6). Note that in order to create this structure,
+   you need to decrease the symmetry from the fcc to simple cubic, and then add
+   an atom. Review your crystallography and PWSCF's input file format so that 
+   you understand how to do this.
+4. Plot the formation energy of the $\mbox{Cu}_{1-x}\mbox{Au}_x$ phases you have
+   calculated against $x$. Discuss which of the ordered intermetallic 
+   structures are stable at 0K.

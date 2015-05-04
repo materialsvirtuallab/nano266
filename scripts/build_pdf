@@ -7,7 +7,7 @@ A help script to generate all PDFs from the multimarkdown README.md.
 import os
 from monty.os import cd
 import re
-
+import filecmp
 
 for parent, _, files in os.walk("labs"):
     for f in files:
@@ -24,5 +24,8 @@ for parent, _, files in os.walk("labs"):
                     out = "%s.pdf" % title
                     os.system('multimarkdown -t latex "%s" > tmpmmd.tex' % f)
                     os.system('pdflatex tmpmmd.tex')
-                    os.system('mv tmpmmd.pdf "%s"' % out)
+                    if not filecmp.cmp("tmpmmd.pdf", out, shallow=False):
+                        os.system('mv tmpmmd.pdf "%s"' % out)
+                    else:
+                        print("No changes to %s" % out)
                     os.system('rm tmpmmd.*')

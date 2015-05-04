@@ -31,7 +31,7 @@
 ATOMIC_SPECIES
    Fe   55.85  Fe.pbe-spn-kjpaw_psl.0.2.1.UPF
 ATOMIC_POSITIONS crystal 
-   Fe      0.000000000    0.000000000    0.000000000    
+   Fe      0.0    0.0    0.0    
 K_POINTS automatic 
   {k} {k} {k}   0 0 0 
 
