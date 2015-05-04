@@ -1,5 +1,5 @@
 LaTeX input:        mmd-mavrldoc-header
-Title:              NANO266 Lab 1
+Title:              NANO266 Lab 1 - Calculations on Molecules
 Author:             Shyue Ping Ong
 Affiliation:        University of California, San Diego
 Address:            9500 Gilman Drive, Mail Code 0448, La Jolla, CA 92093-0448

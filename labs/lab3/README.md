@@ -81,7 +81,7 @@ phase.
    offset. Sample lattice parameters with a sufficiently fine grid to get a 
    reliable value for the equilibrium lattice constant. To get an idea where to 
    begin, note that the room-temperature experimental lattice constant is about 
-   3.97 angstroms.
+   3.97 ${\buildrel _{\circ} \over {\mathrm{A}}}$.
 2. Using the equilibrium lattice parameter from part (1), plot the energy as a 
    function of displacement of the Ti atom along one of the cubic lattice 
    directions, allowing the O atoms to fully relax for each displacement. 
@@ -101,9 +101,10 @@ phase.
 1. Calculate the equation of state (energy versus lattice parameter) for FCC
    Cu and Au, with differences converged to 0.15 mHa? Investigate the k-point
    sampling for FCC Cu and Au with different lattice constants (the
-   experimental values are aCu = 3.677 °Aand aAu = 4.059 °A) and plane-wave
-   energy cutoff ecutwfc =30 Ryd. Use different k-meshes (e.g.
-   $4\times4\times4$, $8\times8\times8$, $12\times12\times12$,
+   experimental values are $a_{\mbox{Cu}} = 3.677 {\buildrel _{\circ} \over 
+   {\mathrm{A}}}$ and $a_{\mbox{Au}} = 4.059 {\buildrel _{\circ} \over 
+   {\mathrm{A}}}$) and plane-wave energy cutoff ecutwfc =30 Ryd. Use different
+   $k$ meshes (e.g. $4\times4\times4$, $8\times8\times8$, $12\times12\times12$,
    $20\times20\times20$ and different ecutrho (120-360 Ryd). Which $k$-point
    mesh provides convergence to 0.15 mHa?
 2. At 0K, will CuAu (in the 50%-50% concentration) prefer to segregate or
