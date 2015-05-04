@@ -29,7 +29,7 @@ guide at https://www.sdsc.edu/support/user_guides/comet.html. For the purposes
 of this lab, a sample *submit_script* has been provided. It is imperative that
 you understand how the script works as you will be using this for the rest of
 this and the next lab. Read the user guide to understand what each of the
-preamble means. You can then modify them to suit your needs.
+options in the preamble means. You can then modify them to suit your needs.
 
 To submit the job, just simply run:
 
@@ -59,10 +59,14 @@ energies to within 1 meV.
    parameters for both bcc and hcp Fe (i.e., $a$ for BCC and $a$ and $c$ for
    HCP). (20 points)
 2. Varying the volume of the cell calculate when the HCP structure becomes more
-   favorable than the BCC one. Further, (20 points)
+   favorable than the BCC one. Further, (10 points)
 3. Calculate and compare the total energy for the BCC structure in the
-   ferromagnetic, anti-ferromagnetic, and nonmagnetic states. (20 points)
+   ferromagnetic, anti-ferromagnetic, and nonmagnetic states. (10 points)
 
+Note that you will need to read the PWSCF manual to figure out how to set
+various options to do this work. At this stage of the course, we will not
+be providing complete scripts and you need to work through the manuals to
+figure out what to do. This is part and parcel of computational modeling work.
 
 # Q2 (40 points): Stability of the PbTiO$_3$ perovskite
 
@@ -91,24 +95,25 @@ ferroelectric behavior of this material?
 
 # Q3: Formation Energy of the CuAu alloy
 
-1. Calculate the equation of state (energy versus volume) for FCC Cu and Au,
-   with differences converged to 0.15 mHa? Investigate the k-point sampling for
-   FCC Cu and Au with different lattice constants (the experimental values are
-   aCu = 3.677 °Aand aAu = 4.059 °A) and plane-wave energy cutoff ecutwfc =30
-   Ryd. Use different k-meshes (e.g. 4×4×4, 8×8×8, 12×12×12, and 20×20×20); and
-   different ecutrho (e.g. 120 up to 360 Ryd). Which k-point mesh provides
-   convergence to 0.15 mHa?
-2. At 0K, will CuAu (in the 50%-50% concentration) prefer to segregate or order?
-   Explore the stability of the L10 phase of CuAu. As explained in the Handout,
-   the ordered phase L10 between copper and gold, is a body-centered tetragonal
-   (bct) with two atoms in the unit cell, and lattice parameters are a = b 6= c
-3. Calculate the equation of state of CuAu E = E(a, c), where a=celldm(1) and c/
-   a=celldm(3). A good range for c/a is in between 1, for FCC structures, and 1/
-   p2, for BCC structures. We strongly recommend to use a job-script, to change
-   automatically the value of celldm(1) and celldm(3). It would be useful to
-   make a first-pass check for the best value for c/a, using a sparse k-point
-   mesh.
-4. Calculate the formation energy of CuAu:
+1. Calculate the equation of state (energy versus lattice parameter) for FCC
+   Cu and Au, with differences converged to 0.15 mHa? Investigate the k-point
+   sampling for FCC Cu and Au with different lattice constants (the
+   experimental values are aCu = 3.677 °Aand aAu = 4.059 °A) and plane-wave
+   energy cutoff ecutwfc =30 Ryd. Use different k-meshes (e.g.
+   $4\times4\times4$, $8\times8\times8$, $12\times12\times12$,
+   $20\times20\times20$ and different ecutrho (120-360 Ryd). Which $k$-point
+   mesh provides convergence to 0.15 mHa?
+2. At 0K, will CuAu (in the 50%-50% concentration) prefer to segregate or
+   order? Explore the stability of the L10 phase of CuAu. The ordered phase
+   L10 between copper and gold, is a body-centered tetragonal (bct) with two
+   atoms in the unit cell, and lattice parameters are $a = b \ne c$. You may
+   search the internet for the structure and experimental lattice parameters.
+   Calculate the equation of state of CuAu, $E = E(a, c)$,
+   where $a$=celldm(1) and $c/a$=celldm(3). A good range for c/a is in between
+   1, for FCC structures, and $1/\sqrt{2}$, for BCC structures. Modify the job
+   script accrodingly ldm(1) and celldm(3). It is helpful to make a first-pass
+   check for the best value for c/a, using a sparse $k$-point mesh.
+3. Calculate the formation energy of CuAu:
    $$\Delta H_f (\mbox{CuAu}) = E_{tot}(\mbox{CuAu}) − E_b(\mbox{Cu}) − E_b(\mbox{Au})$$
    where Eb(Cu) and Eb(Au) are the total energies for Cu and Au in their FCC
    bulk phase. The total energy CuAu, Etot(CuAu), is chosen for fully relaxed
