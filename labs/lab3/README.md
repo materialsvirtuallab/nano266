@@ -31,7 +31,16 @@ you understand how the script works as you will be using this for the rest of
 this and the next lab. Read the user guide to understand what each of the
 preamble means. You can then modify them to suit your needs.
 
+To submit the job, just simply run:
 
+```bash
+sbatch submit_script
+```
+
+You may check on the status of your job using the following command:
+```bash
+squeue -u <username>
+```
 
 # Q1 (40 points): The bcc-hcp transition in iron
 
