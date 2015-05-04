@@ -96,7 +96,7 @@ phase.
 4. Which phase is the most energetically stable for PbTiO3 and how does that
    relate to the ferroelectric behavior of this material?
 
-# Q3 (30 points): Formation Energy of the CuAu alloy
+# Q3 (30 points): Formation Energies of the Cu$\_x$Au$\_y$ alloys
 
 1. Calculate the equation of state (energy versus lattice parameter) for FCC
    Cu and Au, with differences converged to 0.15 mHa? Investigate the k-point
