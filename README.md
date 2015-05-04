@@ -23,9 +23,9 @@ which points to the root directory.
 
 # Acknowledgments
 
-Some of the materials are inspired by and adapted from MIT Course 3.320:
-Atomistic Computer Modeling of Materials taught by Prof Gerbrand Ceder and
-Nicola Marzari. Those materials are available on MIT Open Courseware.
+Some of the materials are inspired by and adapted from excellent MIT Course
+3.320: Atomistic Computer Modeling of Materials taught by Professors Gerbrand 
+Ceder and Nicola Marzari. Those materials are available on MIT Open Courseware.
 
 --
 Shyue Ping Ong
