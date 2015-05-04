@@ -24,7 +24,7 @@ cd <path/to/repo>/labs/lab3
 
 # Submitting jobs to the Comet queues
 
-
+A sample *submit_script* has
 
 # Q1 (40 points): The bcc-hcp transition in iron
 

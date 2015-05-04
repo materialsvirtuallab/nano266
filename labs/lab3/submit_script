@@ -12,4 +12,5 @@ module load python qe
 module swap mvapich2_ib openmpi_ib
 export OMP_NUM_THREADS=24
 
+cd $HOME/nano266/labs/lab3
 python run_pw.py
