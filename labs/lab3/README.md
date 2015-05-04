@@ -24,7 +24,14 @@ cd <path/to/repo>/labs/lab3
 
 # Submitting jobs to the Comet queues
 
-A sample *submit_script* has
+Comet uses the SLURM queuing system. For more information, you may read the
+guide at https://www.sdsc.edu/support/user_guides/comet.html. For the purposes
+of this lab, a sample *submit_script* has been provided. It is imperative that
+you understand how the script works as you will be using this for the rest of
+this and the next lab. Read the user guide to understand what each of the
+preamble means. You can then modify them to suit your needs.
+
+
 
 # Q1 (40 points): The bcc-hcp transition in iron
 

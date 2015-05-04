@@ -3,14 +3,12 @@
 #SBATCH --output="job.%j.%N.out"
 #SBATCH --partition=compute
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=24
+#SBATCH --ntasks-per-node=1
 #SBATCH --export=ALL
 #SBATCH -t 01:00:00
 #SBATCH -A csd452
 
 module load python qe
-module swap mvapich2_ib openmpi_ib
-export OMP_NUM_THREADS=24
 
 cd $HOME/nano266/labs/lab3
 python run_pw.py

@@ -39,7 +39,7 @@ for k in [8]:
     #Print some status messages.
     print("Running with alat = %s, k = %s..." % (alat, k))
     # Run PWSCF. Modify the pw.x command accordingly if needed.
-    os.system("mpirun pw.x -inp {jobname}.pw.in > {jobname}.out".format(jobname=jobname))
+    os.system("pw.x -inp {jobname}.pw.in > {jobname}.out".format(jobname=jobname))
 
     print("Done. Output file is %s.out." % jobname)
 
