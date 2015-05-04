@@ -26,25 +26,26 @@ cd <path/to/repo>/labs/lab3
 
 
 
-# Q1 (12 points): The bcc-hcp transition in iron
+# Q1 (40 points): The bcc-hcp transition in iron
 
-In this problem, you will look at the bcc to hcp transition in iron. We will be 
+In this problem, you will look at the bcc to hcp transition in iron. We will be
 using the PBE GGA functional that we used in the earlier lab. Use an energy
-cutoff of 50 Ry with a charge density cutoff of 250 Ry. You will need to 
-determine an appropriate $k$-point mesh for both the bcc and hcp structures. 
-The energy differences are very small; choose parameters to converge your 
-energies to within 1 meV. 
+cutoff of 50 Ry with a charge density cutoff of 250 Ry. You will need to
+determine an appropriate $k$-point mesh for both the bcc and hcp structures.
+The energy differences are very small; choose parameters to converge your
+energies to within 1 meV.
 1. Calculate the ground state energy of Fe in both the bcc and hcp structure.
    Two template files are provided for bcc and hcp. A run_pw.py file is also
-   provided that works for bcc, but you need to modify it as appropriate to works
-   for hcp. Note that it is important when comparing energies that the k-point
-   samplings for both systems are comparable and converged. Determine an
-   appropriate $k$-point grid for both structures. Optimize the lattice parameters
-   for both bcc and hcp Fe (i.e., $a$ for BCC and $a$ and $c$ for HCP). 
+   provided that works for bcc, but you need to modify it as appropriate to
+   work for hcp. Note that it is important when comparing energies that the
+   $k$-point samplings for both systems are comparable and converged. Determine
+   an appropriate $k$-point grid for both structures. Optimize the lattice
+   parameters for both bcc and hcp Fe (i.e., $a$ for BCC and $a$ and $c$ for
+   HCP). (20 points)
 2. Varying the volume of the cell calculate when the HCP structure becomes more
-   favorable than the BCC one. Further, (40 points)
-3. Calculate and compare the total energy for the BCC structure in the ferromagnetic,
-   anti-ferromagnetic, and nonmagnetic states. (20 points)
+   favorable than the BCC one. Further, (20 points)
+3. Calculate and compare the total energy for the BCC structure in the
+   ferromagnetic, anti-ferromagnetic, and nonmagnetic states. (20 points)
 
 
 # Q2 (40 points): Stability of the PbTiO$_3$ perovskite
@@ -75,24 +76,24 @@ ferroelectric behavior of this material?
 # Q3: Formation Energy of the CuAu alloy
 
 1. Calculate the equation of state (energy versus volume) for FCC Cu and Au,
-   with differences converged to 0.15 mHa? Investigate the k-point sampling for 
-   FCC Cu and Au with different lattice constants (the experimental values are 
-   aCu = 3.677 °Aand aAu = 4.059 °A) and plane-wave energy cutoff ecutwfc =30 
-   Ryd. Use different k-meshes (e.g. 4×4×4, 8×8×8, 12×12×12, and 20×20×20); and 
-   different ecutrho (e.g. 120 up to 360 Ryd). Which k-point mesh provides 
+   with differences converged to 0.15 mHa? Investigate the k-point sampling for
+   FCC Cu and Au with different lattice constants (the experimental values are
+   aCu = 3.677 °Aand aAu = 4.059 °A) and plane-wave energy cutoff ecutwfc =30
+   Ryd. Use different k-meshes (e.g. 4×4×4, 8×8×8, 12×12×12, and 20×20×20); and
+   different ecutrho (e.g. 120 up to 360 Ryd). Which k-point mesh provides
    convergence to 0.15 mHa?
 2. At 0K, will CuAu (in the 50%-50% concentration) prefer to segregate or order?
-   Explore the stability of the L10 phase of CuAu. As explained in the Handout, 
-   the ordered phase L10 between copper and gold, is a body-centered tetragonal 
+   Explore the stability of the L10 phase of CuAu. As explained in the Handout,
+   the ordered phase L10 between copper and gold, is a body-centered tetragonal
    (bct) with two atoms in the unit cell, and lattice parameters are a = b 6= c
 3. Calculate the equation of state of CuAu E = E(a, c), where a=celldm(1) and c/
    a=celldm(3). A good range for c/a is in between 1, for FCC structures, and 1/
-   p2, for BCC structures. We strongly recommend to use a job-script, to change 
-   automatically the value of celldm(1) and celldm(3). It would be useful to 
-   make a first-pass check for the best value for c/a, using a sparse k-point 
+   p2, for BCC structures. We strongly recommend to use a job-script, to change
+   automatically the value of celldm(1) and celldm(3). It would be useful to
+   make a first-pass check for the best value for c/a, using a sparse k-point
    mesh.
 4. Calculate the formation energy of CuAu:
    $$\Delta H_f (\mbox{CuAu}) = E_{tot}(\mbox{CuAu}) − E_b(\mbox{Cu}) − E_b(\mbox{Au})$$
-   where Eb(Cu) and Eb(Au) are the total energies for Cu and Au in their FCC 
-   bulk phase. The total energy CuAu, Etot(CuAu), is chosen for fully relaxed 
+   where Eb(Cu) and Eb(Au) are the total energies for Cu and Au in their FCC
+   bulk phase. The total energy CuAu, Etot(CuAu), is chosen for fully relaxed
    equilibrium lattice parameters and internal coordinates.
