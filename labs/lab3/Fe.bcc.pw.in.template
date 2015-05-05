@@ -24,10 +24,6 @@
   conv_thr = 1.D-8,
   mixing_beta = 0.7,
  /
- &IONS
- /
- &CELL
- /
 ATOMIC_SPECIES
    Fe   55.85  Fe.pbe-spn-kjpaw_psl.0.2.1.UPF
 ATOMIC_POSITIONS crystal 

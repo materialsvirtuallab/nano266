@@ -1,0 +1,40 @@
+ &CONTROL
+  calculation = 'relax' ,
+  outdir = './tmp' ,
+  prefix = 'PbTiO3',
+  pseudo_dir = './' ,
+  tprnfor = .True.,
+  tstress = .True.,
+ /
+ &SYSTEM
+  ibrav = 1,
+  celldm(1) = {alat},
+  nat = 5,
+  ntyp = 3,
+  ecutwfc = 30,
+  ecutrho = 240,
+  occupations = 'smearing',
+  smearing = 'cold',
+  degauss = 0.025,
+ /
+ &ELECTRONS
+  diagonalization = 'david',
+  conv_thr = 1.D-8,
+  mixing_beta = 0.7,
+ /
+ &IONS
+  ion_dynamic = 'bfgs',
+ /
+ATOMIC_SPECIES
+   Pb   207.2  Pb.pbe-dn-kjpaw_psl.0.2.2.UPF
+   Ti   47.87  Ti.pbe-sp-van_ak.UPF
+   O    16     O.pbe-n-kjpaw_psl.0.1.UPF
+ATOMIC_POSITIONS crystal 
+   Pb      0.0    0.0    0.0  0 0 0
+   Ti      0.5    0.5    0.5  0 0 0
+   O       0.5    0.5    0.0 
+   O       0.5    0.0    0.5 
+   O       0.0    0.5    0.5  
+K_POINTS automatic 
+  4 4 4   1 1 1
+

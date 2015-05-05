@@ -43,7 +43,7 @@ You may check on the status of your job using the following command:
 squeue -u <username>
 ```
 
-# Q1 (30 points): The bcc-hcp transition in iron
+# Q1 (20 points): The bcc-hcp transition in iron
 
 In this problem, you will look at the bcc to hcp transition in iron. We will be
 using the PBE GGA functional that we used in the earlier lab. Use an energy
@@ -76,27 +76,41 @@ ferroelectric response of $\mbox{PbTiO}_3$ is the result of a displacive
 transition where a low temperature tetragonal phase is preferred over the cubic
 phase.
 
-1. Calculate and plot the energy of cubic PbTiO3 as a function of lattice
-   parameter. Use a 4 $\times$ 4 $\times$ 4 $k$-point mesh with a 1, 1, 1
-   offset. Sample lattice parameters with a sufficiently fine grid to get a
-   reliable value for the equilibrium lattice constant. To get an idea where to
-   begin, note that the room-temperature experimental lattice constant is about
-   3.97 ${\buildrel _{\circ} \over {\mathrm{A}}}$.
+For this question, it is important that you note several differences in the
+`PbTiO3.pw.in.template` file.
+
+* The `calculation` parameter is set to `relax`, which means we are allowing
+  atoms to move.
+* There is an addition IONS section where the `ion_dynamics` is set to `"bfgs"`,
+  which chooses the quasi-Newton minimization method.
+* At the end of the atomic positions for Pb and Ti, there are three additional
+  0s. These indicate that the Pb and Ti are not allowed to move in any of the
+  coordinates. Conversely, no such restriction is placed on the O atoms, which
+  are allowed to relax accordingly.
+
+Please answer the following questions.
+
+1. Calculate and plot the energy of cubic $\mbox{PbTiO}_3$ as a function of 
+   lattice parameter. Use a 4 $\times$ 4 $\times$ 4 $k$-point mesh with a 
+   1, 1, 1 offset. Sample lattice parameters with a sufficiently fine grid to 
+   get a reliable value for the equilibrium lattice constant. To get an idea 
+   where to begin, note that the room-temperature experimental lattice constant 
+   is about 3.97 ${\buildrel _{\circ} \over {\mathrm{A}}}$.
 2. Using the equilibrium lattice parameter from part (1), plot the energy as a
    function of displacement of the Ti atom along one of the cubic lattice
    directions, allowing the O atoms to fully relax for each displacement.
    Report the Ti displacement at which the total energy is at a minimum. What
    is the energy difference between this configuration and the minimum-energy
-   configuration from part (1)? Be aware that for PbTiO$_3$, the Ti
-   displacement will be very small.
+   configuration from part (1)? Be aware that for $\mbox{PbTiO}_3$, the Ti
+   displacement will be very small. 
 3. Now allow both the Ti atom and the O atoms to relax and find the minimum
    energy structure, using the minimum-energy Ti displacement from part (B) as
    your starting configuration. Report the final atomic positions and final
    energy.
-4. Which phase is the most energetically stable for PbTiO3 and how does that
-   relate to the ferroelectric behavior of this material?
+4. Which phase is the most energetically stable for $\mbox{PbTiO}_3$ and how 
+   does that relate to the ferroelectric behavior of this material?
 
-# Q3 (30 points): Formation Energy of the $\mbox{Cu}_{1-x}\mbox{Au}_x$ intermetallics
+# Q3 (40 points): Formation Energy of the $\mbox{Cu}_{1-x}\mbox{Au}_x$ intermetallics
 
 In this problem, we will investigate the formation energies of the
 $\mbox{Cu}_{1-x}\mbox{Au}_x$ for $x$ = 0.25, 0.5 and 0.75. See Ozolins et al. 
