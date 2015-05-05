@@ -24,7 +24,11 @@ cd <path/to/repo>/labs/lab3
 
 # Submitting jobs to the Comet queues
 
-Comet uses the SLURM queuing system. For more information, you may read the
+Comet uses the Simple Linux Utility for Resource Management (Slurm) job
+scheduling system. All supercomputing clusters use a job scheduler of some 
+sort, e.g., PBS, Sun GridEngine, SLURM. They differ in some features, but work 
+on the same basic principle. You send jobs to a queue, and they are run 
+according to some priority system. For more information, you may read the
 guide at https://www.sdsc.edu/support/user_guides/comet.html. For the purposes
 of this lab, a sample *submit_script* has been provided. It is imperative that
 you understand how the script works as you will be using this for the rest of
@@ -42,6 +46,9 @@ You may check on the status of your job using the following command:
 ```bash
 squeue -u <username>
 ```
+
+If you make a mistake and need to kill a job for whatever reason. use the 
+`scancel` command.
 
 # Q1 (20 points): The bcc-hcp transition in iron
 
