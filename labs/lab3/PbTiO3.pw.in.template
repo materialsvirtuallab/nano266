@@ -23,7 +23,7 @@
   mixing_beta = 0.7,
  /
  &IONS
-  ion_dynamic = 'bfgs',
+  ion_dynamics = 'bfgs',
  /
 ATOMIC_SPECIES
    Pb   207.2  Pb.pbe-dn-kjpaw_psl.0.2.2.UPF

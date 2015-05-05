@@ -21,9 +21,7 @@ with open("Fe.bcc.pw.in.template") as f:
 k = 8 # k-point grid of 8x8x8
 alat = 5.42 # The lattice parameter for the cell in Bohr.
 
-# Loop through a series of values of ecut. Note that ecut is stipulated in Ry
-# in PWSCF. Modify this accordingly to loop through either different values
-# of alat, k, ecut, etc.
+# Loop through different k-points.
 for k in [8]:
     # This generates a string from the template with the parameters replaced
     # by the specified values.

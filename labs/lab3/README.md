@@ -50,6 +50,10 @@ squeue -u <username>
 If you make a mistake and need to kill a job for whatever reason. use the 
 `scancel` command.
 
+```bash
+scancel <jobid>
+```
+
 # Q1 (20 points): The bcc-hcp transition in iron
 
 In this problem, you will look at the bcc to hcp transition in iron. We will be
@@ -66,15 +70,18 @@ energies to within 1 meV.
 2. Varying the volume of the cell calculate when the hcp structure becomes more
    favorable than the bcc one. Note that it is important when comparing
    energies that the $k$-point samplings for both systems are comparable and
-   converged. Determine an appropriate $k$-point grid for both structures.
-   Optimize the lattice parameters for both bcc and hcp Fe (i.e., $a$ for bcc and $a$ and $c$ for hcp).
+   converged. Determine an appropriate $k$-point grid for both structures. Note
+   that the $k$-point should be proportional to the reciprocal lattice vector
+   length. Optimize the lattice parameters for both bcc and hcp Fe (i.e., $a$ 
+   for bcc and $a$ and $c$ for hcp).
 3. Calculate and compare the total energy for the BCC structure in the
    ferromagnetic, anti-ferromagnetic, and nonmagnetic states. (10 points)
 
 Note that you will need to read the PWSCF manual to figure out how to set
 various options to do this work. At this stage of the course, we will not
-be providing complete scripts and you need to work through the manuals to
-figure out what to do. This is part and parcel of computational modeling work.
+be providing all the templates and scripts and you need to work through the 
+manuals to figure out what to do. This is part and parcel of computational 
+modeling work.
 
 # Q2 (40 points): Stability of the $\mbox{PbTiO}_3$ perovskite
 
@@ -88,8 +95,8 @@ For this question, it is important that you note several differences in the
 
 * The `calculation` parameter is set to `relax`, which means we are allowing
   atoms to move.
-* There is an addition IONS section where the `ion_dynamics` is set to `"bfgs"`,
-  which chooses the quasi-Newton minimization method.
+* There is an addition IONS section with `ion_dynamics = 'bfgs'`, which chooses
+  the quasi-Newton minimization method.
 * At the end of the atomic positions for Pb and Ti, there are three additional
   0s. These indicate that the Pb and Ti are not allowed to move in any of the
   coordinates. Conversely, no such restriction is placed on the O atoms, which
@@ -108,8 +115,8 @@ Please answer the following questions.
    directions, allowing the O atoms to fully relax for each displacement.
    Report the Ti displacement at which the total energy is at a minimum. What
    is the energy difference between this configuration and the minimum-energy
-   configuration from part (1)? Be aware that for $\mbox{PbTiO}_3$, the Ti
-   displacement will be very small. 
+   configuration from part (1)? Note that the Ti displacement will be very 
+   small. 
 3. Now allow both the Ti atom and the O atoms to relax and find the minimum
    energy structure, using the minimum-energy Ti displacement from part (B) as
    your starting configuration. Report the final atomic positions and final
@@ -126,12 +133,13 @@ diagrams and structures, Phys. Rev. B, 1997, 57, 19,
 doi:10.1103/PhysRevB.57.6427.
 
 1. Calculate the ground state energy for fcc Cu, Au and 
-   $\mbox{Cu}_{1-x}\mbox{Au}_x$  Here, we will use
-   PWSCF's *vc-relax* option to avoid having to manually do a equation of state
-   analysis. Start with the end members and the CuAu ($x$ = 0.5) intermetallic
-   and do a $k$-point convergence such that your formation energies are within
+   $\mbox{Cu}_{1-x}\mbox{Au}_x$.  Here, we will use PWSCF's *vc-relax* option 
+   to avoid having to manually do a equation of state analysis. Start with the 
+   end members and the CuAu ($x$ = 0.5) intermetallic and do a $k$-point 
+   convergence such that your formation energies are within
    5 meV / atom. Start with a relatively small grid, e.g., 4 $\times$ 4 $\times 
-   4. For CuAu, you should use the L10 phase, which is a body-centered tetragonal (bct) with two atoms in the unit cell, and lattice 
+   4. For CuAu, you should use the L10 phase, which is a body-centered 
+   tetragonal (bct) with two atoms in the unit cell, and lattice 
    parameters are $a = b \ne c$. A sample file is provided. You may
    search the internet for the experimental lattice parameters and use those to 
    set your initial guesses for $a$ = celldm(1) and $c/a$ = celldm(3). You 
@@ -147,8 +155,8 @@ doi:10.1103/PhysRevB.57.6427.
    the Cu atoms to be on the faces, which gives one Au (1 / 8 $\times$ 8) and 
    three Cu (1 / 2 $\times$ 6). Note that in order to create this structure,
    you need to decrease the symmetry from the fcc to simple cubic, and then add
-   an atom. Review your crystallography and PWSCF's input file format so that 
-   you understand how to do this.
+   atoms accordingly. Review your crystallography and PWSCF's input file format 
+   so that you understand how to do this.
 4. Plot the formation energy of the $\mbox{Cu}_{1-x}\mbox{Au}_x$ phases you have
    calculated against $x$. Discuss which of the ordered intermetallic 
    structures are stable at 0K.

@@ -23,6 +23,9 @@
   conv_thr = 1.D-8,
   mixing_beta = 0.7,
  /
+ &IONS
+  ion_dynamics = 'bfgs',
+ /
 ATOMIC_SPECIES
    Cu   63.546  Cu.pbe-kjpaw.UPF
    Au   196.97  Au.pbe-dn-kjpaw_psl.0.1.UPF
