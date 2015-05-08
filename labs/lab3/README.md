@@ -64,9 +64,10 @@ The energy differences are very small; choose parameters to converge your
 energies to within 1 meV.
 
 1. Calculate the ground state energy of Fe in both the bcc and hcp structure.
-   Two template files are provided for bcc and hcp. A run_pw.py file is also
+   Two template files are provided for bcc and hcp.  A run_pw.py file is also
    provided that works for bcc, but you need to modify it as appropriate to
-   work for hcp.
+   work for hcp. In the case of hcp, celldm(3), which is the c/a ratio that needs
+   to be provided. Try the following values of c/a ratio: [1.72,1.73,1.74].
 2. Varying the volume of the cell calculate when the hcp structure becomes more
    favorable than the bcc one. Note that it is important when comparing
    energies that the $k$-point samplings for both systems are comparable and
@@ -95,8 +96,9 @@ For this question, it is important that you note several differences in the
 
 * The `calculation` parameter is set to `relax`, which means we are allowing
   atoms to move.
-* There is an addition IONS section with `ion_dynamics = 'bfgs'`, which chooses
-  the quasi-Newton minimization method.
+* There are two additional sections: IONS section with `ion_dynamics = 'bfgs'`,
+   and CELL section with `cell_dynamics = 'bfgs'` which chooses the quasi-Newton
+   minimization method.
 * At the end of the atomic positions for Pb and Ti, there are three additional
   0s. These indicate that the Pb and Ti are not allowed to move in any of the
   coordinates. Conversely, no such restriction is placed on the O atoms, which
