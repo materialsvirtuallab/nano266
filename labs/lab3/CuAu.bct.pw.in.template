@@ -7,13 +7,13 @@
   tstress = .True.,
  /
  &SYSTEM
-  ibrav = 2,
+  ibrav = 7,
   celldm(1) = {alat},
   celldm(3)= {calat},
   nat = 2,
   ntyp = 2,
   ecutwfc = 50,
-  ecutrho = 250,
+  ecutrho = 500,
   occupations = 'smearing',
   smearing = 'cold',
   degauss = 0.025,
@@ -30,11 +30,11 @@
   cell_dynamics = 'bfgs',
  /
 ATOMIC_SPECIES
-   Cu   63.546  Cu.pbe-kjpaw.UPF
-   Au   196.97  Au.pbe-dn-kjpaw_psl.0.1.UPF
+   Au   196.97  Au.pbe-dn-rrkjus_psl.0.1.UPF
+   Cu   63.546  Cu.pbe-dn-rrkjus_psl.0.2.UPF 
 ATOMIC_POSITIONS crystal 
-   Cu      0.0    0.0    0.0 
-   Au      0.5    0.0    0.5    
+   Au      0.0    0.0    0.0 
+   Cu      0.5    0.0    0.5  
 K_POINTS automatic 
-  {k1} {k2} {k3}   0 0 0 
+  {k1} {k1} {k3}   0 0 0 
 
