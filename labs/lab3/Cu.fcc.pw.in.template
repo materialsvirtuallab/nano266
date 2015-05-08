@@ -25,6 +25,9 @@
  &IONS
   ion_dynamics = 'bfgs',
  /
+ &CELL
+  cell_dynamics = 'bfgs',
+ /
 ATOMIC_SPECIES
    Cu   63.546  Cu.pbe-kjpaw.UPF
 ATOMIC_POSITIONS crystal 
