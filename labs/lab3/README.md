@@ -1,5 +1,5 @@
 LaTeX input:        mmd-mavrldoc-header
-Title:              NANO266 Lab 3 - Bulk properties from Quantum Mechanics
+Title:              NANO266 Lab 3 - Phase equilibria from Quantum Mechanics
 Base Header Level:  2
 LaTeX Mode:         mavrldoc
 LaTeX input:        mmd-mavrldoc-begin-doc
@@ -8,7 +8,7 @@ LaTeX footer:       mmd-mavrldoc-footer
 
 # Introduction
 
-In this lab, we will look at obtaining bulk properties from quantum mechanics.
+In this lab, we will look at predicting phase equilibrium from quantum mechanics.
 We will still be using QuantumEspresso. We will also introduce you to the
 basics of running calculations on supercomputing resources, e.g., how to submit
 jobs, handle queues, etc.
@@ -66,15 +66,17 @@ energies to within 1 meV.
 1. Calculate the ground state energy of Fe in both the bcc and hcp structure.
    Two template files are provided for bcc and hcp.  A run_pw.py file is also
    provided that works for bcc, but you need to modify it as appropriate to
-   work for hcp. In the case of hcp, celldm(3), which is the c/a ratio that needs
-   to be provided. Try the following values of c/a ratio: [1.72,1.73,1.74].
+   work for hcp. Optimize the lattice parameters for both bcc and hcp Fe 
+   (i.e., $a$ for bcc and $a$ and $c$ for hcp). In the case of hcp, celldm(3), 
+   which is the c/a ratio, needs to be provided. Try the following values of 
+   c/a ratio: [1.72,1.73,1.74] and for each of these ratios, alter the $a_{o}$ 
+   parameter to find the equilibrium sructure in hcp phase.
 2. Varying the volume of the cell calculate when the hcp structure becomes more
    favorable than the bcc one. Note that it is important when comparing
    energies that the $k$-point samplings for both systems are comparable and
    converged. Determine an appropriate $k$-point grid for both structures. Note
    that the $k$-point should be proportional to the reciprocal lattice vector
-   length. Optimize the lattice parameters for both bcc and hcp Fe (i.e., $a$ 
-   for bcc and $a$ and $c$ for hcp).
+   length.
 3. Calculate and compare the total energy for the BCC structure in the
    ferromagnetic, anti-ferromagnetic, and nonmagnetic states. (10 points)
 
