@@ -1,0 +1,31 @@
+ &CONTROL
+  calculation = 'scf' ,
+  outdir = './tmp' ,
+  prefix = 'Cu_fcc',
+  pseudo_dir = './' ,
+  tprnfor = .True.,
+  tstress = .True.,
+ /
+ &SYSTEM
+  ibrav = 2,
+  celldm(1) = {alat},
+  nat = 1,
+  ntyp = 1,
+  ecutwfc = 50,
+  ecutrho = 250,
+  occupations = 'smearing',
+  smearing = 'cold',
+  degauss = 0.025,
+ /
+ &ELECTRONS
+  diagonalization = 'david',
+  conv_thr = 1.D-8,
+  mixing_beta = 0.7,
+ /
+ATOMIC_SPECIES
+   Cu   63.546  Cu.pbe-kjpaw.UPF
+ATOMIC_POSITIONS crystal 
+   Cu      0.000000000    0.000000000    0.000000000    
+K_POINTS automatic 
+  8 8 8 0 0 0 
+
