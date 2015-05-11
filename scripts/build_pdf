@@ -24,8 +24,5 @@ for parent, _, files in os.walk("labs"):
                     out = "%s.pdf" % title
                     os.system('multimarkdown -t latex "%s" > tmpmmd.tex' % f)
                     os.system('pdflatex tmpmmd.tex')
-                    if not filecmp.cmp("tmpmmd.pdf", out, shallow=False):
-                        os.system('mv tmpmmd.pdf "%s"' % out)
-                    else:
-                        print("No changes to %s" % out)
+                    os.system('mv tmpmmd.pdf "%s"' % out)
                     os.system('rm tmpmmd.*')

@@ -1,5 +1,5 @@
 LaTeX input:        mmd-mavrldoc-header
-Title:              NANO266 Lab 4 - Adsorption on Al surfaces
+Title:              NANO266 Lab 4 - Al surfaces
 Base Header Level:  2
 LaTeX Mode:         mavrldoc
 LaTeX input:        mmd-mavrldoc-begin-doc
