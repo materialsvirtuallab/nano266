@@ -2,8 +2,8 @@
 
 """
 This is a very simple python starter script to automate a series of PWSCF
-calAllations. If you don't know Python, get a quick primer from the official
-Python doAlmentation at https://docs.python.org/2.7/. The script is deliberately
+calculations. If you don't know Python, get a quick primer from the official
+Python documentation at https://docs.python.org/2.7/. The script is deliberately
 simple so that only basic Python syntax is used and you can get comfortable with
 making changes and writing programs.
 
@@ -15,21 +15,21 @@ import shutil
 import numpy as np
 
 # Load the Si.pw.in.template file as a template.
-with open("Al.fcc.pw.in.template") as f:
+with open("Al100_6.pw.in") as f:
     template = f.read()
 
 # Set default values for various parameters
 k = 8 # k-point grid of 8x8x8
-alat = 7.65 # The lattice parameter for the cell in Bohr.
+alat = 6.80 # The lattice parameter for the cell in Bohr.
 
 # Loop through different k-points.
-for alat in np.arange(7.60, 7.70, 0.01):
+for alat in [7.635]:
     # This generates a string from the template with the parameters replaced
     # by the specified values.
-    s = template.format(k=k, alat=alat)
+    s = template.format(alat=alat)
 
     # Let's define an easy jobname.
-    jobname = "Al_fcc_%s_%s" % (k, alat)
+    jobname = "Al100_6_layer_%s_%s" % (k, alat)
 
     # Write the actual input file for PWSCF.
     with open("%s.pw.in" % jobname, "w") as f:
