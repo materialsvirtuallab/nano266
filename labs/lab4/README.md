@@ -47,13 +47,12 @@ energy cutoff of 50 Ry with a $k$-point grid of 8 $\times$ 8 $\times$ 1.
    provided to you, as well as a `fcc_surface_generator.py`. Let's see what the
    input file does by typing:
 
-    ```bash
-    python fcc_surface_generator.py --a 6.92 --nslab 3 --nvac 3
-    ```
+   ```bash
+   python fcc_surface_generator.py --a 7.65 --nslab 3 --nvac 3
+   ```
 
    The output should be something like the following:
 
-    ```
      &CONTROL
       calculation = 'relax' ,
       outdir = './tmp' ,
@@ -99,9 +98,9 @@ energy cutoff of 50 Ry with a $k$-point grid of 8 $\times$ 8 $\times$ 1.
       Al 0.0 0.5 0.416666666667
     K_POINTS automatic
       8 8 1   0 0 0
-    ```
 
    There are several important things to note about this input file:
+
    * The `calculation` parameter has been set to `relax`. This allows the atoms
      to move, but fixes the cell shape.
    * The `ibrav` tag has been set to 6, which is a tetragonal cell. To perform
@@ -117,6 +116,19 @@ energy cutoff of 50 Ry with a $k$-point grid of 8 $\times$ 8 $\times$ 1.
      fractional coordinate depends on **both your slab size as well as your
      vacuum size**! Also, we have fixed all atoms except for the top and
      bottom two atomic layers (denoted by the `0 0 0` after the coordinates.
+
+   You can write the output to a file by giving it the --outfile option:
+
+   ```bash
+   python fcc_surface_generator.py --a 7.65 --nslab 3 --nvac 3 --outfile Al100_3_3.pw.in
+   ```
+
+   To do this question, vary nslab and nvac and look at how the energies
+   change with nslab and nvac. Start by keeping nslab = 2 and vary nvac
+   between 1 and 4. Get a value of nvac that gives a reasonable convergence of
+   surface energies.
+
+   Using the converged value of nvac, vary your nslab between 2 and 4.
 
 # Q2: The (111) surface of Al
 

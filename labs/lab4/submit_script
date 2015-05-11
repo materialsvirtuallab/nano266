@@ -1,0 +1,25 @@
+#!/bin/bash
+#SBATCH --job-name="job"
+#SBATCH --output="job.%j.%N.out"
+#SBATCH --partition=compute
+
+# We are doing relatively small jobs. Let's just use a single processor on 
+# one node.
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+
+# This tells the queuing system that we want a walltime of 1 hour. For this lab,
+# this should be more than sufficient.
+#SBATCH -t 01:00:00
+
+# This sets the account, which is our NANO266 account
+#SBATCH -A csd452          
+
+# When running things in the queue, you should add a load in order to ensure
+# that the modules you need are available.
+module load python qe
+
+# We first switch to our relevant directory, and then run the command.
+# Make modifications to the next two lines as you wish.
+cd $HOME/nano266/labs/lab4
+pw.x -inp Al100_3_3.pw.in > Al100_3_3.out
