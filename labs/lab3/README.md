@@ -144,10 +144,12 @@ doi:10.1103/PhysRevB.57.6427.
    5 meV / atom. Start with a relatively small grid, e.g., 4 $\times$ 4 $\times 
    4. For CuAu, you should use the L10 phase, which is a body-centered 
    tetragonal (bct) with two atoms in the unit cell, and lattice 
-   parameters are $a = b \ne c$. A sample file is provided. You may
+   parameters are $a = b \ne c$. A sample file is provided. Please note that starting
+   configuration is a simple cubic structure with face-centered and corner lattice points
+   occupied such that there are alternate layers of Cu and Au. You may
    search the internet for the experimental lattice parameters and use those to 
-   set your initial guesses for $a$ = celldm(1) and $c/a$ = celldm(3). You 
-   should use good guesses to minimize the computational time.
+   set your initial guesses for $a$ = celldm(1) and $c/a$ = celldm(3) (in case you start with a
+   ibrav = 7, tetragonal structure). You should use good guesses to minimize the computational time.
 2. Calculate the formation energy of $\mbox{Cu}_{1-x}\mbox{Au}_x$ :
    $$\Delta H_f (\mbox{Cu}_{1-x}\mbox{Au}_x) = E(\mbox{Cu}_{1-x}\mbox{Au}_x) − (1 - x) E(\mbox{Cu}) − x E(\mbox{Au})$$
    where E(Cu) and E(Au) are the total energies for Cu and Au in their fcc
