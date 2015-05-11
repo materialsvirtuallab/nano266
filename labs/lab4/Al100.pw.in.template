@@ -1,7 +1,7 @@
  &CONTROL
   calculation = 'relax' ,
   outdir = './tmp' ,
-  prefix = 'Al_100',
+  prefix = 'Al_100_{nslab}_{nvac}',
   pseudo_dir = './' ,
   tprnfor = .True.,
   tstress = .True.,

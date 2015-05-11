@@ -32,8 +32,8 @@ def generate_slab(args):
     atompos = "\n".join(atompos)
     with open("Al100.pw.in.template") as f:
         contents = f.read()
-    contents = contents.format(alat=a, calat=nlayers, atompos=atompos,
-        nat=len(coords))
+    contents = contents.format(alat=a, calat=nlayers, nslab=nslab, nvac=nvac,
+        atompos=atompos, nat=len(coords))
     if args.outfile:
         with open(args.outfile, "wt") as f:
             f.write(contents)
