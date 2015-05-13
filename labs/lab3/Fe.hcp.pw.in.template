@@ -31,5 +31,5 @@ ATOMIC_POSITIONS crystal
    Fe      0.333333333333    0.666666666667    0.25
    Fe      0.666666666667    0.333333333333    0.75    
 K_POINTS automatic 
-  {k1} {k1} {k3}  0 0 0 
+  {k1} {k1} {k3}  1 1 1
 
