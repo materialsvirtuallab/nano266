@@ -78,7 +78,7 @@ energies to within 1 meV.
    that the $k$-point should be proportional to the reciprocal lattice vector
    length.
 3. Calculate and compare the total energy for the BCC structure in the
-   ferromagnetic, anti-ferromagnetic, and nonmagnetic states. (10 points)
+   ferromagnetic, and anti-ferromagnetic states. (10 points)
 
 Note that you will need to read the PWSCF manual to figure out how to set
 various options to do this work. At this stage of the course, we will not
