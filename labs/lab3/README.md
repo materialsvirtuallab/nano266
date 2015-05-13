@@ -70,7 +70,7 @@ energies to within 1 meV.
    (i.e., $a$ for bcc and $a$ and $c$ for hcp). In the case of hcp, celldm(3),
    which is the c/a ratio, needs to be provided. Try the following values of
    c/a ratio: [1.72,1.73,1.74] and for each of these ratios, alter the $a_{o}$
-   parameter to find the equilibrium sructure in hcp phase.
+   parameter to find the equilibrium sructure in hcp phase. Start with an $a_{o}$ value of 4.8.
 2. Varying the volume of the cell, calculate the pressure at which the hcp structure becomes more
    favorable than the bcc one. Note that it is important when comparing
    energies that the $k$-point samplings for both systems are comparable and
