@@ -29,7 +29,7 @@
   cell_dynamics = 'bfgs',
  /
 ATOMIC_SPECIES
-   Cu   63.546  Cu.pbe-kjpaw.UPF
+   Cu   63.546  Cu.pbe-dn-rrkjus_psl.0.2.UPF
 ATOMIC_POSITIONS crystal 
    Cu      0.000000000    0.000000000    0.000000000    
 K_POINTS automatic 
