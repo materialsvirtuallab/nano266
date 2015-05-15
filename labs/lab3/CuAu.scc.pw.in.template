@@ -9,7 +9,7 @@
  &SYSTEM
   ibrav = 1,
   celldm(1) = {alat},
-  nat = 2,
+  nat = 4,
   ntyp = 2,
   ecutwfc = 50,
   ecutrho = 500,
