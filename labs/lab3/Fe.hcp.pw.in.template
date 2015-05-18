@@ -12,8 +12,8 @@
   celldm(3) = {calat},
   nat = 2,
   ntyp = 1,
-  ecutwfc = 50,
-  ecutrho = 250,
+  ecutwfc = 40,
+  ecutrho = 400,
   nspin = 2,
   starting_magnetization(1) = 0.7,
   occupations = 'smearing',
@@ -26,7 +26,7 @@
   mixing_beta = 0.7,
  /
 ATOMIC_SPECIES
-   Fe   55.85  Fe.pbe-spn-kjpaw_psl.0.2.1.UPF
+   Fe   55.85  Fe.pbe-nd-rrkjus.UPF
 ATOMIC_POSITIONS crystal 
    Fe      0.333333333333    0.666666666667    0.25
    Fe      0.666666666667    0.333333333333    0.75    
