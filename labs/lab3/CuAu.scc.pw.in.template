@@ -7,10 +7,9 @@
   tstress = .True.,
  /
  &SYSTEM
-  ibrav = 7,
+  ibrav = 1,
   celldm(1) = {alat},
-  celldm(3)= {calat},
-  nat = 2,
+  nat = 4,
   ntyp = 2,
   ecutwfc = 50,
   ecutrho = 500,
@@ -28,13 +27,17 @@
  /
  &CELL
   cell_dynamics = 'bfgs',
+  cell_factor = 2.0,
+  press = 0.0,
  /
 ATOMIC_SPECIES
    Au   196.97  Au.pbe-dn-rrkjus_psl.0.1.UPF
    Cu   63.546  Cu.pbe-dn-rrkjus_psl.0.2.UPF 
 ATOMIC_POSITIONS crystal 
-   Au      0.0    0.0    0.0 
-   Cu      0.5    0.0    0.5  
+   Cu      0.0    0.0    0.0 
+   Cu      0.5    0.0    0.5
+   Au      0.0    0.5    0.5
+   Au      0.5    0.5    0.0
 K_POINTS automatic 
   {k1} {k1} {k3}   0 0 0 
 

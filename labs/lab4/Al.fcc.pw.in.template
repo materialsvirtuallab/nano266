@@ -1,7 +1,7 @@
  &CONTROL
-  calculation = 'vc-relax' ,
+  calculation = 'scf' ,
   outdir = './tmp' ,
-  prefix = 'Cu_fcc',
+  prefix = 'Al',
   pseudo_dir = './' ,
   tprnfor = .True.,
   tstress = .True.,
@@ -22,16 +22,10 @@
   conv_thr = 1.D-8,
   mixing_beta = 0.7,
  /
- &IONS
-  ion_dynamics = 'bfgs',
- /
- &CELL
-  cell_dynamics = 'bfgs',
- /
 ATOMIC_SPECIES
-   Cu   63.546  Cu.pbe-dn-rrkjus_psl.0.2.UPF
+   Al   26.98  Al.pbe-n-kjpaw_psl.0.1.UPF
 ATOMIC_POSITIONS crystal 
-   Cu      0.000000000    0.000000000    0.000000000    
+   Al   0.0   0.0    0.0    
 K_POINTS automatic 
-  {k} {k} {k}   0 0 0 
+  {k} {k} {k} 0 0 0 
 
