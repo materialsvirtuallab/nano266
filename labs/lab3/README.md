@@ -58,7 +58,7 @@ scancel <jobid>
 
 In this problem, you will look at the bcc to hcp transition in iron. We will be
 using the PBE GGA functional that we used in the earlier lab. Use an energy
-cutoff of 50 Ry with a charge density cutoff of 250 Ry. You will need to
+cutoff of 40 Ry with a charge density cutoff of 400 Ry. You will need to
 determine an appropriate $k$-point mesh for both the bcc and hcp structures.
 The energy differences are very small; choose parameters to converge your
 energies to within 1 meV.
