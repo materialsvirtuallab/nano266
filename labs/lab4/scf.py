@@ -15,7 +15,7 @@ import shutil
 import numpy as np
 
 # Load the Si.pw.in.template file as a template.
-with open("Al.fcc.pw.in.template") as f:
+with open("Al.100.bulk.pw.in.template") as f:
     template = f.read()
 
 # Set default values for various parameters
@@ -29,7 +29,7 @@ for alat in np.arange(7.60, 7.70, 0.01):
     s = template.format(k=k, alat=alat)
 
     # Let's define an easy jobname.
-    jobname = "Al_fcc_%s_%s" % (k, alat)
+    jobname = "Al_100_bulk_%s_%s" % (k, alat)
 
     # Write the actual input file for PWSCF.
     with open("%s.pw.in" % jobname, "w") as f:

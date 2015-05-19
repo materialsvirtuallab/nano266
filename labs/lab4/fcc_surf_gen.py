@@ -1,23 +1,39 @@
 from __future__ import division
 import numpy as np
+import math
 import argparse
 
-fcc_coords = np.array(
+
+coords100 = np.array(
     [[0.0, 0.0, 0.0],
      [0.5, 0.5, 0.0],
      [0.5, 0.0, 0.5],
      [0.0, 0.5, 0.5]]
 )
 
+
+coords111 = np.array(
+    [[0.0, 0.0, 0.0],
+     [2/3, 1/3, 2/3],
+     [1/3, 2/3, 1/3]]
+)
+
+
 def generate_slab(args):
     a = args.a
     nslab = args.nslab
     nvac = args.nvac
+    k = args.k
     nlayers = nslab + nvac
 
-    pos = fcc_coords.copy()
+    if args.miller == "100":
+        pos = coords100.copy()
+        calat = nlayers
+    else:
+        pos = coords111.copy()
+        calat = nlayers * math.sqrt(6)
 
-    pos[:, 2] = pos[:, 2] * 1.0 / nlayers
+    pos[:, 2] = pos[:, 2] / nlayers
 
     coords = []
     for i in range(nslab):
@@ -25,15 +41,15 @@ def generate_slab(args):
 
     atompos = []
     for i, c in enumerate(coords):
-        if i not in range(4, len(coords) - 4):
-            atompos.append("  Al %s %s %s" % tuple(c))
-        else:
-            atompos.append("  Al %s %s %s 0 0 0" % tuple(c))
+        atompos.append("  Al %s %s %s" % tuple(c))
+
     atompos = "\n".join(atompos)
-    with open("Al100.pw.in.template") as f:
+    conv_thr = 1e-6 * len(coords)
+    with open("Al.%s.surf.pw.in.template" % args.miller) as f:
         contents = f.read()
-    contents = contents.format(alat=a, calat=nlayers, nslab=nslab, nvac=nvac,
-        atompos=atompos, nat=len(coords))
+    contents = contents.format(alat=a, calat=calat, nslab=nslab, nvac=nvac,
+            k=k, atompos=atompos, nat=len(coords), conv_thr=conv_thr)
+
     if args.outfile:
         with open(args.outfile, "wt") as f:
             f.write(contents)
@@ -47,6 +63,13 @@ if __name__ == "__main__":
     parser.add_argument(
         '-a', '--a', dest='a', type=float, required=True,
         help='a lattice parameter for fcc lattice in Bohr.')
+    parser.add_argument(
+        '-m', '--miller', dest='miller', type=str, required=True,
+        choices=["100", "111"],
+        help='Miller index for surface. Only 100 or 111 supported now.')
+    parser.add_argument(
+        '-k', '--k', dest='k', type=int, required=True,
+        help='k points for a b direction.')
     parser.add_argument(
         '-s', '--nslab', dest='nslab', type=int, required=True,
         help='Number of layers for slab. Must be integer multiples of conventional fcc lattice.')

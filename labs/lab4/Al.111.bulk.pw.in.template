@@ -1,16 +1,16 @@
  &CONTROL
-  calculation = 'relax' ,
+  calculation = 'scf' ,
   outdir = './tmp' ,
-  prefix = 'Al_100_{nslab}_{nvac}',
+  prefix = 'Al111_bulk',
   pseudo_dir = './' ,
   tprnfor = .True.,
   tstress = .True.,
  /
  &SYSTEM
-  ibrav = 6,
+  ibrav = 4,
   celldm(1) = {alat},
-  celldm(3) = {calat},
-  nat = {nat},
+  celldm(3) = 2.44949,
+  nat = 3,
   ntyp = 1,
   ecutwfc = 50,
   ecutrho = 250,
@@ -20,15 +20,14 @@
  /
  &ELECTRONS
   diagonalization = 'david',
-  conv_thr = 1.D-6,
+  conv_thr = 1.D-8,
   mixing_beta = 0.7,
  /
- &IONS
-  ion_dynamics = 'bfgs',
- /
 ATOMIC_SPECIES
-  Al   26.98  Al.pbe-n-kjpaw_psl.0.1.UPF
+   Al   26.98  Al.pbe-n-rrkjus_psl.0.1.UPF
 ATOMIC_POSITIONS crystal 
-{atompos}
-K_POINTS automatic 
-  8 8 1   0 0 0
+   Al   0.0   0.0    0.0
+   Al 0.333333333333 0.333333333333 0.666666666667 
+   Al 0.666666666667 0.666666666667 0.333333333333
+K_POINTS Automatic
+  {k1} {k1} {k3} 1 1 1
