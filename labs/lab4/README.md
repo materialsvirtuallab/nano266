@@ -134,11 +134,98 @@ energy cutoff of 50 Ry with a $k$-point grid of 8 $\times$ 8 $\times$ 1.
    determine the value of nslab that converges the surface energies to
    0.01 Jm $^{-2}$. Do not exceed `nslab = 6` for this exercise.
 
-   Report your final surface energy in Jm $^{-2}$.
+   Report your final surface energy in Jm $^{-2}$. Also discuss how the atoms
+   at the surface has relaxed and comment on why.
 
 # Q2: The (111) surface of Al
 
-We will now explore the (111) surface of Al.
+We will now explore the (111) surface of Al. For this, we need to first get
+our slab structure. Unlike the (100) surface that is simply along the cubic
+crystallographic axes, getting the (100) surface involves some work.
 
+We will now show you how you can use VESTA (http://jp-minerals.org/vesta/en/)
+to generate any surface structure. First download and install VESTA for your
+platform. Here is the step by step guide to creating the Al (111) surface.
+
+* Step 1: Open the `Al.cif` in VESTA. This is the standard `fcc` conventional
+  unit cell of Al.
+* Step 2: Let us now first insert the (111) lattice plane into the crystal for
+  easier visualization. Go to `Edit->Lattice Planes`. Click new, then type in
+  (111) for your Miller indices and set your `d` to 1. Your dialog box should
+  look something like this:
+
+   ![VESTA Insert Lattice Plane](InsertLatticePlane.png)
+
+* Step 3: Click `Ok`. You will see that a lattice plane has been drawn in your
+  crystal. Go to `Edit->Edit Data->Unit Cell`. Click `Remove symmetry` and
+  then hit `Apply`. We need to break symmetry before we can create the slab.
+  Then go to the `Structure Parameters` tab and assign different labels for
+  each of your atoms. This makes it easier to identify the atoms later.
+  Hit `Apply` again.
+* Step 4: The next step is to generate a larger unit cell as we are going to
+  ``cut'' the crystal in a different orientation that goes beyond the limits
+  of the unit cell. Go back to the `Unit Cell` tab. Click on `Options` and
+  then enter 2s for the diagonal elements of the rotation matrix. That
+  generates a $$2 \times 2 \times 2$$ supercell of your crystal. Click `Ok`
+  for all the warnings. Click `Ok` until you close all dialog boxes and see a
+  larger version of the Al cell.
+* Step 5: Click on `Objects` and check the `L` (label) for the topmost Al. All
+  the Al atoms should now be labelled.
+
+   ![VESTA Labeled supercell](LabeledAl.png)
+
+* Step 6: We are going to now redefine our lattice vectors so that our
+  $\mathbf{a}$ and $\mathbf{b}$ lattice vectors are within the (111) plane
+  and our $\mathbf{c}$ lattice vector is non-parallel (ideally normal to the
+  plane). To do this, we can observe that we can define atom `Al2` in the
+  figure above to be the origin, and set our new $\mathbf{a}'$ to be the
+  vector connecting `Al2` and `Al1`, and $\mathbf{b}'$ to be the vector
+  connecting `Al2` and `Al4`. Using the VESTA atom picker, we can determine
+  that the crystal coordinates of the atoms to be:
+
+   \\[
+   \begin{aligned}
+   \mathbf{r_{Al4}} &= (0.25, 0.25, 0)\\
+   \mathbf{r_{Al2}} &= (0, 0.25, 0.25)\\
+   \mathbf{r_{Al1}} &= (0, 0, 0.5)
+   \end{aligned}
+   \\]
+
+* Step 7: Go to `Edit->Unit Cell` again, and click `Options`. We then need to
+  enter our rotation matrix and origin shift to the values we have determined
+  in the previous step. Note the way the lattice vectors are transformed based
+  on the documentation. For the last column, we set it  (0.5, 0.5, 0.5), since
+  we have already doubled our cell in all directions (see figure below). Click
+  `Ok`. Then go to the `Structure Parameters` tab. You will find that there
+  are a lot of duplicate atoms due to the mapping of supercell atoms onto each
+  other. Just click `Remove duplicate atoms` and you should be left with three
+  unique atoms.
+
+   ![VESTA Transformation matrix](Transform.png)
+
+* Step 8: Click `Ok` until you end up in the crystal. You will find that you
+  now have a hexagonal cell and the (111) lattice plane is now parallel to your
+  $\mathbf{a}$ and $\mathbf{b}$ lattice vectors. Export the atom position to a
+  file using `File->Export Data`. Choose the VASP POSCAR format, even though
+  we will not be using VASP for our calculations.
+
+Using the coordinates, you will need to modify the `fcc_surf_gen.py` to work
+for the (111) lattice plane. Look at `Al.111.bulk.pw.in.template` and
+`Al.111.surf.pw.in.template`. Note that we are now using a hexagonal Bravais
+lattice setting.
+
+Repeat your calculations of surface energy in Q1 for the (111) lattice plane.
+You do not need to search for the optimal lattice parameters again. You need to
+work out the appropriate hexagonal lattice parameters based on your optimal
+cubic lattice parameters. Use a $15 \times 15 \times 1$ $k$-point grid for your
+slab calculations.
+
+Report your convergence and final (111) surface energy for Al in Jm $^{-2}$.
+Also discuss how the atom at the surface has relaxed and comment on why the
+relaxtion occurs the way it does.
+
+Comment on the difference in surface energy between the (100) and (111)
+surface. Which one is lower in energy? Can you provide a likely physical reason
+for the relative stabilities of the surfaces?
 
 # Q3: Adsorption of H on Al

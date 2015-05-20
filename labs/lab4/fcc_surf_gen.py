@@ -12,13 +12,6 @@ coords100 = np.array(
 )
 
 
-coords111 = np.array(
-    [[0.0, 0.0, 0.0],
-     [2/3, 1/3, 2/3],
-     [1/3, 2/3, 1/3]]
-)
-
-
 def generate_slab(args):
     a = args.a
     nslab = args.nslab
