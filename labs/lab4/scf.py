@@ -19,7 +19,7 @@ with open("Al.100.bulk.pw.in.template") as f:
     template = f.read()
 
 # Set default values for various parameters
-k = 8 # k-point grid of 8x8x8
+k = 16 # k-point grid of 8x8x8
 alat = 7.65 # The lattice parameter for the cell in Bohr.
 
 # Loop through different k-points.
@@ -29,14 +29,14 @@ for alat in np.arange(7.60, 7.70, 0.01):
     s = template.format(k=k, alat=alat)
 
     # Let's define an easy jobname.
-    jobname = "Al_100_bulk_%s_%s" % (k, alat)
+    jobname = "Al_100_bulk_%s" % (alat)
 
     # Write the actual input file for PWSCF.
     with open("%s.pw.in" % jobname, "w") as f:
         f.write(s)
 
     #Print some status messages.
-    print("Running with alat = %s, k = %s..." % (alat, k))
+    print("Running with alat = %s..." % (alat))
     # Run PWSCF. Modify the pw.x command accordingly if needed.
     os.system("pw.x -inp {jobname}.pw.in > {jobname}.out".format(jobname=jobname))
 
