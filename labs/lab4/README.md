@@ -217,15 +217,19 @@ lattice setting.
 Repeat your calculations of surface energy in Q1 for the (111) lattice plane.
 You do not need to search for the optimal lattice parameters again. You need to
 work out the appropriate hexagonal lattice parameters based on your optimal
-cubic lattice parameters. Use a $15 \times 15 \times 1$ $k$-point grid for your
-slab calculations.
+cubic lattice parameters. Use a $16 \times 16 \times 1$ $k$-point grid for your
+slab calculations. Also, you may perform your calculations using 2 vacuum
+layers and 3 slab layers. There is no need to redo the convergence.
 
-Report your convergence and final (111) surface energy for Al in Jm $^{-2}$.
-Also discuss how the atom at the surface has relaxed and comment on why the
-relaxtion occurs the way it does.
+Report your final (111) surface energy for Al in Jm $^{-2}$. Discuss how the
+atom at the surface has relaxed and comment on why the relaxtion occurs the
+way it does.
 
 Comment on the difference in surface energy between the (100) and (111)
 surface. Which one is lower in energy? Can you provide a likely physical reason
 for the relative stabilities of the surfaces?
 
 # Q3: Adsorption of H on Al
+
+In the final question, we will investigate the adsorption of oxygen on Al
+surfaces.

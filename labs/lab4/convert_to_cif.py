@@ -10,6 +10,8 @@ Bohr2Ang = 0.52917721092
 read = False
 atompos = []
 for l in lines:
+    if re.search("bravais-lattice index\s+=\s+(\d+)", l):
+        ibrav = int(l.split("=")[-1])
     if re.search("celldm\(1\)=\s+([\d\.]+)\s", l):
         m = re.search("celldm\(1\)=\s+([\d\.]+)\s", l)
         a = float(m.group(1)) * Bohr2Ang
@@ -37,7 +39,7 @@ _cell_length_b   {a}
 _cell_length_c   {c}
 _cell_angle_alpha   90.
 _cell_angle_beta   90.
-_cell_angle_gamma   90.
+_cell_angle_gamma   {gamma}
 _symmetry_Int_Tables_number   1
 _chemical_formula_structural   Al
 _chemical_formula_sum   Al{nat}
@@ -57,7 +59,7 @@ _atom_site_fract_z
 _atom_site_occupancy
 """
 
-cif = cif.format(a=a, c=c, nat=len(atompos), vol=a*a*c)
+cif = cif.format(a=a, c=c, nat=len(atompos), vol=a*a*c, gamma=120 if ibrav == 4 else 90)
 
 for i, s in enumerate(atompos):
     toks = s.split()
