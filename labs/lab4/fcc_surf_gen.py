@@ -62,7 +62,7 @@ if __name__ == "__main__":
         description='''Simple tool for generating fcc surface structures for PWSCF calculations.''')
     parser.add_argument(
         '-a', '--a', dest='a', type=float, required=True,
-        help='a lattice parameter for fcc lattice in Bohr.')
+        help='a lattice parameter for cell in Bohr.')
     parser.add_argument(
         '-m', '--miller', dest='miller', type=str, required=True,
         choices=["100", "111"],

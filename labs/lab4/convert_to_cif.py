@@ -14,6 +14,7 @@ for l in lines:
         m = re.search("celldm\(1\)=\s+([\d\.]+)\s", l)
         a = float(m.group(1)) * Bohr2Ang
         m = re.search("celldm\(3\)=\s+([\d\.]+)\s", l)
+        c = float(m.group(1)) or 1
         c = float(m.group(1)) * a
     if read and l.strip() != "" and "End" not in l:
         atompos.append(l)
@@ -23,8 +24,13 @@ for l in lines:
     else:
         read = False
 
+if len(atompos) == 0:
+    print("No relaxed atomic positions found! ")
+    print("This script can only be used on a relaxation run, not SCF!")
+    sys.exit(-1)
+
 cif = """
-data_Cu
+data_Al
 _symmetry_space_group_name_H-M   'P 1'
 _cell_length_a   {a}
 _cell_length_b   {a}
@@ -33,8 +39,8 @@ _cell_angle_alpha   90.
 _cell_angle_beta   90.
 _cell_angle_gamma   90.
 _symmetry_Int_Tables_number   1
-_chemical_formula_structural   Cu
-_chemical_formula_sum   Cu{nat}
+_chemical_formula_structural   Al
+_chemical_formula_sum   Al{nat}
 _cell_volume   {vol}
 _cell_formula_units_Z   {nat}
 loop_

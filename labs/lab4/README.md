@@ -130,12 +130,15 @@ energy cutoff of 50 Ry with a $k$-point grid of 8 $\times$ 8 $\times$ 1.
    where $E_{slab}$ is the energy of the slab, $E_{bulk}$ is the energy per
    atom of bulk Al, and N is the number of atoms in the slab.
 
-   Using the converged value of nvac, vary your nslab between 1 and 4. Again,
+   Using the converged value of nvac, vary your nslab between 1 and 6. Again,
    determine the value of nslab that converges the surface energies to
-   0.01 Jm $^{-2}$.
+   0.01 Jm $^{-2}$. Do not exceed `nslab = 6` for this exercise.
 
    Report your final surface energy in Jm $^{-2}$.
 
 # Q2: The (111) surface of Al
+
+We will now explore the (111) surface of Al.
+
 
 # Q3: Adsorption of H on Al
