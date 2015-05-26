@@ -49,24 +49,25 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
    more dense grid near the minimum energy. Record down the lattice parameter
    in Bohr and energy in Ry.
 2. Using the lattice parameter you obtained in part 1, perform a calculation of
-   the Al (100) surface. A sample `Al100.pw.in.template` file has been
-   provided to you, as well as a `fcc_surf_gen.py`. Start by typing:
+   the Al (100) surface. A sample `Al.100.surf.pw.in.template` file has been
+   provided to you, as well as a `fcc_surf_gen.py` (type `fcc_surf_gen.py -h` 
+   for help). Start by typing:
 
-     `python fcc_surf_gen.py --a 7.65 --nslab 3 --nvac 3`
+     `python fcc_surf_gen.py -a 7.65 -m "100" -k 16 -s 3 -v 3`
 
    The output should be something like the following:
 
      &CONTROL
       calculation = 'relax' ,
       outdir = './tmp' ,
-      prefix = 'Al_100',
+      prefix = 'Al_100_3_3',
       pseudo_dir = './' ,
       tprnfor = .True.,
       tstress = .True.,
      /
      &SYSTEM
       ibrav = 6,
-      celldm(1) = 6.92,
+      celldm(1) = 7.65,
       celldm(3) = 6,
       nat = 12,
       ntyp = 1,
@@ -79,22 +80,23 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
      &ELECTRONS
       diagonalization = 'david',
       conv_thr = 1.D-6,
-      mixing_beta = 0.7,
+      mixing_beta = 0.3,
+      mixing_mode = 'local-TF'
      /
      &IONS
       ion_dynamics = 'bfgs',
      /
     ATOMIC_SPECIES
-      Al   26.98  Al.pbe-n-kjpaw_psl.0.1.UPF
+      Al   26.98  Al.pbe-n-van.UPF
     ATOMIC_POSITIONS crystal
       Al 0.0 0.0 0.0
       Al 0.5 0.5 0.0
       Al 0.5 0.0 0.0833333333333
       Al 0.0 0.5 0.0833333333333
-      Al 0.0 0.0 0.166666666667 0 0 0
-      Al 0.5 0.5 0.166666666667 0 0 0
-      Al 0.5 0.0 0.25 0 0 0
-      Al 0.0 0.5 0.25 0 0 0
+      Al 0.0 0.0 0.166666666667
+      Al 0.5 0.5 0.166666666667
+      Al 0.5 0.0 0.25
+      Al 0.0 0.5 0.25
       Al 0.0 0.0 0.333333333333
       Al 0.5 0.5 0.333333333333
       Al 0.5 0.0 0.416666666667
