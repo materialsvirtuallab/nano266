@@ -53,7 +53,7 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
    provided to you, as well as a `fcc_surf_gen.py` (type `fcc_surf_gen.py -h` 
    for help). Start by typing:
 
-     `python fcc_surf_gen.py -a 7.65 -m "100" -k 16 -s 3 -v 3`
+     `python fcc_surf_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3`
 
    The output should be something like the following:
 
@@ -124,7 +124,7 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
 
    You can write the output to a file by giving it the `--outfile` option:
 
-     python fcc_surf_gen.py --a 7.65 --nslab 3 --nvac 3 --outfile Al100_3_3.pw.in
+     python fcc_surf_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3 --outfile Al100_3_3.pw.in
 
    To do this question, vary nslab and nvac and look at how the energies
    change with nslab and nvac. Start by keeping nslab = 2 and vary nvac
