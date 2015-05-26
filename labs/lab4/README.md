@@ -36,7 +36,7 @@ CPU time if you are not careful.
 
 We will first start by calculating the energy of the (100) surface in Al. You
 need to perform a convergence with respect to both slab and vaAlum size. Use an
-energy cutoff of 50 Ry with a $k$-point grid of 8 $\times$ 8 $\times$ 1.
+energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
 
 1. Start by first finding the equilibrium structure of fcc Al. You have already
    done this in lab 3, but we are going to do this again using the SCF method,
@@ -70,8 +70,8 @@ energy cutoff of 50 Ry with a $k$-point grid of 8 $\times$ 8 $\times$ 1.
       celldm(3) = 6,
       nat = 12,
       ntyp = 1,
-      ecutwfc = 50,
-      ecutrho = 250,
+      ecutwfc = 30,
+      ecutrho = 150,
       occupations = 'smearing',
       smearing = 'cold',
       degauss = 0.025,
@@ -100,7 +100,7 @@ energy cutoff of 50 Ry with a $k$-point grid of 8 $\times$ 8 $\times$ 1.
       Al 0.5 0.0 0.416666666667
       Al 0.0 0.5 0.416666666667
     K_POINTS automatic
-      8 8 1   0 0 0
+      16 16 1   0 0 0
 
    There are several important things to note about this input file:
 
