@@ -148,7 +148,7 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
 
 We will now explore the (111) surface of Al. For this, we need to first get
 our slab structure. Unlike the (100) surface that is simply along the cubic
-crystallographic axes, getting the (100) surface involves some work.
+crystallographic axes, getting the (111) surface involves some work.
 
 The first thing to note is that the fcc structure is in fact a stacking of
 hexagonally close-packed atoms along the [111] direction.
