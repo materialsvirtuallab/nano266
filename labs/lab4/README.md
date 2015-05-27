@@ -175,7 +175,7 @@ platform. Here is the step by step guide to creating the Al (111) surface.
 * Step 4: The next step is to generate a larger unit cell as we are going to
   ``cut'' the crystal in a different orientation that goes beyond the limits
   of the unit cell. Go back to the `Unit Cell` tab. Click on `Options` and
-  then enter 2s for the diagonal elements of the rotation matrix. That
+  then enter 2 for all the diagonal elements of the rotation matrix. That
   generates a $$2 \times 2 \times 2$$ supercell of your crystal. Click `Ok`
   for all the warnings. Click `Ok` until you close all dialog boxes and see a
   larger version of the Al cell.
