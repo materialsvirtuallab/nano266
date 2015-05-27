@@ -43,14 +43,14 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
    i.e., by plotting the equation of state of energy versus the lattice
    parameter. Converge your lattice parameter to within 0.001 angstroms. For
    reference, the experimental lattice parameter is 4.05 angstroms. A template
-   file `Al.fcc.pw.in.template` has already been provided. Please use the
+   file `Al.100.bulk.pw.in.template` has already been provided. Please use the
    `scf.py` script to perform these calculations. As usual, please scan with
    a fairly coarse grid (e.g., 0.01 increments) before performing scans with a
    more dense grid near the minimum energy. Record down the lattice parameter
    in Bohr and energy in Ry.
 2. Using the lattice parameter you obtained in part 1, perform a calculation of
    the Al (100) surface. A sample `Al.100.surf.pw.in.template` file has been
-   provided to you, as well as a `fcc_surf_gen.py` (type `fcc_surf_gen.py -h` 
+   provided to you, as well as a `fcc_surf_gen.py` (type `fcc_surf_gen.py -h`
    for help). Start by typing:
 
      `python fcc_surf_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3`
