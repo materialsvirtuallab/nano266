@@ -119,8 +119,7 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
      group of four atoms are related to each other by a translation in the $c$
      direction. It is absolutely critical that you understand that the $c$
      fractional coordinate depends on **both your slab size as well as your
-     vacuum size**! Also, we have fixed all atoms except for the top and
-     bottom two atomic layers (denoted by the `0 0 0` after the coordinates.
+     vacuum size**! 
 
    You can write the output to a file by giving it the `--outfile` option:
 
