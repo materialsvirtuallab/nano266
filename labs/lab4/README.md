@@ -262,8 +262,11 @@ For the slab + H calculation, you will need to investigate the different
 absorption sites on the Al surface. For the (111) hexagonal surface,
 there are three high symmetry sites - the ``on top'' site above an Al
 atom, the ``bridge'' site between two nearest neighbor Al atoms, and the
-``hollow'' site between three nearest neighbor Al atoms. You will need to
-create simulation cells to model each of them. Note that you will need to
+``hollow'' site between three nearest neighbor Al atoms. There are 2 such hollow 
+sites to be considered. The stacking in the <111> direction is given by the 
+A-B-C-A-B-C sequence. Assuming the surface ends with a 'C' plane, the hollow-site 
+will either correspond to a 'A'-plane hollow site or 'B' pane hollow site. 
+You will need to create simulation cells to model each of them. Note that you will need to
 extend your unit cell in the **a** and **b** directions as well to ensure that
 H atoms in neighboring periodic images are not too close to each other. Use a
 reasonable sized cell, and scale your $k$-point grid accordingly. Because we
