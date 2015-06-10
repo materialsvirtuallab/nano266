@@ -119,7 +119,7 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
      group of four atoms are related to each other by a translation in the $c$
      direction. It is absolutely critical that you understand that the $c$
      fractional coordinate depends on **both your slab size as well as your
-     vacuum size**! 
+     vacuum size**!
 
    You can write the output to a file by giving it the `--outfile` option:
 
@@ -143,7 +143,7 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
    Report your final surface energy in Jm $^{-2}$. Also discuss how the atoms
    at the surface has relaxed and comment on why.
 
-# Q2: The (111) surface of Al
+# Q2 (30 points): The (111) surface of Al
 
 We will now explore the (111) surface of Al. For this, we need to first get
 our slab structure. Unlike the (100) surface that is simply along the cubic
@@ -238,7 +238,7 @@ Comment on the difference in surface energy between the (100) and (111)
 surface. Which one is lower in energy? Can you provide a likely physical reason
 for the relative stabilities of the surfaces?
 
-# Q3: Binding energy of H atom on Al
+# Q3 (50 points): Binding energy of H atom on Al
 
 In the final question, we will investigate the adsorption of a hydrogen atom
 on the Al (111) surface. As this is a final question of the course, you should
@@ -262,10 +262,10 @@ For the slab + H calculation, you will need to investigate the different
 absorption sites on the Al surface. For the (111) hexagonal surface,
 there are three high symmetry sites - the ``on top'' site above an Al
 atom, the ``bridge'' site between two nearest neighbor Al atoms, and the
-``hollow'' site between three nearest neighbor Al atoms. There are 2 such hollow 
-sites to be considered. The stacking in the <111> direction is given by the 
-A-B-C-A-B-C sequence. Assuming the surface ends with a 'C' plane, the hollow-site 
-will either correspond to a 'A'-plane hollow site or 'B' pane hollow site. 
+``hollow'' site between three nearest neighbor Al atoms. There are 2 such hollow
+sites to be considered. The stacking in the <111> direction is given by the
+A-B-C-A-B-C sequence. Assuming the surface ends with a 'C' plane, the hollow-site
+will either correspond to a 'A'-plane hollow site or 'B' pane hollow site.
 You will need to create simulation cells to model each of them. Note that you will need to
 extend your unit cell in the **a** and **b** directions as well to ensure that
 H atoms in neighboring periodic images are not too close to each other. Use a
