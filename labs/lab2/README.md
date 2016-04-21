@@ -162,7 +162,7 @@ Calculate the bulk modulus of silicon at the equilibrium lattice constant using 
 
 \\[ K = V \frac{\partial^2 E}{\partial V^2} \\]
 
-Think about how you can obtain \\[K\\] from the \\[E\\] vs \\[a\\] plot. Be careful that
+Think about how you can obtain *K* from the *E* vs *a* plot. Be careful that
 PWSCF reports energies per *primitive cell*, and you will need to make sure
 you do appropriate unit conversions and scaling.
 
