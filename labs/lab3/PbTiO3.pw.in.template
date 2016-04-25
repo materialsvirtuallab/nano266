@@ -25,6 +25,9 @@
  &IONS
   ion_dynamics = 'bfgs',
  /
+ &CELL
+  cell_dynamics = 'bfgs',
+ /
 ATOMIC_SPECIES
    Pb   207.2  Pb.pbe-dn-rrkjus_psl.0.2.2.UPF
    Ti   47.87  Ti.pbe-sp-van_ak.UPF
