@@ -109,7 +109,7 @@ For this question, it is important that you note several differences in the
 Please answer the following questions.
 
 1. Calculate and plot the energy of cubic $\mbox{PbTiO}_3$ as a function of
-   lattice parameter. Use a 4 $\times$ 4 $\times$ 4 $k$-point mesh with a
+   lattice parameter. Use a 6 $\times$ 6 $\times$ 6 $k$-point mesh with a
    1, 1, 1 offset. Sample lattice parameters with a sufficiently fine grid to
    get a reliable value for the equilibrium lattice constant. To get an idea
    where to begin, note that the room-temperature experimental lattice constant
