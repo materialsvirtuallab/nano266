@@ -35,8 +35,9 @@ CPU time if you are not careful.
 # Q1 (20 points): The (100) surface of Al
 
 We will first start by calculating the energy of the (100) surface in Al. You
-need to perform a convergence with respect to both slab and vaAlum size. Use an
-energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
+need to perform a convergence with respect to both slab and vacuum size. Use an
+energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1 for the
+slab calculations.
 
 1. Start by first finding the equilibrium structure of fcc Al. You have already
    done this in lab 3, but we are going to do this again using the SCF method,
@@ -44,10 +45,10 @@ energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1.
    parameter. Converge your lattice parameter to within 0.001 angstroms. For
    reference, the experimental lattice parameter is 4.05 angstroms. A template
    file `Al.100.bulk.pw.in.template` has already been provided. Please use the
-   `scf.py` script to perform these calculations. As usual, please scan with
-   a fairly coarse grid (e.g., 0.01 increments) before performing scans with a
-   more dense grid near the minimum energy. Record down the lattice parameter
-   in Bohr and energy in Ry.
+   `scf.py` script to perform these calculations with a default $k$-point grid 
+   of 16 $\times$ 16 $\times$ 16. As usual, please scan with fairly coarse grid 
+   (e.g., 0.01 increments) before performing scans with a more dense grid near 
+   the minimum energy. Record down the lattice parameter in Bohr and energy in Ry.
 2. Using the lattice parameter you obtained in part 1, perform a calculation of
    the Al (100) surface. A sample `Al.100.surf.pw.in.template` file has been
    provided to you, as well as a `fcc_surf_gen.py` (type `fcc_surf_gen.py -h`
