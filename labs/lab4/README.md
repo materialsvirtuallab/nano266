@@ -278,8 +278,9 @@ too long, rethink your supercell and $k$-point grid.
 
 Report all your binding energies in eV. Discuss the relative binding energies
 of H on the different sites, and whether the results are in line with your
-chemical intuition. Can you estimate the diffusion coefficient for H on the
-Al(111) surface?
+chemical intuition. Hint: Some H adsorption sites may be unstable. You need to 
+check the final position of H atom in each case. Can you estimate the diffusion 
+coefficient for H on the Al(111) surface?
 
 [latticeplane]: InsertLatticePlane.png "Lattice Plane Dialog Box in VESTA"
 [labeledsupercell]: LabeledAl.png "Labeled Al supercell"
