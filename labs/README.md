@@ -68,7 +68,7 @@ the bin directory to your path as follows (assuming you are on bash):
 export PATH=$PATH:<path/to/repo>/bin/Mac
 # The following is to set the NWChem basis sets used in lab1.
 # Be careful that the ending slash is needed!
-export NWCHEM_BASIS_LIBRARY = <path/to/repo>/resources/nwchem_basis/
+export NWCHEM_BASIS_LIBRARY=<path/to/repo>/resources/nwchem_basis/
 ```
 
 ## Option 3: Use a Virtual Machine
