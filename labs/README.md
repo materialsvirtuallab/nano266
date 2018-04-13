@@ -50,6 +50,7 @@ If you are on a Windows machine, you need to download a SSH client like
 Once you are logged in, immediately run
 
 ```bash
+module unload intel
 module load qe nwchem python
 export NWCHEM_BASIS_LIBRARY=/opt/nwchem/data/libraries/
 ```
