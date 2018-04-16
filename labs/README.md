@@ -104,11 +104,28 @@ machine, you should try options 1 or 3 above.
 
 # Cloning the repo
 
+First, go to [Github](https://github.com). Create an account if you do not already
+have one.
+
+Next, create a ssh key if you do not have one on XSEDE with the following command:
+```
+ssh-keygen
+```
+You may press Enter to choose the defaults for all the prompts.
+
+Then, show your *public* SSH key:
+```
+cat ~/.ssh/id_rsa.pub
+```
+Copy this key. 
+
+In your Github user profile, under "SSH and GPG keys", add the key you just copied.
+
 On wherever you are performing the calculations for the lab, you should clone
 this repo by doing:
 
 ```
-git clone https://github.com/materialsvirtuallab/nano266.git
+git clone git@github.com:materialsvirtuallab/nano266.git
 ```
 
 Check that you have the repo cloned successfully by doing a `ls`. If you are
@@ -121,6 +138,7 @@ and Mac and can easily be installed in Unix-based OSes. To update your repo to
 the latest version at any time, you can do:
 
 ```
+cd ~/nano266
 git pull
 ```
 
