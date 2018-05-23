@@ -142,9 +142,8 @@ doi:10.1103/PhysRevB.57.6427.
    end members and the CuAu ($x$ = 0.5) intermetallic and do a $k$-point
    convergence such that your formation energies are within
    5 meV / atom. Start with a relatively small grid, e.g., 4 $\times$ 4 $\times
-   4. For CuAu, you should use the L10 phase, which is a body-centered
-   tetragonal (bct) with two atoms in the unit cell, and lattice
-   parameters are $a = b \ne c$. A sample file is provided. Please note that starting
+   4. For CuAu, you should use the L10 phase, which is a tetragonal structure
+   and lattice parameters are $a = b \ne c$. A sample file is provided. Please note that starting
    configuration is a simple cubic structure with face-centered and corner lattice points
    occupied such that there are alternate layers of Cu and Au. You may
    search the internet for the experimental lattice parameters and use those to
