@@ -59,52 +59,52 @@ slab calculations.
    The output should be something like the following:
 
 ```
-     &CONTROL
-      calculation = 'relax' ,
-      outdir = './tmp' ,
-      prefix = 'Al_100_3_3',
-      pseudo_dir = './' ,
-      tprnfor = .True.,
-      tstress = .True.,
-     /
-     &SYSTEM
-      ibrav = 6,
-      celldm(1) = 7.65,
-      celldm(3) = 6,
-      nat = 12,
-      ntyp = 1,
-      ecutwfc = 30,
-      ecutrho = 150,
-      occupations = 'smearing',
-      smearing = 'cold',
-      degauss = 0.025,
-     /
-     &ELECTRONS
-      diagonalization = 'david',
-      conv_thr = 1.D-6,
-      mixing_beta = 0.3,
-      mixing_mode = 'local-TF'
-     /
-     &IONS
-      ion_dynamics = 'bfgs',
-     /
-    ATOMIC_SPECIES
-      Al   26.98  Al.pbe-n-van.UPF
-    ATOMIC_POSITIONS crystal
-      Al 0.0 0.0 0.0
-      Al 0.5 0.5 0.0
-      Al 0.5 0.0 0.0833333333333
-      Al 0.0 0.5 0.0833333333333
-      Al 0.0 0.0 0.166666666667
-      Al 0.5 0.5 0.166666666667
-      Al 0.5 0.0 0.25
-      Al 0.0 0.5 0.25
-      Al 0.0 0.0 0.333333333333
-      Al 0.5 0.5 0.333333333333
-      Al 0.5 0.0 0.416666666667
-      Al 0.0 0.5 0.416666666667
-    K_POINTS automatic
-      16 16 1   0 0 0
+&CONTROL
+  calculation = 'relax' ,
+  outdir = './tmp' ,
+  prefix = 'Al_100_3_3',
+  pseudo_dir = './' ,
+  tprnfor = .True.,
+  tstress = .True.,
+/
+&SYSTEM
+  ibrav = 6,
+  celldm(1) = 7.65,
+  celldm(3) = 6,
+  nat = 12,
+  ntyp = 1,
+  ecutwfc = 30,
+  ecutrho = 150,
+  occupations = 'smearing',
+  smearing = 'cold',
+  degauss = 0.025,
+/
+&ELECTRONS
+  diagonalization = 'david',
+  conv_thr = 1.D-6,
+  mixing_beta = 0.3,
+  mixing_mode = 'local-TF'
+/
+&IONS
+  ion_dynamics = 'bfgs',
+/
+ATOMIC_SPECIES
+  Al   26.98  Al.pbe-n-van.UPF
+ATOMIC_POSITIONS crystal
+  Al 0.0 0.0 0.0
+  Al 0.5 0.5 0.0
+  Al 0.5 0.0 0.0833333333333
+  Al 0.0 0.5 0.0833333333333
+  Al 0.0 0.0 0.166666666667
+  Al 0.5 0.5 0.166666666667
+  Al 0.5 0.0 0.25
+  Al 0.0 0.5 0.25
+  Al 0.0 0.0 0.333333333333
+  Al 0.5 0.5 0.333333333333
+  Al 0.5 0.0 0.416666666667
+  Al 0.0 0.5 0.416666666667
+K_POINTS automatic
+  16 16 1   0 0 0
 ```
 
    There are several important things to note about this input file:
