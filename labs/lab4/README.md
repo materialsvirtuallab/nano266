@@ -58,6 +58,7 @@ slab calculations.
 
    The output should be something like the following:
 
+```
      &CONTROL
       calculation = 'relax' ,
       outdir = './tmp' ,
@@ -104,6 +105,7 @@ slab calculations.
       Al 0.0 0.5 0.416666666667
     K_POINTS automatic
       16 16 1   0 0 0
+```
 
    There are several important things to note about this input file:
 
