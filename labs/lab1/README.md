@@ -142,7 +142,7 @@ Repeat Q1, but this time with N<sub>2</sub>. For this question, copy `H2.nw` to
 `N2.nw` and then modify the file accordingly. The experimental N<sub>2</sub>
 bond  length is around 1.1 angstroms.
 
-Again, record down the final bond length of H<sub>2</sub> in angstroms and the
+Again, record down the final bond length of N<sub>2</sub> in angstroms and the
 final total energy in eV.
 
 # Q3 (25 points): Geometry optimization and energy of NH<sub>3</sub>
