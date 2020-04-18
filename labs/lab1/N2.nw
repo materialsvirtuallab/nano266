@@ -1,0 +1,38 @@
+memory total 1000 mb
+geometry units angstroms
+ H 0 0 0
+ H 0 0 0.7414
+end
+
+title "H2 dft optimize"
+charge 0
+basis
+ H library "6-31G"
+end
+dft
+ mult 1
+ xc b3lyp
+end
+task dft optimize
+
+title "H2 dft freq"
+charge 0
+basis
+ H library "6-31G"
+end
+dft
+ mult 1
+ xc b3lyp
+end
+task dft freq
+
+title "H2 dft energy"
+charge 0
+basis
+ H library "6-311G"
+end
+dft
+ mult 1
+ xc b3lyp
+end
+task dft energy
