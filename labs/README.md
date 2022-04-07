@@ -42,7 +42,7 @@ to the allocation for this course. You can then login to the allocations
 with
 
 ```bash
-ssh <your_username>@comet.sdsc.edu
+ssh <your_username>@expanse.sdsc.edu
 ```
 
 If you are on a Windows machine, you need to download a SSH client like
@@ -71,22 +71,7 @@ export PATH=$PATH:<path/to/repo>/bin/Mac
 export NWCHEM_BASIS_LIBRARY=<path/to/repo>/resources/nwchem_basis/
 ```
 
-## Option 3: Use a Virtual Machine
-
-You can download VirtualBox (https://www.virtualbox.org/), and a
-pre-configured Ubuntu virtual machine at this [link](https://s3.amazonaws.com/mavrl-web/nano266.ova).
-
-Note that it is a hefty 3 Gb download, so you will want to download this on
-a fast connection. After launching VirtualBox, do File->Import Appliance and
-then select the downloaded `nano266.ova` file. You can then start the
-virtual machine. You should be able to login to the virtual machine without
-a password. If one is ever needed, it is simply "nano266fun". Start a
-terminal by clicking on the icon on the left. By typing `ls`, you should see
-that a nano266 directory is already cloned for you. Simply `cd nano266` and
-you are ready to begin to do the labs.
-
-
-## Option 4: Compile your own
+## Option 3: Compile your own
 
 You can download the source code for QuantumEspresso or NWChem and install
 it yourself. *Attempt this only if you have a fairly good familiarity with
@@ -164,7 +149,7 @@ Finally, you will need to get your results over to your local computer to do
 analysis. The easiest way to do this is with:
 
 ```bash
-scp <username>@trestles.sdsc.edu:~/nano266/location/of/file .
+scp <username>@expanse.sdsc.edu:~/nano266/location/of/file .
 ```
 
 in your local Mac or Linux terminal. If you are on Windows, the equivalent is
