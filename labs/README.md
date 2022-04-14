@@ -38,8 +38,9 @@ installed and in your path. You have four options:
 We have secured an XSEDE allocation for this course. Please go the the XSEDE
 portal (https://portal.xsede.org) and create an account as shown above.
 After you have done so, email your username to one of the TAs to be added
-to the allocation for this course. You can then login to the allocations
-with
+to the allocation for this course. 
+If you are on a MAC machine, you can open the Terminal app and then login to the allocations
+with 
 
 ```bash
 ssh <your_username>@login.expanse.sdsc.edu
@@ -50,12 +51,10 @@ If you are on a Windows machine, you need to download a SSH client like
 Once you are logged in, immediately run
 
 ```bash
-module load qe nwchem python
-export NWCHEM_BASIS_LIBRARY=/opt/nwchem/data/libraries/
+module load python
 ```
 
-to make sure that QuantumEspresso, NWChem and Python are loaded for you and
-that the libraries are set properly. You can also add these two lines to
+to make sure that Python are loaded for you. You can also add this line to
 your `.bash_profile` so that it will always be loaded for you when you login.
 
 ## Option 2: Set up your own Mac

@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH --job-name="nwchem_job"
+#SBATCH --output="job.%j.%N.out"
+#SBATCH --partition=shared
+
+# We are doing relatively small jobs. Let's just use a single processor on
+# one node.
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+
+# This tells the queuing system that we want a walltime of 1 hour. For this lab,
+# this should be more than sufficient.
+#SBATCH -t 01:00:00
+
+# This sets the account, which is our NANO266 account
+#SBATCH -A csd452
+
+# When running things in the queue, you should add a load in order to ensure
+# that the modules you need are available.
+module reset
+module load cpu
+module load intel
+module load intel-mpi
+module load nwchem
+
+export ARMCI_NETWORK=MPI-MT
+
+nwchem H2.nw > H2.nwout
