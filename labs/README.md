@@ -29,7 +29,7 @@ In the labs, we will be using two open-source first principles modeling codes:
    pseudopotentials.
 
 Before you start any of the labs, make sure that you have the software
-installed and in your path. You have four options:
+installed and in your path. You have three options:
 
 ## Option 1: Use XSEDE
 
@@ -93,8 +93,7 @@ have one.
 Next, create a ssh key if you do not have one on XSEDE with the following command:
 ```
 ssh-keygen
-```
-You may press Enter to choose the defaults for all the prompts.
+``` You may press Enter to choose the defaults for all the prompts.
 
 Then, show your *public* SSH key:
 ```
@@ -130,25 +129,28 @@ from within the repo.
 # Using a Unix-based terminal
 
 If you have never used a Unix-based terminal, there is a bit of a slight
-learning curve. But in general, you will be working with only four or five
+learning curve. But in general, you will be working with only the following
 commands:
 
 ```bash
 cd <dirname>       # change directory to <dirname>
-cp <file1> <file2> # copies <file1> to <file2>
-mv <file1> <file2> # moves <file1> to <file2>
+cp <file1> <file2> # copy <file1> to <file2>
+mv <file1> <file2> # move <file1> to <file2>
 rm <file>          # remove <file>
+pwd                # show path to the current directory
+mkdir <dirname>    # make a new directory <dirname>
+ls                 # list files/directories in the current directory
 ```
 
 You will also be doing some basic text editing in the terminal. For beginners,
 the `nano` command line editor has the smallest learning curve. Other options
-are `vi` and `emacs`.
+are `vi` and `emacs`. 
 
 Finally, you will need to get your results over to your local computer to do
 analysis. The easiest way to do this is with:
 
 ```bash
-scp <username>@expanse.sdsc.edu:~/nano266/location/of/file .
+scp <username>@login.expanse.sdsc.edu:~/nano266/<location/of/file> .
 ```
 
 in your local Mac or Linux terminal. If you are on Windows, the equivalent is

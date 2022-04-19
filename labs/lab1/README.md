@@ -37,7 +37,8 @@ to write your own scripts if you have the know-how.
 
 It is assumed that you have already followed the instructions in the README.md
 in the root labs folder and have access to nwchem, either on XSEDE or on your
-own computer or virtual machine. Do a git pull so that you are up to date with
+own computer or virtual machine. Do a `git pull`
+so that you are up to date with
 the repo. Also, read through the README.md file in the main labs folder. 
 Make sure you are in
 the lab1 folder by doing:
@@ -144,11 +145,7 @@ cp ../submit_script .
 sbatch submit_script
 ```
 One of the most important line in submit script is the last one:
-
-```bash
-nwchem H2.nw > H2.nwout
-```
-It calls nwchem binary to use `H2.nw` as input and pipe the output to a new file, `H2.nwout`.
+`nwchem H2.nw > H2.nwout`, which calls nwchem binary to use `H2.nw` as input and pipe the output to a new file, `H2.nwout`.
 
 After the calculation is finished, check the output through:
 
@@ -176,8 +173,9 @@ of the lab.
 Repeat Q1, but this time with N<sub>2</sub>. For this question, copy `H2.nw` to
 `N2.nw` and then modify the input and submit script accordingly. 
 
-The experimental N<sub>2</sub>
-bond  length is around 1.1 angstroms.
+Tip: People can use `vi` for file editing. The basic commands for `vi` is covered in this [link](https://www.guru99.com/the-vi-editor.html). 
+
+The experimental N<sub>2</sub> bond  length is around 1.1 angstroms.
 
 Again, record down the final bond length of N<sub>2</sub> in angstroms and the
 final total energy in eV.
