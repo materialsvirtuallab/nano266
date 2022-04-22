@@ -14,24 +14,26 @@ LaTeX footer:       mmd-mavrldoc-footer
 In this lab, we will look at convergence issues in bulk calculations
 with respect to parameters such as the energy cutoff and k-point grid. We will
 be using QuantumEspresso (http://www.quantum-espresso.org/), an open scource
-first principles code. Note that all calculations in this lab are fairly simple
-and can be run on a modern desktop or laptop in serial mode, i.e., you do not
-actually need access to a supercomputing cluster to perform these calculations.
+first principles code. 
 
 # Initial setup
 
 It is assumed that you have already followed the instructions in the README.md
 in the root labs folder and have access to PWSCF, either on XSEDE or on your
-own computer or virtual machine. Do a git pull so that you are up to date with
-the repo. Try typing `pw.x` in your terminal to make sure that everything is
-working. You may get a `Waiting for input...` message. Just hit Ctrl-C to
-cancel.
+own computer or virtual machine. Do a `git pull` so that you are up to date with
+the repo. Also do a
+ 
+```bash 
+module load python
+```
+on login node to make sure python is loaded for later analysis. 
 
 Once you are done with the above, make sure you are in the lab2 folder by doing:
 
 ```bash
 cd <path/to/repo>/labs/lab2
 ```
+It is recommended to make a new directory and a new copy of inputs for each question in lab2. 
 
 # Q1 (10 points): Convergence of *absolute* energies with respect to energy cutoff
 
@@ -80,14 +82,26 @@ heavily commented to aid you in your understanding. Note that this is a
 starting point. *You will need to understand enough to make changes in order to
 finish this lab.* A second script called `analyze.py` is provided to help you
 compile the results into a csv file, which can be opened with most spreadsheet
-programs for analysis. To run the scripts, you simply need to type
+programs for analysis. To run the python scripts, you simply need to type
 
 ```python <script>.py <other parameters if necessary>```
 
 1. Using PWSCF, calculate the energy of silicon as a function of cutoff
    energy. A good increment is ~10 Ry, in the range of 10-100 Ry. When changing
    the cutoff, make sure to keep the other variables (lattice constant,
-   *k*-points, etc.) fixed. Record and plot your final results. Specify when
+   *k*-points, etc.) fixed. 
+   
+   After the calculations are finished, use 
+   
+   ```bash
+   python analyze.py *.out
+   ``` 
+   for data analysis. This command will call python to execute `analyze.py` and analyze all files ending with `.out`. The analysis results will be saved in the `results.csv` file. If you need to transfer this file to your own computer, you can use
+   
+   ```bash
+   scp <username>@login.expanse.sdsc.edu:~/nano266/<location/of/file> .
+   ``` 
+   Record and plot your final results. Specify when
    you reach the level of convergence of ~5 meV/atom (you will need to take
    care of the unit conversions). Note that PWSCF calculates energy per
    primitive cell.
@@ -160,7 +174,7 @@ variational principle. You will be using this in the next step and your next lab
 
 Calculate the bulk modulus of silicon at the equilibrium lattice constant using the PBE functional. Remember that the bulk modulus is given by:
 
-\\[ K = V \frac{\partial^2 E}{\partial V^2} \\]
+$$K=V \frac{\partial^{2}E} {\partial V^{2}} $$
 
 Think about how you can obtain *K* from the *E* vs *a* plot. Be careful that
 PWSCF reports energies per *primitive cell*, and you will need to make sure

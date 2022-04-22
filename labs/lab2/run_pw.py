@@ -3,16 +3,17 @@
 """
 This is a very simple python starter script to automate a series of PWSCF
 calculations. If you don't know Python, get a quick primer from the official
-Python documentation at https://docs.python.org/2.7/. The script is deliberately
+Python documentation at https://docs.python.org/3.8/. The script is deliberately
 simple so that only basic Python syntax is used and you can get comfortable with
 making changes and writing programs.
 
-Author: Shyue Ping Ong
+Author: Shyue Ping Ong, Yiming Chen
 """
 
-import os
-import shutil
-
+# Load the submit_script. 
+# Note that the current submit_script does not have any PWSCF commands. 
+# Those commands will be appended after the corresponding input is generated.   
+submit_script = open("submit_script", 'a')
 # Load the Si.pw.in.template file as a template.
 with open("Si.pw.in.template") as f:
     template = f.read()
@@ -26,6 +27,7 @@ psp = "Si.pbe-n-kjpaw_psl.0.1.UPF"
 # Loop through a series of values of ecut. Note that ecut is stipulated in Ry
 # in PWSCF. Modify this accordingly to loop through either different values
 # of alat, k, ecut, etc.
+
 for ecut in [10, 20, 30, 40, 50]:
     # This generates a string from the template with the parameters replaced
     # by the specified values.
@@ -38,13 +40,15 @@ for ecut in [10, 20, 30, 40, 50]:
     with open("%s.pw.in" % jobname, "w") as f:
         f.write(s)
 
-    #Print some status messages.
-    print("Running with ecut = %s, alat = %s, k = %s..." % (ecut, alat, k))
-    # Run PWSCF. Modify the pw.x command accordingly if needed.
-    os.system("pw.x < {jobname}.pw.in > {jobname}.out".format(jobname=jobname))
+    # Write the command in submit_script.    
+    submit_script.write(
+            'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1"' 
+            '--mca btl openib,self,vader pw.x -input {jobname}.pw.in -npool 1 > {jobname}.out\n'
+            .format(jobname=jobname))
+    print("Done with input generation for %s" % jobname)
 
-    print("Done. Output file is %s.out." % jobname)
-
-# This just does cleanup. For this lab, we don't need the files that are
-# dumped into the tmp directory.
-shutil.rmtree("tmp")
+# Append another line in submit_script to cleanup. 
+# For this lab, we don't need the files that are dumped into the tmp directory.
+submit_script.write("rm -r tmp")
+# Close the submit_script after appending all PWSCF commands.
+submit_script.close()
