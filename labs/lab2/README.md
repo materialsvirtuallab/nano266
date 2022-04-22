@@ -174,7 +174,7 @@ variational principle. You will be using this in the next step and your next lab
 
 Calculate the bulk modulus of silicon at the equilibrium lattice constant using the PBE functional. Remember that the bulk modulus is given by:
 
-$$K=V \frac{\partial^{2}E} {\partial V^{2}} $$
+<img src="../equation.png" width="150">
 
 Think about how you can obtain *K* from the *E* vs *a* plot. Be careful that
 PWSCF reports energies per *primitive cell*, and you will need to make sure
