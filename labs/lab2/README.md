@@ -24,7 +24,7 @@ own computer or virtual machine. Do a `git pull` so that you are up to date with
 the repo. Also do a
  
 ```bash 
-module load python
+module load gcc/10.2.0 python
 ```
 on login node to make sure python is loaded for later analysis. 
 
@@ -174,7 +174,7 @@ variational principle. You will be using this in the next step and your next lab
 
 Calculate the bulk modulus of silicon at the equilibrium lattice constant using the PBE functional. Remember that the bulk modulus is given by:
 
-<img src="../equation.png" width="150">
+<img src="Equation.png" width="150">
 
 Think about how you can obtain *K* from the *E* vs *a* plot. Be careful that
 PWSCF reports energies per *primitive cell*, and you will need to make sure

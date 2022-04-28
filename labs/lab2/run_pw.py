@@ -42,7 +42,7 @@ for ecut in [10, 20, 30, 40, 50]:
 
     # Write the command in submit_script.    
     submit_script.write(
-            'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1"' 
+            'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1" ' 
             '--mca btl openib,self,vader pw.x -input {jobname}.pw.in -npool 1 > {jobname}.out\n'
             .format(jobname=jobname))
     print("Done with input generation for %s" % jobname)

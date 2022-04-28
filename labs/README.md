@@ -51,7 +51,7 @@ If you are on a Windows machine, you need to download a SSH client like
 Once you are logged in, immediately run
 
 ```bash
-module load python
+module load gcc/10.2.0 python
 ```
 
 to make sure that Python are loaded for you. You can also add this line to
