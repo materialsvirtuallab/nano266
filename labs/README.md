@@ -29,7 +29,7 @@ In the labs, we will be using two open-source first principles modeling codes:
    pseudopotentials.
 
 Before you start any of the labs, make sure that you have the software
-installed and in your path. You have four options:
+installed and in your path. You have three options:
 
 ## Option 1: Use XSEDE
 
@@ -38,8 +38,9 @@ installed and in your path. You have four options:
 We have secured an XSEDE allocation for this course. Please go the the XSEDE
 portal (https://portal.xsede.org) and create an account as shown above.
 After you have done so, email your username to one of the TAs to be added
-to the allocation for this course. You can then login to the allocations
-with
+to the allocation for this course. 
+If you are on a MAC machine, you can open the Terminal app and then login to the allocations
+with 
 
 ```bash
 ssh <your_username>@login.expanse.sdsc.edu
@@ -50,12 +51,10 @@ If you are on a Windows machine, you need to download a SSH client like
 Once you are logged in, immediately run
 
 ```bash
-module load qe nwchem python
-export NWCHEM_BASIS_LIBRARY=/opt/nwchem/data/libraries/
+module load gcc/10.2.0 python
 ```
 
-to make sure that QuantumEspresso, NWChem and Python are loaded for you and
-that the libraries are set properly. You can also add these two lines to
+to make sure that Python are loaded for you. You can also add this line to
 your `.bash_profile` so that it will always be loaded for you when you login.
 
 ## Option 2: Set up your own Mac
@@ -94,8 +93,7 @@ have one.
 Next, create a ssh key if you do not have one on XSEDE with the following command:
 ```
 ssh-keygen
-```
-You may press Enter to choose the defaults for all the prompts.
+``` You may press Enter to choose the defaults for all the prompts.
 
 Then, show your *public* SSH key:
 ```
@@ -131,25 +129,28 @@ from within the repo.
 # Using a Unix-based terminal
 
 If you have never used a Unix-based terminal, there is a bit of a slight
-learning curve. But in general, you will be working with only four or five
+learning curve. But in general, you will be working with only the following
 commands:
 
 ```bash
 cd <dirname>       # change directory to <dirname>
-cp <file1> <file2> # copies <file1> to <file2>
-mv <file1> <file2> # moves <file1> to <file2>
+cp <file1> <file2> # copy <file1> to <file2>
+mv <file1> <file2> # move <file1> to <file2>
 rm <file>          # remove <file>
+pwd                # show path to the current directory
+mkdir <dirname>    # make a new directory <dirname>
+ls                 # list files/directories in the current directory
 ```
 
 You will also be doing some basic text editing in the terminal. For beginners,
 the `nano` command line editor has the smallest learning curve. Other options
-are `vi` and `emacs`.
+are `vi` and `emacs`. 
 
 Finally, you will need to get your results over to your local computer to do
 analysis. The easiest way to do this is with:
 
 ```bash
-scp <username>@expanse.sdsc.edu:~/nano266/location/of/file .
+scp <username>@login.expanse.sdsc.edu:~/nano266/<location/of/file> .
 ```
 
 in your local Mac or Linux terminal. If you are on Windows, the equivalent is

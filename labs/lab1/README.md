@@ -37,16 +37,47 @@ to write your own scripts if you have the know-how.
 
 It is assumed that you have already followed the instructions in the README.md
 in the root labs folder and have access to nwchem, either on XSEDE or on your
-own computer or virtual machine. Do a git pull so that you are up to date with
-the repo. Also, read through the README.md file in the main labs folder and
-make sure that you have NWChem setup properly. Try typing `nwchem` in your
-terminal to make sure that everything is working. You will get an error message
-because there is no input file, but that's not a big deal.
-
-Once you are done with the above, make sure you are in the lab1 folder by doing:
+own computer or virtual machine. Do a `git pull`
+so that you are up to date with
+the repo. Also, read through the README.md file in the main labs folder. 
+Make sure you are in
+the lab1 folder by doing:
 
 ```bash
 cd <path/to/repo>/labs/lab1
+```
+
+# Submitting jobs to the Expanse queues
+
+Expanse uses the Simple Linux Utility for Resource Management (Slurm) job
+scheduling system. All supercomputing clusters use a job scheduler of some
+sort, e.g., PBS, Sun GridEngine, SLURM. They differ in some features, but work
+on the same basic principle. You send jobs to a queue, and they are run
+according to some priority system. For more information, you may read the
+guide at https://portal.xsede.org/sdsc-expanse
+
+For the purposes of this lab, a sample *submit_script* has been provided. It is imperative that
+you understand how the script works as you will be using this for the rest of
+this and the next lab. Read the user guide to understand what each of the
+options in the preamble means. You can then modify them to suit your needs.
+
+To submit the job, just simply run:
+
+```bash
+sbatch submit_script
+```
+
+You may check on the status of your job using the following command:
+
+```bash
+squeue -u <username>
+```
+
+If you make a mistake and need to kill a job for whatever reason. use the
+`scancel` command.
+
+```bash
+scancel <jobid>
 ```
 
 # Q1 (10 points): Geometry optimization and energy of H<sub>2</sub>
@@ -106,23 +137,24 @@ mkdir scratch
 cd scratch
 ```
 
-Now, we copy the input files we want over, and run nwchem:
+Now, we copy the input file and submit script we want over, and submit the job
 
 ```bash
 cp ../H2.nw .
-nwchem H2.nw > H2.nwout
+cp ../submit_script .
+sbatch submit_script
 ```
+One of the most important line in submit script is the last one:
+`nwchem H2.nw > H2.nwout`, which calls nwchem binary to use `H2.nw` as input and pipe the output to a new file, `H2.nwout`.
 
-After a very short while, the calculation should complete and the results are
-in the `H2.nwout` file. To find the final coordinates, search for the final
-occurence of:
+After the calculation is finished, check the output through:
 
 ```bash
 grep -A 8 '"geometry" -> ' H2.nwout
 ```
 
 This command finds all instances that `"geometry" -> ` occurs in `H2.nwout` and
-prints out 8 lines after each occurence.
+prints out 8 lines after each occurence. The last configuration gives the final geometry of H2.
 
 To get the final total energy, we can use grep from the command line:
 
@@ -139,8 +171,11 @@ of the lab.
 # Q2 (10 points): Geometry optimization and energy of N<sub>2</sub>
 
 Repeat Q1, but this time with N<sub>2</sub>. For this question, copy `H2.nw` to
-`N2.nw` and then modify the file accordingly. The experimental N<sub>2</sub>
-bond  length is around 1.1 angstroms.
+`N2.nw` and then modify the input and submit script accordingly. 
+
+Tip: People can use `vi` for file editing. The basic commands for `vi` is covered in this [link](https://www.guru99.com/the-vi-editor.html). 
+
+The experimental N<sub>2</sub> bond  length is around 1.1 angstroms.
 
 Again, record down the final bond length of N<sub>2</sub> in angstroms and the
 final total energy in eV.
@@ -162,8 +197,7 @@ but we are limited by the choice of basis sets available) Redo the calculation
 and determine the bond lengths and angles again. Comment on the difference in
 answer between the calculation with and without polarization functions.
 
-Tip: One of the fastest ways to make changes to a file is using the unix
-command line tool called *sed*. For example, you can do the following:
+Tip: One of the fastest ways to make changes to a file is using the unix command line tool called *sed*. For example, you can do the following:
 
 ```bash
 sed 's/\(6-31[1]*\)G/\1+G*/' NH3.nw > NH3_polarized.nw

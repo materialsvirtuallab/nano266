@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH --job-name="qe_job"
+#SBATCH --output="job.%j.%N.out"
+#SBATCH --partition=shared
+
+# We are doing relatively small jobs. Let's just use a single processor on
+# one node.
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+
+# This tells the queuing system that we want a walltime of 1 hour. For this lab,
+# this should be more than sufficient.
+#SBATCH -t 01:00:00
+
+# This sets the account, which is our NANO266 account
+#SBATCH -A csd452
+
+# When running things in the queue, you should add a load in order to ensure
+# that the modules you need are available.
+module purge
+module load slurm
+module load cpu
+module load gcc/9.2.0
+module load openmpi
+module load quantum-espresso/6.7.0-openblas
+
+export OMP_NUM_THREADS=1
+
+### Run QE
