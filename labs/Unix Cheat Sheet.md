@@ -119,16 +119,16 @@ wc -l {file}  # Count the number of lines in a file.
 ### Pipes and Redirection	(You pipe a command to another command, and redirect it to a file.)
 
 ```bash
-{command} > {file}	Redirect output to a file, eg ls > list.txt writes directory to file.
-{command} >> {file}	Append output to an existing file, eg cat update >> archive adds update to end of archive.
-{command} < {file}	Get input from a file, eg sort < file.txt
-{command} < {file1} > {file2}	Get input from file1, and write to file2, eg sort < old.txt > new.txt sorts old.txt and saves as new.txt.
-{command} | {command}	Pipe one command to another, eg ls | more gets directory and sends it to more to show it one page at a time.
+{command} > {file}  # Redirect output to a file, eg ls > list.txt writes directory to file.
+{command} >> {file}  # Append output to an existing file, eg cat update >> archive adds update to end of archive.
+{command} < {file}  # Get input from a file, eg sort < file.txt
+{command} < {file1} > {file2}  # Get input from file1, and write to file2, eg sort < old.txt > new.txt sorts old.txt and saves as new.txt.
+{command} | {command}  # Pipe one command to another, eg ls | more gets directory and sends it to more to show it one page at a time.
 ```
 
 ### System info
 
-```
+```bash
 date  # Show date and time.
 df  # Check system disk capacity.
 du  # Check your disk usage and show bytes in each directory.
