@@ -93,7 +93,9 @@ have one.
 Next, create a ssh key if you do not have one on XSEDE with the following command:
 ```
 ssh-keygen
-``` You may press Enter to choose the defaults for all the prompts.
+``` 
+
+You may press Enter to choose the defaults for all the prompts.
 
 Then, show your *public* SSH key:
 ```
@@ -141,6 +143,8 @@ pwd                # show path to the current directory
 mkdir <dirname>    # make a new directory <dirname>
 ls                 # list files/directories in the current directory
 ```
+
+A more comprehensive cheat sheet for Unix is given [here](https://github.com/materialsvirtuallab/nano266/blob/master/labs/Unix%20Cheat%20Sheet.md).
 
 You will also be doing some basic text editing in the terminal. For beginners,
 the `nano` command line editor has the smallest learning curve. Other options
