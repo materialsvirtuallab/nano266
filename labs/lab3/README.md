@@ -113,7 +113,7 @@ doi:10.1103/PhysRevB.57.6427.
    end members and the CuAu (*x* = 0.5) intermetallic and do a *k*-point
    convergence such that your formation energies are within
    5 meV / atom. Start with a relatively small grid, e.g., 4 *x* 4 *x* 4
-   4. For CuAu, you should use the L10 phase, which is a tetragonal structure
+2. For CuAu, you should use the L10 phase, which is a tetragonal structure
    and lattice parameters are a = b ≠ c. A sample file is provided. Please note that starting
    configuration is a simple cubic structure with face-centered and corner lattice points
    occupied such that there are alternate layers of Cu and Au. You may
@@ -123,8 +123,8 @@ doi:10.1103/PhysRevB.57.6427.
 2. Calculate the formation energy of Cu<sub>1-x</sub>Au<sub>x</sub>  :
 
 	<img src="Formation energy.png">
-   where E(Cu) and E(Au) are the total energies for Cu and Au in their fcc
-   bulk phase. Note that you must normalize the energies accordingly. We want the formation energies per atom, i.e., 0.5 *x* the formation energy per CuAu.
+	
+   where E(Cu) and E(Au) are the total energies for Cu and Au in their fcc bulk phase. Note that you must normalize the energies accordingly. We want the formation energies per atom, i.e., 0.5 *x* the formation energy per CuAu.
 3. Repeat the calculations for Cu<sub>3</sub>Au and CuAu<sub>3</sub>. For
    both these structures, start with a fcc Cu or Au structure, and replace all
    corner atoms with atoms of the other type. For example, to create
