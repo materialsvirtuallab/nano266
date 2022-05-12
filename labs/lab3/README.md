@@ -47,7 +47,7 @@ energies to within 1 meV.
    energies that the *k*-point samplings for both systems are comparable and
    converged. Determine an appropriate *k*-point grid for both structures. Note
    that the *k*-point should be proportional to the reciprocal lattice vector
-   length.
+   length and should be integer. 
 3. Calculate and compare the total energy for the BCC structure in the
    ferromagnetic, and anti-ferromagnetic states. (10 points)
 
