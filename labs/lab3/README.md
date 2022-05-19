@@ -112,8 +112,9 @@ doi:10.1103/PhysRevB.57.6427.
    to avoid having to manually do a equation of state analysis. Start with the
    end members and the CuAu (*x* = 0.5) intermetallic and do a *k*-point
    convergence such that your formation energies are within
-   5 meV / atom. Start with a relatively small grid, e.g., 4 *x* 4 *x* 4
-2. For CuAu, you should use the L10 phase, which is a tetragonal structure
+   5 meV / atom. Start with a relatively small grid, e.g., 4 *x* 4 *x* 4. 
+   
+   For CuAu, you should use the L10 phase, which is a tetragonal structure
    and lattice parameters are a = b ≠ c. A sample file is provided. Please note that starting
    configuration is a simple cubic structure with face-centered and corner lattice points
    occupied such that there are alternate layers of Cu and Au. You may
