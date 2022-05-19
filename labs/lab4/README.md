@@ -193,6 +193,7 @@ platform. Here is the step by step guide to creating the Al (111) surface.
   vector connecting `Al2` and `Al1`, and $\mathbf{b}'$ to be the vector
   connecting `Al2` and `Al4`. Using the VESTA atom picker, we can determine
   that the crystal coordinates of the atoms to be:
+
   <img src="Coordinates.png">
 
 * Step 7: Go to `Edit->Unit Cell` again, and click `Options`. We then need to
