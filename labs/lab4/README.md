@@ -126,7 +126,7 @@ K_POINTS automatic
 
    You can write the output to a file by giving it the `--outfile` option:
 
-     python fcc\_surf\_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3 --outfile Al100\_3\_3.pw.in
+    `python fcc_surf_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3 --outfile Al100_3_3.pw.in`
 
    To do this question, vary nslab and nvac and look at how the energies
    change with nslab and nvac. Start by keeping nslab = 2 and vary nvac
@@ -177,7 +177,7 @@ platform. Here is the step by step guide to creating the Al (111) surface.
 * Step 4: The next step is to generate a larger unit cell as we are going to cut the crystal in a different orientation that goes beyond the limits
   of the unit cell. Go back to the `Unit Cell` tab. Click on `Options` and
   then enter 2 for all the diagonal elements of the rotation matrix. That
-  generates a $$2 \times 2 \times 2$$ supercell of your crystal. Click `Ok`
+  generates a 2 *x* 2 *x* 2 supercell of your crystal. Click `Ok`
   for all the warnings. Click `Ok` until you close all dialog boxes and see a
   larger version of the Al cell.
 * Step 5: Click on `Objects` and check the `L` (label) for the topmost Al. All
@@ -193,14 +193,7 @@ platform. Here is the step by step guide to creating the Al (111) surface.
   vector connecting `Al2` and `Al1`, and $\mathbf{b}'$ to be the vector
   connecting `Al2` and `Al4`. Using the VESTA atom picker, we can determine
   that the crystal coordinates of the atoms to be:
-
-   \\[
-   \begin{aligned}
-   \mathbf{r_{Al4}} &= (0.25, 0.25, 0)\\
-   \mathbf{r_{Al2}} &= (0, 0.25, 0.25)\\
-   \mathbf{r_{Al1}} &= (0, 0, 0.5)
-   \end{aligned}
-   \\]
+  <img src="Coordinates.png">
 
 * Step 7: Go to `Edit->Unit Cell` again, and click `Options`. We then need to
   enter our rotation matrix and origin shift to the values we have determined
@@ -216,7 +209,7 @@ platform. Here is the step by step guide to creating the Al (111) surface.
 
 * Step 8: Click `Ok` until you end up in the crystal. You will find that you
   now have a hexagonal cell and the (111) lattice plane is now parallel to your
-  $$\mathbf{a}$$ and $$\mathbf{b}$$ lattice vectors. Export the atom position to a
+  $\mathbf{a}$ and $\mathbf{b}$ lattice vectors. Export the atom position to a
   file using `File->Export Data`. Choose the VASP POSCAR format, even though
   we will not be using VASP for our calculations.
 
@@ -228,11 +221,11 @@ that we are now using a hexagonal Bravais lattice setting.
 Repeat your calculations of surface energy in Q1 for the (111) lattice plane.
 You do not need to search for the optimal lattice parameters again. You need to
 work out the appropriate hexagonal lattice parameters based on your optimal
-cubic lattice parameters. Use a $$16 \times 16 \times 1$$ *k*-point grid for your
+cubic lattice parameters. Use a 16 *x* 16 *x* 1 *k*-point grid for your
 slab calculations. Also, you may perform your calculations using 2 vacuum
 layers and 3 slab layers. There is no need to redo the convergence study.
 
-Report your final (111) surface energy for Al in Jm$$^{-2}$$. Discuss how the
+Report your final (111) surface energy for Al in Jm<sup>-2</sup>. Discuss how the
 atom at the surface has relaxed and comment on why the relaxtion occurs the
 way it does.
 

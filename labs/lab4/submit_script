@@ -27,5 +27,3 @@ module load quantum-espresso/6.7.0-openblas
 export OMP_NUM_THREADS=1
 
 # Run QE
-# Make modifications to the next line as you wish.
-mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1" --mca btl openib,self,vader pw.x -input Al100_3_3.pw.in -npool 1 > Al100_3_3.out
