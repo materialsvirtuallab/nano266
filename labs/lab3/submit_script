@@ -8,6 +8,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 
+# This sets the memory required for the job
+#SBATCH --mem=20000M
+
 # This tells the queuing system that we want a walltime of 1 hour. For this lab,
 # this should be more than sufficient.
 #SBATCH -t 01:00:00
@@ -26,4 +29,4 @@ module load quantum-espresso/6.7.0-openblas
 
 export OMP_NUM_THREADS=1
 
-### Run QE
+# Run QE
