@@ -10,9 +10,9 @@ making changes and writing programs.
 Author: Shyue Ping Ong
 """
 
-import os
 import numpy as np
 
+submit_script = open("submit_script", 'a')
 # Load the Al.100.bulk.pw.in.template file as a template.
 with open("Al.100.bulk.pw.in.template") as f:
     template = f.read()

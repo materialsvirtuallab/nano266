@@ -16,6 +16,12 @@ xhtml header:       <script type="text/javascript" src="https://cdn.mathjax.org/
 In this lab, we will look surface calculations with PWSCF.
 
 # Initial setup
+Always do a `git pull` so that you are up to date with the repo. Also do a
+
+```
+module load gcc/10.2.0 python/3.8.5
+```
+on login node to make sure python is loaded for later analysis.
 
 By this stage, you should already have everything set up. Make sure you are in
 the lab4 folder by doing:

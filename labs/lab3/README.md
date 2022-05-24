@@ -15,7 +15,7 @@ We will still be using QuantumEspresso.
 By this stage, you should already have everything set up.  Do a `git pull` so that you are up to date with the repo. Also do a
 
 ```
-module load gcc/10.2.0 python
+module load gcc/10.2.0 python/3.8.5
 ```
 on login node to make sure python is loaded for later analysis. Make sure you are in
 the lab3 folder by doing:

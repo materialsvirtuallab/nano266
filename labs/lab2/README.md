@@ -24,7 +24,7 @@ own computer or virtual machine. Do a `git pull` so that you are up to date with
 the repo. Also do a
  
 ```bash 
-module load gcc/10.2.0 python
+module load gcc/10.2.0 python/3.8.5
 ```
 on login node to make sure python is loaded for later analysis. 
 
