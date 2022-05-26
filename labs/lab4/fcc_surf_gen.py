@@ -11,7 +11,6 @@ coords100 = np.array(
      [0.0, 0.5, 0.5]]
 )
 
-
 def generate_slab(args):
     a = args.a
     nslab = args.nslab
@@ -41,11 +40,16 @@ def generate_slab(args):
     with open("Al.%s.surf.pw.in.template" % args.miller) as f:
         contents = f.read()
     contents = contents.format(alat=a, calat=calat, nslab=nslab, nvac=nvac,
-            k=k, atompos=atompos, nat=len(coords), conv_thr=conv_thr)
+            k=k, atompos=atompos, nat=len(coords), conv_thr=conv_thr) 
 
     if args.outfile:
         with open(args.outfile, "wt") as f:
             f.write(contents)
+        submit_script.write(
+            'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1" '
+            '--mca btl openib,self,vader pw.x -input {jobname}.pw.in -npool 1 > {jobname}.out\n'
+            .format(jobname=args.outfile))
+        print("Done with input generation for %s" % args.outfile)
     else:
         print(contents)
 
@@ -72,5 +76,8 @@ if __name__ == "__main__":
     parser.add_argument(
         '-o', '--outfile', dest='outfile', type=str,
         help='File to write PWSCF input file to.')
+    submit_script = open("submit_script", 'a')
     args = parser.parse_args()
     generate_slab(args)
+    submit_script.write("rm -r tmp")
+    submit_script.close()
