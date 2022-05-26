@@ -102,7 +102,7 @@ doi:10.1103/PhysRevB.57.6427.
 1. Calculate the ground state energy for fcc Cu, Au and
    Cu<sub>1-x</sub>Au<sub>x</sub>.  Here, we will use PWSCF's *vc-relax* option
    to avoid having to manually do a equation of state analysis. Start with the
-   end members and the CuAu (*x* = 0.5) intermetallic and do a $k$-point
+   end members and the CuAu (*x* = 0.5) intermetallic and do a *k*-point
    convergence such that your formation energies are within
    5 meV / atom. Start with a relatively small grid, e.g., 4 × 4 × 4. 
    For CuAu, you should use the L10 phase, which is a tetragonal structure
@@ -115,9 +115,9 @@ doi:10.1103/PhysRevB.57.6427.
 2. Calculate the formation energy of Cu<sub>1-x</sub>Au<sub>x</sub> :
    ΔH<sub>f</sub> (Cu<sub>1-x</sub>Au<sub>x</sub>) = E(Cu<sub>1-x</sub>Au<sub>x</sub>) − (1 - x) E(Cu) − x E(Au)
    where E(Cu) and E(Au) are the total energies for Cu and Au in their fcc
-   bulk phase. Note that you must normalize the energies accordingly. We want the formation energies per atom, i.e., 0.5 $\times$ the formation energy per CuAu.
-   where E(Cu) and E(Au) are the total energies for Cu and Au in their fcc bulk phase. Note that you must normalize the energies accordingly. We want the formation energies per atom, i.e., 0.5 *x* the formation energy per CuAu.
-3. Repeat the calculations for Cu<sub>3</sub>Au and CuAu<sub>3</sub>. For
+   bulk phase. Note that you must normalize the energies accordingly. We want the formation energies per atom, i.e., 
+   0.5 × the formation energy per CuAu. 
+4. Repeat the calculations for Cu<sub>3</sub>Au and CuAu<sub>3</sub>. For
    both these structures, start with a fcc Cu or Au structure, and replace all
    corner atoms with atoms of the other type. For example, to create
    the Cu<sub>3</sub>Au, you can start from the fcc Cu unit cell, and set
@@ -126,6 +126,6 @@ doi:10.1103/PhysRevB.57.6427.
    you need to decrease the symmetry from the fcc to simple cubic, and then add
    atoms accordingly. Review your crystallography and PWSCF's input file format
    so that you understand how to do this.
-4. Plot the formation energy of the Cu<sub>1-x</sub>Au<sub>x</sub> phases you have
+5. Plot the formation energy of the Cu<sub>1-x</sub>Au<sub>x</sub> phases you have
    calculated against *x*. Discuss which of the ordered intermetallic
    structures are stable at 0K.

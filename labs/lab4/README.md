@@ -1,17 +1,4 @@
-LaTeX input:        mmd-mavrldoc-header
-Title:              NANO266 Lab 4 - Al surfaces
-Author:             Shyue Ping Ong
-Affiliation:        University of California, San Diego
-Address:            9500 Gilman Drive, Mail Code 0448, La Jolla, CA 92093-0448
-Web:                http://www.materialsvirtuallab.org
-Base Header Level:  2
-LaTeX Mode:         mavrldoc
-LaTeX input:        mmd-mavrldoc-begin-doc
-LaTeX footer:       mmd-mavrldoc-footer
-xhtml header:       <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-
-# Introduction
+# NANO266 Lab 4 - Al surfaces
 
 In this lab, we will look surface calculations with PWSCF.
 
@@ -42,7 +29,7 @@ CPU time if you are not careful.
 
 We will first start by calculating the energy of the (100) surface in Al. You
 need to perform a convergence with respect to both slab and vacuum size. Use an
-energy cutoff of 30 Ry with a *k*-point grid of 16 *x* 16 *x* 1 for the
+energy cutoff of 30 Ry with a *k*-point grid of 16 × 16 × 1 for the
 slab calculations.
 
 1. Start by first finding the equilibrium structure of fcc Al. You have already
@@ -52,7 +39,7 @@ slab calculations.
    reference, the experimental lattice parameter is 4.05 angstroms. A template
    file `Al.100.bulk.pw.in.template` has already been provided. Please use the
    `scf.py` script to perform these calculations with a default *k*-point grid 
-   of 16 *x* 16  *x* 16. As usual, please scan with fairly coarse grid 
+   of 16 × 16 × 16. As usual, please scan with fairly coarse grid 
    (e.g., 0.01 increments) before performing scans with a more dense grid near 
    the minimum energy. Record down the lattice parameter in Bohr and energy in Ry.
 2. Using the lattice parameter you obtained in part 1, perform a calculation of
@@ -183,7 +170,7 @@ platform. Here is the step by step guide to creating the Al (111) surface.
 * Step 4: The next step is to generate a larger unit cell as we are going to cut the crystal in a different orientation that goes beyond the limits
   of the unit cell. Go back to the `Unit Cell` tab. Click on `Options` and
   then enter 2 for all the diagonal elements of the rotation matrix. That
-  generates a 2 *x* 2 *x* 2 supercell of your crystal. Click `Ok`
+  generates a 2 × 2 × 2 supercell of your crystal. Click `Ok`
   for all the warnings. Click `Ok` until you close all dialog boxes and see a
   larger version of the Al cell.
 * Step 5: Click on `Objects` and check the `L` (label) for the topmost Al. All
@@ -195,8 +182,8 @@ platform. Here is the step by step guide to creating the Al (111) surface.
   **a** and **b** lattice vectors are within the (111) plane
   and our **c** lattice vector is non-parallel (ideally normal to the
   plane). To do this, we can observe that we can define atom `Al2` in the
-  figure above to be the origin, and set our new $\mathbf{a}'$ to be the
-  vector connecting `Al2` and `Al1`, and $\mathbf{b}'$ to be the vector
+  figure above to be the origin, and set our new **a'** to be the
+  vector connecting `Al2` and `Al1`, and **b'** to be the vector
   connecting `Al2` and `Al4`. Using the VESTA atom picker, we can determine
   that the crystal coordinates of the atoms to be:
 
@@ -216,7 +203,7 @@ platform. Here is the step by step guide to creating the Al (111) surface.
 
 * Step 8: Click `Ok` until you end up in the crystal. You will find that you
   now have a hexagonal cell and the (111) lattice plane is now parallel to your
-  $\mathbf{a}$ and $\mathbf{b}$ lattice vectors. Export the atom position to a
+  **a** and **b** lattice vectors. Export the atom position to a
   file using `File->Export Data`. Choose the VASP POSCAR format, even though
   we will not be using VASP for our calculations.
 
@@ -228,7 +215,7 @@ that we are now using a hexagonal Bravais lattice setting.
 Repeat your calculations of surface energy in Q1 for the (111) lattice plane.
 You do not need to search for the optimal lattice parameters again. You need to
 work out the appropriate hexagonal lattice parameters based on your optimal
-cubic lattice parameters. Use a 16 *x* 16 *x* 1 *k*-point grid for your
+cubic lattice parameters. Use a 16 × 16 × 1 *k*-point grid for your
 slab calculations. Also, you may perform your calculations using 2 vacuum
 layers and 3 slab layers. There is no need to redo the convergence study.
 
