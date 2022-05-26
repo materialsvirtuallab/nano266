@@ -16,6 +16,12 @@ xhtml header:       <script type="text/javascript" src="https://cdn.mathjax.org/
 In this lab, we will look surface calculations with PWSCF.
 
 # Initial setup
+Always do a `git pull` so that you are up to date with the repo. Also do a
+
+```
+module load gcc/10.2.0 python/3.8.5
+```
+on login node to make sure python is loaded for later analysis.
 
 By this stage, you should already have everything set up. Make sure you are in
 the lab4 folder by doing:
@@ -26,7 +32,7 @@ cd <path/to/repo>/labs/lab4
 
 # Running calculations
 
-You will still be running the calculations using the queues on Comet. However,
+You will still be running the calculations using the queues on Expanse. However,
 it is important to note that surface calculations can take much longer than
 bulk calculations. It is therefore imperative that you perform these
 calculations prudently. It is very easy to burn through all the allocated
@@ -36,7 +42,7 @@ CPU time if you are not careful.
 
 We will first start by calculating the energy of the (100) surface in Al. You
 need to perform a convergence with respect to both slab and vacuum size. Use an
-energy cutoff of 30 Ry with a $k$-point grid of 16 $\times$ 16 $\times$ 1 for the
+energy cutoff of 30 Ry with a *k*-point grid of 16 *x* 16 *x* 1 for the
 slab calculations.
 
 1. Start by first finding the equilibrium structure of fcc Al. You have already
@@ -45,8 +51,8 @@ slab calculations.
    parameter. Converge your lattice parameter to within 0.001 angstroms. For
    reference, the experimental lattice parameter is 4.05 angstroms. A template
    file `Al.100.bulk.pw.in.template` has already been provided. Please use the
-   `scf.py` script to perform these calculations with a default $k$-point grid 
-   of 16 $\times$ 16 $\times$ 16. As usual, please scan with fairly coarse grid 
+   `scf.py` script to perform these calculations with a default *k*-point grid 
+   of 16 *x* 16  *x* 16. As usual, please scan with fairly coarse grid 
    (e.g., 0.01 increments) before performing scans with a more dense grid near 
    the minimum energy. Record down the lattice parameter in Bohr and energy in Ry.
 2. Using the lattice parameter you obtained in part 1, perform a calculation of
@@ -112,38 +118,38 @@ K_POINTS automatic
    * The `calculation` parameter has been set to `relax`. This allows the atoms
      to move, but fixes the cell shape.
    * The `ibrav` tag has been set to 6, which is a tetragonal cell. To perform
-     a surface calculation, we are extending the cell in the $c$-direction and
+     a surface calculation, we are extending the cell in the *c*-direction and
      removing atoms. So we are breaking symmetry in that direction.
    * The  `celldm(3)` parameter is set to 6. This means that we have
-     constructed a supercell where the $c$ lattice parameter is 6 $\times$
-     that in the $a$ and $b$ directions.
-   * In the ATOMIC_POSITIONS section, note the $c$ fractional coordinate of
+     constructed a supercell where the *c* lattice parameter is 6  *x*
+     that in the *a* and *b* directions.
+   * In the ATOMIC_POSITIONS section, note the *c* fractional coordinate of
      each atom. The conventional fcc cell has four atoms. Look at how each
-     group of four atoms are related to each other by a translation in the $c$
-     direction. It is absolutely critical that you understand that the $c$
+     group of four atoms are related to each other by a translation in the *c*
+     direction. It is absolutely critical that you understand that the *c*
      fractional coordinate depends on **both your slab size as well as your
      vacuum size**!
 
    You can write the output to a file by giving it the `--outfile` option:
 
-     python fcc_surf_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3 --outfile Al100_3_3.pw.in
+    `python fcc_surf_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3 --outfile Al100_3_3.pw.in`
 
    To do this question, vary nslab and nvac and look at how the energies
    change with nslab and nvac. Start by keeping nslab = 2 and vary nvac
    between 1 and 4. Get a value of nvac that gives a reasonable convergence of
-   surface energies (say 0.01 Jm $^{-2}$). Note that the surface energy is
+   surface energies (say 0.01 Jm<sup>-2</sup>). Note that the surface energy is
    given by:
 
-   \\[\gamma = \frac{1}{2A} (E_{slab} - N E_{bulk}) \\]
-
-   where $E_{slab}$ is the energy of the slab, $E_{bulk}$ is the energy per
+   <img src="Surface energy.png">
+   
+   where *E<sub>slab</sub>* is the energy of the slab, *E<sub>bulk</sub>*  is the energy per
    atom of bulk Al, and N is the number of atoms in the slab.
 
    Using the converged value of nvac, vary your nslab between 1 and 6. Again,
    determine the value of nslab that converges the surface energies to
-   0.01 Jm $^{-2}$. Do not exceed `nslab = 6` for this exercise.
+   0.01 Jm<sup>-2</sup>. Do not exceed `nslab = 6` for this exercise.
 
-   Report your final surface energy in Jm $^{-2}$. Also discuss how the atoms
+   Report your final surface energy in Jm<sup>-2</sup>. Also discuss how the atoms
    at the surface has relaxed and comment on why.
 
 # Q2 (30 points): The (111) surface of Al
@@ -174,11 +180,10 @@ platform. Here is the step by step guide to creating the Al (111) surface.
   Then go to the `Structure Parameters` tab and assign different labels for
   each of your atoms. This makes it easier to identify the atoms later.
   Hit `Apply` again.
-* Step 4: The next step is to generate a larger unit cell as we are going to
-  ``cut'' the crystal in a different orientation that goes beyond the limits
+* Step 4: The next step is to generate a larger unit cell as we are going to cut the crystal in a different orientation that goes beyond the limits
   of the unit cell. Go back to the `Unit Cell` tab. Click on `Options` and
   then enter 2 for all the diagonal elements of the rotation matrix. That
-  generates a $$2 \times 2 \times 2$$ supercell of your crystal. Click `Ok`
+  generates a 2 *x* 2 *x* 2 supercell of your crystal. Click `Ok`
   for all the warnings. Click `Ok` until you close all dialog boxes and see a
   larger version of the Al cell.
 * Step 5: Click on `Objects` and check the `L` (label) for the topmost Al. All
@@ -195,13 +200,7 @@ platform. Here is the step by step guide to creating the Al (111) surface.
   connecting `Al2` and `Al4`. Using the VESTA atom picker, we can determine
   that the crystal coordinates of the atoms to be:
 
-   \\[
-   \begin{aligned}
-   \mathbf{r_{Al4}} &= (0.25, 0.25, 0)\\
-   \mathbf{r_{Al2}} &= (0, 0.25, 0.25)\\
-   \mathbf{r_{Al1}} &= (0, 0, 0.5)
-   \end{aligned}
-   \\]
+  <img src="Coordinates.png">
 
 * Step 7: Go to `Edit->Unit Cell` again, and click `Options`. We then need to
   enter our rotation matrix and origin shift to the values we have determined
@@ -229,11 +228,11 @@ that we are now using a hexagonal Bravais lattice setting.
 Repeat your calculations of surface energy in Q1 for the (111) lattice plane.
 You do not need to search for the optimal lattice parameters again. You need to
 work out the appropriate hexagonal lattice parameters based on your optimal
-cubic lattice parameters. Use a $16 \times 16 \times 1$ $k$-point grid for your
+cubic lattice parameters. Use a 16 *x* 16 *x* 1 *k*-point grid for your
 slab calculations. Also, you may perform your calculations using 2 vacuum
 layers and 3 slab layers. There is no need to redo the convergence study.
 
-Report your final (111) surface energy for Al in Jm $^{-2}$. Discuss how the
+Report your final (111) surface energy for Al in Jm<sup>-2</sup>. Discuss how the
 atom at the surface has relaxed and comment on why the relaxtion occurs the
 way it does.
 
@@ -251,32 +250,32 @@ files, either manually or using VESTA, and performing the calculations.
 
 The binding energy of an H atom on a surface is given by:
 
-\\[E_b = E(\mbox{slab + H}) - E(\mbox{slab}) - \frac{1}{2} E(\mbox{H}_2) \\]
+<img src="Binding energy.png">
 
 To calculate this, you need to perform calculations of a slab with the H atom,
 as well as the energy of H<sub>2</sub> gas. To do the latter in periodic
-boundary conditions, you need to do a ``particle in a box'' calculation, i.e.,
+boundary conditions, you need to do a `particle in a box` calculation, i.e.,
 you create a big enough simulation box (typically, sizes ~10 angstroms should
 be sufficient, but you need to do your own tests), and put your H<sub>2</sub>
 molecule in a non-symmetry position, and perform a calculation that allows
 atomic positions but not cell volumes to relax.
 
 For the slab + H calculation, you will need to investigate the different
-absorption sites on the Al surface. For the (111) hexagonal surface,
-there are three high symmetry sites - the ``on top'' site above an Al
-atom, the ``bridge'' site between two nearest neighbor Al atoms, and the
-``hollow'' site between three nearest neighbor Al atoms. There are 2 such hollow
+absorption sites on the Al surface. For the (111) hexagonal surface
+there are three high symmetry sites - the ``on top`` site above an Al
+atom, the ``bridge`` site between two nearest neighbor Al atoms, and the
+``hollow`` site between three nearest neighbor Al atoms. There are 2 such hollow
 sites to be considered. The stacking in the <111> direction is given by the
 A-B-C-A-B-C sequence. Assuming the surface ends with a 'C' plane, the hollow-site
 will either correspond to a 'A'-plane hollow site or 'B' pane hollow site.
 You will need to create simulation cells to model each of them. Note that you will need to
 extend your unit cell in the **a** and **b** directions as well to ensure that
 H atoms in neighboring periodic images are not too close to each other. Use a
-reasonable sized cell, and scale your $k$-point grid accordingly. Because we
+reasonable sized cell, and scale your *k*-point grid accordingly. Because we
 are comparing relative energies between different sites rather than absolute
 binding energies, you do not need to use very large cells. The calculations
 should be doable using a single processor. If your calculations are taking
-too long, rethink your supercell and $k$-point grid.
+too long, rethink your supercell and *k*-point grid.
 
 Report all your binding energies in eV. Discuss the relative binding energies
 of H on the different sites, and whether the results are in line with your

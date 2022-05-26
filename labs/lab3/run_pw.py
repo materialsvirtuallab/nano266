@@ -10,10 +10,12 @@ making changes and writing programs.
 Author: Shyue Ping Ong
 """
 
-import os
-import shutil
+# Load the submit_script.
+# Note that the current submit_script does not have any PWSCF commands.
+# Those commands will be appended after the corresponding input is generated.
+submit_script = open("submit_script", 'a')
 
-# Load the Si.pw.in.template file as a template.
+# Load the Fe.pw.in.template file as a template.
 with open("Fe.bcc.pw.in.template") as f:
     template = f.read()
 
@@ -34,13 +36,16 @@ for k in [8]:
     with open("%s.pw.in" % jobname, "w") as f:
         f.write(s)
 
-    #Print some status messages.
-    print("Running with alat = %s, k = %s..." % (alat, k))
-    # Run PWSCF. Modify the pw.x command accordingly if needed.
-    os.system("pw.x -inp {jobname}.pw.in > {jobname}.out".format(jobname=jobname))
+    # Write the command in submit_script.
+    submit_script.write(
+            'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1" '
+            '--mca btl openib,self,vader pw.x -input {jobname}.pw.in -npool 1 > {jobname}.out\n'
+            .format(jobname=jobname))
+    print("Done with input generation for %s" % jobname)
+ 
 
-    print("Done. Output file is %s.out." % jobname)
-
-# This just does cleanup. For this lab, we don't need the files that are
-# dumped into the tmp directory.
-shutil.rmtree("tmp")
+# Append another line in submit_script to cleanup.
+# For this lab, we don't need the files that are dumped into the tmp directory.
+submit_script.write("rm -r tmp")
+# Close the submit_script after appending all PWSCF commands.
+submit_script.close()

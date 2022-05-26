@@ -9,7 +9,7 @@
  &SYSTEM
   ibrav = 4,
   celldm(1) = {alat},
-  celldm(3) = {calat},
+  celldm(3) = {caratio},
   nat = 2,
   ntyp = 1,
   ecutwfc = 40,

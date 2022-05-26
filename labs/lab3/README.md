@@ -1,50 +1,21 @@
 # NANO266 Lab 3 - Phase Stability from Quantum Mechanics
 
 In this lab, we will look at predicting phase equilibrium from quantum mechanics.
-We will still be using QuantumEspresso. We will also introduce you to the
-basics of running calculations on supercomputing resources, e.g., how to submit
-jobs, handle queues, etc.
-
+We will still be using QuantumEspresso. 
 # Initial setup
 
-By this stage, you should already have everything set up. Make sure you are in
+By this stage, you should already have everything set up.  Do a `git pull` so that you are up to date with the repo. Also do a
+
+```
+module load gcc/10.2.0 python/3.8.5
+```
+on login node to make sure python is loaded for later analysis. Make sure you are in
 the lab3 folder by doing:
 
 ```bash
 cd <path/to/repo>/labs/lab3
 ```
 
-# Submitting jobs to the Comet queues
-
-Comet uses the Simple Linux Utility for Resource Management (Slurm) job
-scheduling system. All supercomputing clusters use a job scheduler of some
-sort, e.g., PBS, Sun GridEngine, SLURM. They differ in some features, but work
-on the same basic principle. You send jobs to a queue, and they are run
-according to some priority system. For more information, you may read the
-guide at https://www.sdsc.edu/support/user_guides/comet.html. For the purposes
-of this lab, a sample *submit_script* has been provided. It is imperative that
-you understand how the script works as you will be using this for the rest of
-this and the next lab. Read the user guide to understand what each of the
-options in the preamble means. You can then modify them to suit your needs.
-
-To submit the job, just simply run:
-
-```bash
-sbatch submit_script
-```
-
-You may check on the status of your job using the following command:
-
-```bash
-squeue -u <username>
-```
-
-If you make a mistake and need to kill a job for whatever reason. use the
-`scancel` command.
-
-```bash
-scancel <jobid>
-```
 
 # Q1 (20 points): The bcc-hcp transition in iron
 
@@ -68,7 +39,7 @@ energies to within 1 meV.
    energies that the *k*-point samplings for both systems are comparable and
    converged. Determine an appropriate *k*-point grid for both structures. Note
    that the *k*-point should be proportional to the reciprocal lattice vector
-   length.
+   length and should be integer. 
 3. Calculate and compare the total energy for the BCC structure in the
    ferromagnetic, and anti-ferromagnetic states.
 
@@ -145,6 +116,7 @@ doi:10.1103/PhysRevB.57.6427.
    ΔH<sub>f</sub> (Cu<sub>1-x</sub>Au<sub>x</sub>) = E(Cu<sub>1-x</sub>Au<sub>x</sub>) − (1 - x) E(Cu) − x E(Au)
    where E(Cu) and E(Au) are the total energies for Cu and Au in their fcc
    bulk phase. Note that you must normalize the energies accordingly. We want the formation energies per atom, i.e., 0.5 $\times$ the formation energy per CuAu.
+   where E(Cu) and E(Au) are the total energies for Cu and Au in their fcc bulk phase. Note that you must normalize the energies accordingly. We want the formation energies per atom, i.e., 0.5 *x* the formation energy per CuAu.
 3. Repeat the calculations for Cu<sub>3</sub>Au and CuAu<sub>3</sub>. For
    both these structures, start with a fcc Cu or Au structure, and replace all
    corner atoms with atoms of the other type. For example, to create
