@@ -130,7 +130,7 @@ with comments added.
     task dft energy             # Specify that we want to do an energy calculation
 
 Let us first create a separate directory to run the calculation. This makes it
-easier for us to cleanup after we are done.
+easier for us to clean up after we are done.
 
 ```bash
 mkdir scratch
@@ -182,7 +182,7 @@ final total energy in eV.
 
 # Q3 (25 points): Geometry optimization and energy of NH<sub>3</sub>
 
-The geommetry of ammonia is somewhat more complex, so we have provided an
+The geometry of ammonia is somewhat more complex, so we have provided an
 `NH3.nw` file. Perform the same calculation as in Q1.
 
 For NH<sub>3</sub>, record down the final N-H bond lengths, and also, calculate

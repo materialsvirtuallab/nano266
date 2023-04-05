@@ -40,7 +40,7 @@ It is recommended to make a new directory and a new copy of inputs for each ques
 Start by looking at the `Si.pw.in.template`, which is a template for the input
 file for PWSCF. You should get yourself familiar with the format, and what each
 of the sections and parameters mean. Note that some parameters have
-placeholders {xxx}, which will be replaced by our run script. A PWSCF_IO
+placeholders `{xxx}`, which will be replaced by our run script. A PWSCF_IO
 tutorial is provided in the tutorials folder of this repo to help you
 understand the parameters. You may also wish to consult the QuantumEspresso
 online documentation. A quick explanation of the key parameters are given as
