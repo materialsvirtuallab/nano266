@@ -18,7 +18,7 @@
 # When running things in the queue, you should add a load in order to ensure
 # that the modules you need are available.
 module reset
-module load cpu
+module load cpu/0.15.4
 module load intel
 module load intel-mpi
 module load nwchem
