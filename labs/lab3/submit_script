@@ -22,7 +22,7 @@
 # that the modules you need are available.
 module purge
 module load slurm
-module load cpu
+module load cpu/0.15.4
 module load gcc/9.2.0
 module load openmpi
 module load quantum-espresso/6.7.0-openblas
