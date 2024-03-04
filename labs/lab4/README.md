@@ -119,7 +119,7 @@ K_POINTS automatic
 
    You can write the output to a file by giving it the `--outfile` option:
 
-    `python fcc_surf_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3 --outfile Al100_3_3.pw.in`
+`python fcc_surf_gen.py --a 7.65 --miller "100" --k 16 --nslab 3 --nvac 3 --outfile Al100_3_3.pw.in`
 
    To do this question, vary nslab and nvac and look at how the energies
    change with nslab and nvac. Start by keeping nslab = 2 and vary nvac
