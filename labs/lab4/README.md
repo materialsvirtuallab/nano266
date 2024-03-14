@@ -152,62 +152,52 @@ We will now show you how you can use VESTA (http://jp-minerals.org/vesta/en/)
 to generate any surface structure. First download and install VESTA for your
 platform. Here is the step by step guide to creating the Al (111) surface.
 
-* Step 1: Open the `Al.cif` in VESTA. This is the standard `fcc` conventional
-  unit cell of Al.
-* Step 2: Let us now first insert the (111) lattice plane into the crystal for
-  easier visualization. Go to `Edit->Lattice Planes`. Click new, then type in
-  (111) for your Miller indices and set your `d` to 1. Your dialog box should
-  look something like the figure below:
+* Step 1: Open the `Al.cif` in VESTA. This is the standard `fcc` conventional unit cell of Al.
+* Step 2: Let us now first insert the (111) lattice plane into the crystal for easier visualization. Go to 
+  `Edit->Lattice Planes`. Click new, then type in (111) for your Miller indices and set your `d` to 1. Your dialog 
+  box should look something like the figure below:
 
    ![latticeplane][]
 
-* Step 3: Click `Ok`. You will see that a lattice plane has been drawn in your
-  crystal. Go to `Edit->Edit Data->Unit Cell`. Click `Remove symmetry` and
-  then hit `Apply`. We need to break symmetry before we can create the slab.
-  Then go to the `Structure Parameters` tab and assign different labels for
-  each of your atoms. This makes it easier to identify the atoms later.
-  Hit `Apply` again.
-* Step 4: The next step is to generate a larger unit cell as we are going to cut the crystal in a different orientation that goes beyond the limits
-  of the unit cell. Go back to the `Unit Cell` tab. Click on `Options` and
-  then enter 2 for all the diagonal elements of the rotation matrix. That
-  generates a 2 × 2 × 2 supercell of your crystal. Click `Ok`
-  for all the warnings. Click `Ok` until you close all dialog boxes and see a
-  larger version of the Al cell.
+* Step 3: Click `Ok`. You will see that a lattice plane has been drawn in your crystal. Go to `Edit->Edit Data->Unit 
+  Cell`. Click `Remove symmetry` and then hit `Apply`. We need to break symmetry before we can create the slab.
+  Then go to the `Structure Parameters` tab and assign different labels for each of your atoms (e.g., "Al1", "Al2", 
+  "Al3" and "Al4"). This makes it easier to identify the atoms later. Hit `Apply` again.
+* Step 4: The next step is to generate a larger unit cell as we are going to cut the crystal in a different 
+  orientation that goes beyond the limits of the unit cell. Go back to the `Unit Cell` tab. Click on `Transform` and
+  then enter 2 for all the diagonal elements of the rotation matrix. That generates a 2 × 2 × 2 supercell of your 
+  crystal. Click `Ok` for all the warnings. Click `Ok` until you close all dialog boxes and see a larger version of 
+  the Al cell.
 * Step 5: Click on `Objects` and check the `L` (label) for the topmost Al. All
   the Al atoms should now be labeled.
 
    ![labeledsupercell][]
 
-* Step 6: We are going to now redefine our lattice vectors so that our
-  **a** and **b** lattice vectors are within the (111) plane
-  and our **c** lattice vector is non-parallel (ideally normal to the
-  plane). To do this, we can observe that we can define atom `Al2` in the
-  figure above to be the origin, and set our new **a'** to be the
-  vector connecting `Al2` and `Al1`, and **b'** to be the vector
-  connecting `Al2` and `Al4`. Using the VESTA atom picker, we can determine
-  that the crystal coordinates of the atoms to be:
+* Step 6: We are going to now redefine our lattice vectors so that our **a** and **b** lattice vectors are within 
+  the (111) plane and our **c** lattice vector is non-parallel (ideally normal to the plane). To do this, we can 
+  observe that we can define atom `Al2` in the figure above to be the origin, and set our new **a'** to be the
+  vector connecting `Al2` and `Al1`, and **b'** to be the vector connecting `Al2` and `Al4`. Using the VESTA atom 
+  picker, we can determine that the crystal coordinates of the atoms to be:
 
   <img src="Coordinates.png">
 
-* Step 7: Go to `Edit->Unit Cell` again, and click `Options`. We then need to
-  enter our rotation matrix and origin shift to the values we have determined
-  in the previous step. Note the way the lattice vectors are transformed based
-  on the documentation (the vectors are in a row format and the matrix is defined in columns). For the last column, we set it  (0.5, 0.5, 0.5), since
-  we have already doubled our cell in all directions (see figure below). Click
-  `Ok`. Then go to the `Structure Parameters` tab. You will find that there
-  are a lot of duplicate atoms due to the mapping of supercell atoms onto each
-  other. Just click `Remove duplicate atoms` and you should be left with three
-  unique atoms.
+* Step 7: Go to `Edit->Edit Data->Unit Cell` again, and click `Transform`. First click on `Initialize Current 
+  Matrix`. We then need to enter our rotation matrix and origin shift to the values we have determined in the 
+  previous step. Note the way the lattice vectors are transformed based on the documentation (the vectors are in a 
+  row format and the matrix is defined in columns). For the last column, we set it  (0.5, 0.5, 0.5), since
+  we have already doubled our cell in all directions (see figure below). Click `Ok`. Then go to the `Structure 
+  Parameters` tab. You will find that there are a lot of duplicate atoms due to the mapping of supercell atoms onto each
+  other. Just click `Remove duplicate atoms` and you should be left with three unique atoms.
 
    ![transformation][]
 
-* Step 8: Click `Ok` until you end up in the crystal. You will find that you
-  now have a hexagonal cell and the (111) lattice plane is now parallel to your
-  **a** and **b** lattice vectors. Export the atom position to a
-  file using `File->Export Data`. Choose the VASP POSCAR format, even though
-  we will not be using VASP for our calculations.
+* Step 8: Click `Ok` until you end up in the crystal. You will find that you now have a hexagonal cell and the (111) 
+  lattice plane is now parallel to your **a** and **b** lattice vectors. Export the atom position to a
+  file using `File->Export Data`. Choose the VASP POSCAR format, even though we will not be using VASP for our 
+  calculations.
 
-Using the coordinates (e.g., viewing the POSCAR file in a text editor), you
+For some reason, the VASP POSCAR generated has duplicate atoms. Remove any atoms that sit in the same coordinates. 
+You should have three unique coordinates. Using the coordinates (e.g., viewing the POSCAR file in a text editor), you
 will need to modify the `fcc_surf_gen.py` to work for the (111) lattice plane.
 Look at `Al.111.bulk.pw.in.template` and `Al.111.surf.pw.in.template`. Note
 that we are now using a hexagonal Bravais lattice setting.
