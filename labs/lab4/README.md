@@ -192,7 +192,8 @@ platform. Here is the step by step guide to creating the Al (111) surface.
    ![transformation][]
 
 * Step 8: Click `Ok` until you end up in the crystal. You will find that you now have a hexagonal cell and the (111) 
-  lattice plane is now parallel to your **a** and **b** lattice vectors. Export the atom position to a
+  lattice plane is now parallel to your **a** and **b** lattice vectors. Double check that your **a** and **b** 
+  lattice parameters correspond to the shortest distance between Al atoms. Export the atom position to a
   file using `File->Export Data`. Choose the VASP POSCAR format, even though we will not be using VASP for our 
   calculations.
 
