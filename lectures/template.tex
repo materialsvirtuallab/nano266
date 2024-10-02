@@ -1,0 +1,115 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{amsmath,amsfonts,amsthm,bm}
+\usepackage{color}
+\usepackage{graphicx} % Allows including images
+\usepackage{subcaption}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning,shapes.geometric, arrows}
+%\usepackage{pgfplots}
+\usepackage{adjustbox}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage[version=4]{mhchem}
+\usepackage{array}
+\usepackage{physics}
+
+\lstset{ %
+  basicstyle=\scriptsize\ttfamily, % fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  %breaklines=true,                 % sets automatic line breaking
+  %captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray}\textit,    % comment style
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Python,                 % the language of the code
+  %otherkeywords={*,...},          % if you want to add more keywords to the set
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stringstyle=\color{red}, % string literal style
+  tabsize=4,	                   % sets default tabsize to 2 spaces
+  columns=fixed                    % Using fixed column width (for e.g. nice alignment)
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magenta,      
+    urlcolor=red,
+}
+
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\let \vec \mathbf
+
+\newcommand{\classname}{NANO266}
+\newcommand{\classyear}{Fall 2024}
+\mode<presentation> {
+    \usetheme{CambridgeUS}
+    \setbeamertemplate{footline}[text line]{%
+      \parbox{\linewidth}{\vspace*{-8pt}\classname\hfill\classyear\hfill\insertpagenumber}}
+
+    %\setbeamertemplate{footline}[page number]
+    \setbeamertemplate{navigation symbols}{}
+}
+
+
+\title[\classname Course Admin]{\classname~- Quantum Mechanical Modeling of Materials and Nanostructures\\Course Admin}
+
+\author{Shyue Ping Ong}
+\institute[UCSD]{University of California, San Diego\\
+\medskip
+}
+\date{\classyear} % Date, can be changed to a custom date
+
+\begin{document}
+
+
+\begin{frame}
+    \titlepage % Print the title page as the first slide
+\end{frame}
+
+
+\begin{frame}{Simple Frame}
+\end{frame}
+
+
+\begin{frame}{Two Column Frame}
+\begin{columns}
+\column{0.5\textwidth}
+\column{0.5\textwidth}
+\end{columns}
+\end{frame} 
+
+
+\begin{frame}{Figure Frame}
+% \begin{figure}
+%     \centering
+%     \begin{subfigure}{0.2\textwidth}
+%     \includegraphics[width=\linewidth]{lectures/figures/0.3_Jupiter_1.png}
+%     \includegraphics[width=\linewidth]{lectures/figures/0.3_Jupiter_2.png}
+%     \end{subfigure}
+%     \begin{subfigure}{0.5\textwidth}
+%         \includegraphics[width=\linewidth]{lectures/figures/0.3_Jupiter_3.png}    
+%             \end{subfigure}
+%     \caption{Reproduced from ref \cite{militzerMassiveCoreJupiter2008a}.}
+% \end{figure}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Bibliography}
+    \bibliographystyle{unsrt}
+    \bibliography{refs}
+\end{frame}
+
+
+
+\begin{frame}
+    \Huge{\centerline{The End}}
+\end{frame}
+
+\end{document}
+
