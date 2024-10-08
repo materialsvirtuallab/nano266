@@ -16,7 +16,7 @@
 #SBATCH -t 01:00:00
 
 # This sets the account, which is our NANO266 account
-#SBATCH -A csd452
+#SBATCH -A csd914
 
 # When running things in the queue, you should add a load in order to ensure
 # that the modules you need are available.
