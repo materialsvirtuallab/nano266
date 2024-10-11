@@ -418,20 +418,83 @@ e^{i\vec{k}.(\vec{r} + N_i \vec{a_i})} = e^{i\vec{k}.\vec{r}}\implies e^{i\vec{k
 
 \begin{frame}{Choosing $\vec{k}$ point grids}
 
+\begin{columns}
+\column{0.5\textwidth}
 \textbf{Sampling at one point}
 \begin{itemize}
-    \item Baldereschi point: Point such that the value which any given periodic function of wave vector assumes at this point is an excellent approximation to the average value of the same function throughout the Brillouin zone. This special point is termed the ``mean-value point'' and is dictated by the crystal symmetry. The coordinates of the mean-value point for cubic lattices are explicitly given.
-    \item Gamma ($\Gamma$) point: 
+    \item Baldereschi point\cite{baldereschiMeanValuePointBrillouin1973}: ``Mean-value point'' dictated by the crystal symmetry.
+    \item Gamma ($\Gamma$) point $(0,0,0)$: Commonly used to minimize computational cost for large cells.
 \end{itemize}
 
 \textbf{Sampling in a Grid}
 \begin{itemize}
-    \item Monkhorst-Pack – Sampling at regular grid mesh.
-    \item Special grids along 
+    \item Monkhorst-Pack\cite{monkhorstSpecialPointsBrillouinzone1976}: Regular grid mesh.
+    \item Grids along high-symmetry lines, e.g., for bandstructure calculations.
 \end{itemize}
+
+\column{0.5\textwidth}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{\textwidth}
+    \centering
+        \includegraphics[width=0.55\linewidth]{lectures/figures/7_monkhorst_square.png}
+    \caption{MK grid for square lattices}
+    \end{subfigure}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{lectures/figures/7_monkhorst_hexagonal.png}
+    \caption{MK grid for hexagonal lattices}
+    \end{subfigure}
+\end{figure} 
+
+\end{columns} 
 
 \end{frame} 
 
+
+\begin{frame}{Convergence with respect to energy cutoff}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\linewidth]{lectures/figures/7_convergence_kpoint.png}
+    \caption{Energy per atom of fcc Cu with lattice constant of 3.64 \AA~as a function of $M$ for $M \times M \times M$ $k$-point grid.\cite{shollDensityFunctionalTheory2009}}
+\end{figure} 
+\end{frame} 
+
+
+\begin{frame}{Irreducible $k$ points}
+Symmetry reduces points that need to be evaluated (irreducible Brillouin Zone).
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{lectures/figures/7_irr_BZ.png}
+    \caption{Grids for integration for a 2d square lattice. The left and center figures are equivalent with one point at the origin, and six inequivalent points in the irreducible BZ shown in grey. Right: A shifted special point grid of the same density but with only three inequivalent points. \cite{shollDensityFunctionalTheory2009}}
+\end{figure} 
+\begin{alertblock}{$k$ grid vs cell volume}
+    The $k$-point grid is inversely related to unit cell volume. E.g., if cell is doubled in one direction, $k$-point grid should be halved in that direction to maintain the same sampling density.
+\end{alertblock}
+
+\end{frame} 
+
+
+\begin{frame}{$k$ points for metals}
+\begin{columns}
+\column{0.5\textwidth}
+BZ in metals are divided into occupied and unoccupied regions by Fermi surface, where the integrated functions change discontinuously from non-zero to zero. $\implies$ Extremely dense $k$-point mesh needed for integration.
+\textbf{Algorithmic solutions}
+\begin{itemize}
+    \item \textbf{Tetrahedron method}: Define a tetrahedra that fill reciprocal space and interpolate. Most widely used is Blochl's version.
+    \item \textbf{Smearing} Force the function being integrated to be continuous by ``smearing'' out the discontinuity.
+\end{itemize}
+
+\column{0.5\textwidth}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{lectures/figures/7_Cu_fermi_surface.png}
+    \caption{Fermi-surface of Copper (Cu), the color codes the inverse effective mass of the electrons, large effective masses are represented in red.\cite{weismannSeeingFermiSurface2009}}
+\end{figure} 
+
+\end{columns} 
+\end{frame} 
 
 
     \begin{frame}[allowframebreaks]{Bibliography}
