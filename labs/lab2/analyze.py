@@ -13,7 +13,7 @@ patterns = {
     "ecut": re.compile(r"kinetic\-energy cutoff\s+=\s+([\d\.\-]+)\s+Ry"),
     "alat": re.compile(r"celldm\(1\)=\s+([\d\.]+)\s"),
     "nkpts": re.compile(r"number of k points=\s+([\d]+)"),
-    "total_force": re.compile(r"Total force =\s+([\d\.]+)")
+    "total_force": re.compile(r"Total force =\s+([\d\.]+)"),
 }
 
 
@@ -30,8 +30,8 @@ def get_results(filename):
 
 
 def analyze(filenames):
-    fieldnames = ['filename', 'ecut', 'nkpts', 'alat', 'energy','total_force']
-    with open('results.csv', 'w') as csvfile:
+    fieldnames = ["filename", "ecut", "nkpts", "alat", "energy", "total_force"]
+    with open("results.csv", "w") as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for f in filenames:
@@ -43,9 +43,14 @@ def analyze(filenames):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description='''Tool for analysis of PWSCF calculations.''')
+        description="""Tool for analysis of PWSCF calculations."""
+    )
     parser.add_argument(
-        'filenames', metavar='filenames', type=str, nargs="+",
-        help='Files to process. You may use wildcards, e.g., "python analyze.py *.out".')
+        "filenames",
+        metavar="filenames",
+        type=str,
+        nargs="+",
+        help='Files to process. You may use wildcards, e.g., "python analyze.py *.out".',
+    )
     args = parser.parse_args()
     analyze(args.filenames)

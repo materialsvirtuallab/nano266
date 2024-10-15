@@ -12,14 +12,14 @@ Author: Shyue Ping Ong
 
 import numpy as np
 
-submit_script = open("submit_script", 'a')
+submit_script = open("submit_script", "a")
 # Load the Al.100.bulk.pw.in.template file as a template.
 with open("Al.100.bulk.pw.in.template") as f:
     template = f.read()
 
 # Set default values for various parameters
-k = 16 # k-point grid of 16x16x16
-alat = 7.65 # The lattice parameter for the cell in Bohr.
+k = 16  # k-point grid of 16x16x16
+alat = 7.65  # The lattice parameter for the cell in Bohr.
 
 # Loop through different k-points.
 for alat in np.arange(7.55, 7.65, 0.01):
@@ -36,11 +36,13 @@ for alat in np.arange(7.55, 7.65, 0.01):
 
     # Write the command in submit_script.
     submit_script.write(
-            'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1" '
-            '--mca btl openib,self,vader pw.x -input {jobname}.pw.in -npool 1 > {jobname}.out\n'
-            .format(jobname=jobname))
+        'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1" '
+        "--mca btl openib,self,vader pw.x -input {jobname}.pw.in -npool 1 > {jobname}.out\n".format(
+            jobname=jobname
+        )
+    )
     print("Done with input generation for %s" % jobname)
-    
+
 
 # Append another line in submit_script to cleanup.
 # For this lab, we don't need the files that are dumped into the tmp directory.

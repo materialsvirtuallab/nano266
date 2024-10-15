@@ -59,13 +59,16 @@ _atom_site_fract_z
 _atom_site_occupancy
 """
 
-cif = cif.format(a=a, c=c, nat=len(atompos), vol=a*a*c, gamma=120 if ibrav == 4 else 90)
+cif = cif.format(
+    a=a, c=c, nat=len(atompos), vol=a * a * c, gamma=120 if ibrav == 4 else 90
+)
 
 for i, s in enumerate(atompos):
     toks = s.split()
     sp = toks[0]
-    row = "{sp} {sp}{i} 1 {x} {y} {z} 1".format(sp=sp, i=i+1,
-            x=float(toks[1]), y=float(toks[2]), z=float(toks[3]))
+    row = "{sp} {sp}{i} 1 {x} {y} {z} 1".format(
+        sp=sp, i=i + 1, x=float(toks[1]), y=float(toks[2]), z=float(toks[3])
+    )
     cif += row + "\n"
 
 with open(sys.argv[2], "w") as f:

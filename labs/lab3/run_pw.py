@@ -13,15 +13,15 @@ Author: Shyue Ping Ong
 # Load the submit_script.
 # Note that the current submit_script does not have any PWSCF commands.
 # Those commands will be appended after the corresponding input is generated.
-submit_script = open("submit_script", 'a')
+submit_script = open("submit_script", "a")
 
 # Load the Fe.pw.in.template file as a template.
 with open("Fe.bcc.pw.in.template") as f:
     template = f.read()
 
 # Set default values for various parameters
-k = 8 # k-point grid of 8x8x8
-alat = 5.42 # The lattice parameter for the cell in Bohr.
+k = 8  # k-point grid of 8x8x8
+alat = 5.42  # The lattice parameter for the cell in Bohr.
 
 # Loop through different k-points.
 for k in [8]:
@@ -38,11 +38,13 @@ for k in [8]:
 
     # Write the command in submit_script.
     submit_script.write(
-            'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1" '
-            '--mca btl openib,self,vader pw.x -input {jobname}.pw.in -npool 1 > {jobname}.out\n'
-            .format(jobname=jobname))
+        'mpirun --map-by core --mca btl_openib_if_include "mlx5_2:1" '
+        "--mca btl openib,self,vader pw.x -input {jobname}.pw.in -npool 1 > {jobname}.out\n".format(
+            jobname=jobname
+        )
+    )
     print("Done with input generation for %s" % jobname)
- 
+
 
 # Append another line in submit_script to cleanup.
 # For this lab, we don't need the files that are dumped into the tmp directory.
