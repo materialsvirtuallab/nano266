@@ -168,7 +168,7 @@
 
 
     \begin{frame}{Consequence of H-K theorems}
-        Schrodinger equation in 3N electronic coordinates reduced to solving for electron density in 3 spatial coordinates!\newline
+        Schr\"odinger equation in 3N electronic coordinates reduced to solving for electron density in 3 spatial coordinates!\newline
         \newline
         In theory, H-K theorems are exact.\newline
         \newline
@@ -203,7 +203,7 @@
             E[\rho(\vec{r})] = T_{ni}[\rho(\vec{r})] + V_{ne}[\rho(\vec{r})] + V_{ee}[\rho(\vec{r})] + \Delta T[\rho(\vec{r})] + \Delta V_{ee} [\rho(\vec{r})]
         \end{equation*}
 
-        The contribution from the correction terms ($T[\rho(\vec{r})]$ and $\Delta V_{ee} [\rho(\vec{r})]$ is called the exchange-correlation energy.
+        The contribution from the correction terms ($\Delta T[\rho(\vec{r})]$ and $\Delta V_{ee} [\rho(\vec{r})]$) is called the \textbf{exchange-correlation energy}.
 
     \end{frame}
 
@@ -225,7 +225,7 @@
     \end{frame}
 
     \begin{frame}{Solution to KS equations}
-        Follows broadly the general concepts of HF SCF approach, i.e., construct guess KS orbitals within a basis set, solve secular equation to obtain new orbitals (and density matrix) and iterate until convergence.\newline
+        Follows broadly the same procedure as the HF SCF approach, i.e., construct guess KS orbitals within a basis set, solve secular equation to obtain new orbitals (and density matrix) and iterate until convergence.\newline
         \newline
         Key differences between HF and DFT
         \begin{itemize}
@@ -266,7 +266,9 @@
             E[\rho(\vec{r})] = T_{ni}[\rho(\vec{r})] + V_{ne}[\rho(\vec{r})] + V_{ee}[\rho(\vec{r})] + V_{xc}[\rho(\vec{r})]
         \end{equation*}
 
-        Thus far, we have constructed an elegant system, but we have conveniently swept all unknowns into the mysterious $V_{xc}$. Unfortunately, the H-K theorems provide no guidance on the form of this $V_{xc}$. With approximate$V_{xc}$, DFT can be non-variational.\newline
+        Thus far, we have constructed an elegant system, but we have conveniently swept all unknowns into the mysterious $V_{xc}$. \newline
+\newline 
+Unfortunately, the H-K theorems provide no guidance on the form of this $V_{xc}$. With approximate$V_{xc}$, DFT can be non-variational.\newline
         \newline
         What is the simplest possible assumption we can make?
     \end{frame}
