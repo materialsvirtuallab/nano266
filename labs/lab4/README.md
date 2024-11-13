@@ -177,9 +177,9 @@ platform. Here is the step by step guide to creating the Al (111) surface.
   the (111) plane and our **c** lattice vector is non-parallel (ideally normal to the plane). To do this, we can 
   observe that we can define atom `Al2` in the figure above to be the origin, and set our new **a'** to be the
   vector connecting `Al2` and `Al1`, and **b'** to be the vector connecting `Al2` and `Al4`. Using the VESTA atom 
-  picker, we can determine that the crystal coordinates of the atoms to be:
-
-  <img src="Coordinates.png">
+  picker, we can determine that the crystal coordinates of the atoms to be Al1: (0, 0, 0.5), Al2: (0, 0.25, 0.25), 
+  Al4: (0.25, 0.25, 0). This means **a'** = (0, -0.25, 0.25), **b'** = (0.25, 0, -0.25). We will choose **c'** to be 
+  the <111> direction of the crystal, which is perpendicular to the (111) surface of the cube.
 
 * Step 7: Go to `Edit->Edit Data->Unit Cell` again, and click `Transform`. First click on `Initialize Current 
   Matrix`. We then need to enter our rotation matrix and origin shift to the values we have determined in the 
